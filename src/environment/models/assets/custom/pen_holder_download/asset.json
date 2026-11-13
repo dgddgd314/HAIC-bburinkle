@@ -1,0 +1,21 @@
+{
+  "display_name": "Graphite metal pen holder",
+  "aliases": [
+    "pen holder",
+    "pencil holder",
+    "연필꽂이",
+    "필기구 통"
+  ],
+  "categories": [
+    "Office & School"
+  ],
+  "root_body": "downloaded_pen_holder",
+  "base_quat": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "floor_z": 0.0,
+  "dynamic": false
+}

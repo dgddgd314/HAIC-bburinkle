@@ -1,0 +1,27 @@
+{
+    "assetId": "food_roast_chicken",
+    "category": "roast chicken",
+    "description": "A whole roasted chicken with browned crispy skin, served on a platter.",
+    "description_long": "A whole roasted chicken with browned crispy skin, served on a platter.",
+    "description_short": {
+        "one_word": "chicken",
+        "two_words": "roast chicken"
+    },
+    "synset": "roast_chicken.n.01",
+    "onFloor": false,
+    "onWall": false,
+    "onCeiling": false,
+    "onObject": true,
+    "receptacle": false,
+    "license_info": {
+        "license": "unknown-user-supplied",
+        "uri": "",
+        "creator_display_name": ""
+    },
+    "mass": 1.6002341451435882,
+    "boundingBox": {
+        "x": 0.3800000011779521,
+        "y": 0.24472000229621643,
+        "z": 0.1671000006132105
+    }
+}

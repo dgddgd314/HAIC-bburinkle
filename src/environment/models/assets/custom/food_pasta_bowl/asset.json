@@ -1,0 +1,8 @@
+{
+  "display_name": "Pasta bowl",
+  "root_body": "food_pasta_bowl",
+  "aliases": ["pasta", "spaghetti", "food bowl", "파스타"],
+  "categories": ["Food & Dining"],
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.037
+}

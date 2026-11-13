@@ -1,0 +1,9 @@
+{
+  "display_name": "Mapping-matched cafeteria service counter",
+  "root_body": "cafeteria_mapping_counter",
+  "aliases": ["service counter", "cafeteria counter", "배식대", "식당 카운터"],
+  "categories": ["Dining", "Cabinets & Storage"],
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.0,
+  "dynamic": false
+}

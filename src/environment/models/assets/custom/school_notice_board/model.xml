@@ -1,0 +1,11 @@
+<mujoco model="school_notice_board_model">
+  <compiler angle="radian" boundmass="0.01"/>
+  <default><default class="v"><geom group="0" contype="0" conaffinity="0"/></default><default class="c"><geom group="4" contype="1" conaffinity="1"/></default></default>
+  <worldbody><body name="school_notice_board">
+    <geom name="frame_v" class="v" type="box" pos="0 0 1.35" size="0.68 0.045 0.48" rgba="0.38 0.25 0.13 1"/>
+    <geom name="cork_v" class="v" type="box" pos="0 -0.048 1.35" size="0.62 0.008 0.42" rgba="0.72 0.50 0.27 1"/>
+    <geom name="paper1_v" class="v" type="box" pos="-0.29 -0.058 1.47" size="0.19 0.003 0.22" rgba="0.88 0.93 0.96 1"/>
+    <geom name="paper2_v" class="v" type="box" pos="0.28 -0.058 1.25" size="0.22 0.003 0.17" rgba="0.94 0.84 0.55 1"/>
+    <geom name="board_c" class="c" type="box" pos="0 0 1.35" size="0.68 0.045 0.48"/>
+  </body></worldbody>
+</mujoco>

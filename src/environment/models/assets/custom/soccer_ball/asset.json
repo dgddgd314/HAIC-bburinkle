@@ -1,0 +1,16 @@
+{
+  "display_name": "Soccer ball",
+  "aliases": [
+    "football",
+    "football ball",
+    "축구공",
+    "공"
+  ],
+  "categories": [
+    "Sports & Recreation"
+  ],
+  "root_body": "soccer_ball",
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.11,
+  "dynamic": true
+}

@@ -1,0 +1,21 @@
+<mujoco model="school_corridor_bench_model">
+  <compiler angle="radian" boundmass="0.01"/>
+  <default>
+    <default class="v"><geom group="0" contype="0" conaffinity="0"/></default>
+    <default class="c"><geom group="4" contype="1" conaffinity="1" friction="0.9 0.02 0.001"/></default>
+  </default>
+  <asset>
+    <material name="bench_wood" rgba="0.65 0.43 0.24 1" roughness="0.76"/>
+    <material name="bench_metal" rgba="0.20 0.23 0.25 1" roughness="0.5" specular="0.25"/>
+  </asset>
+  <worldbody><body name="school_corridor_bench">
+    <geom name="seat_v" class="v" type="box" pos="0 0 0.46" size="0.72 0.18 0.045" material="bench_wood"/>
+    <geom name="back_v" class="v" type="box" pos="0 0.155 0.72" size="0.72 0.035 0.25" material="bench_wood"/>
+    <geom name="leg_l_v" class="v" type="box" pos="-0.58 0 0.225" size="0.035 0.14 0.225" material="bench_metal"/>
+    <geom name="leg_r_v" class="v" type="box" pos="0.58 0 0.225" size="0.035 0.14 0.225" material="bench_metal"/>
+    <geom name="seat_c" class="c" type="box" pos="0 0 0.46" size="0.72 0.18 0.045"/>
+    <geom name="back_c" class="c" type="box" pos="0 0.155 0.72" size="0.72 0.035 0.25"/>
+    <geom name="leg_l_c" class="c" type="box" pos="-0.58 0 0.225" size="0.035 0.14 0.225"/>
+    <geom name="leg_r_c" class="c" type="box" pos="0.58 0 0.225" size="0.035 0.14 0.225"/>
+  </body></worldbody>
+</mujoco>

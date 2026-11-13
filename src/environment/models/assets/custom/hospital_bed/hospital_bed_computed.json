@@ -1,0 +1,31 @@
+{
+    "assetId": "hospital_bed",
+    "category": "hospital bed",
+    "description": "A hospital bed with a white mattress, blue folded blanket, beige metal side rails, an adjustable frame and four caster wheels.",
+    "description_long": "This is a wheeled hospital patient bed. The frame and side rails are a light grey-beige metal, the mattress is covered with a white sheet, and a blue blanket is folded over the foot end. The base sits on four black caster wheels and the head section is raised on an adjustable back rest.",
+    "description_short": {
+        "one_word": "bed",
+        "two_words": "hospital bed",
+        "three_words": "wheeled hospital bed",
+        "four_words": "white wheeled hospital bed",
+        "five_words": "wheeled hospital bed with blue blanket"
+    },
+    "synset": "hospital_bed.n.01",
+    "onFloor": true,
+    "onWall": false,
+    "onCeiling": false,
+    "onObject": false,
+    "receptacle": true,
+    "license_info": {
+        "license": "CC-BY-3.0",
+        "uri": "http://creativecommons.org/licenses/by/3.0/",
+        "creator_display_name": "Emmanuel PUYBARET / eTeks, Scopia Visual Interfaces Systems s.l.",
+        "creator_profile_url": "http://www.scopia.es"
+    },
+    "mass": 110.03419639794876,
+    "boundingBox": {
+        "x": 1.0003840007639746,
+        "y": 2.0955860631401766,
+        "z": 0.8968340184525787
+    }
+}

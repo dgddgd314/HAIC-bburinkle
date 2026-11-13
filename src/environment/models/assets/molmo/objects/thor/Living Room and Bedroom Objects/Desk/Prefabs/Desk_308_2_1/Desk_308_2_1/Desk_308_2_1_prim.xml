@@ -1,0 +1,129 @@
+<mujoco model="Desk_308_2_1">
+  <compiler angle="radian" boundmass="0.01"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="SMOOTHWOODWood2" file="TexturesCom_WoodWhite1.png"/>
+    <texture type="2d" name="HammeredMetal_Dark" file="HammeredMetal_AlbedoTransparency.png"/>
+    <material name="material_SMOOTHWOODWood2" class="/" texture="SMOOTHWOODWood2" rgba="0.632353 0.415019 0.339425 1"/>
+    <material name="material_HammeredMetal_Dark" class="/" texture="HammeredMetal_Dark" rgba="0.264706 0.264706 0.264706 1"/>
+    <mesh name="Desk_308_2_1_DeskMesh" class="/" content_type="model/obj" file="Desk_308_2_1_DeskMesh/Desk_308_2_1_DeskMesh.obj"/>
+    <mesh name="Desk_308_2_1_DrawerMesh_01" class="/" content_type="model/obj" file="Desk_308_2_1_DrawerMesh_01/Desk_308_2_1_DrawerMesh_01.obj"/>
+    <mesh name="Desk_308_2_1_handle_1_305mm_01" class="/" content_type="model/obj" file="Desk_308_2_1_handle_1_305mm_01/Desk_308_2_1_handle_1_305mm_01.obj"/>
+    <mesh name="Desk_308_2_1_DrawerMesh_03" class="/" content_type="model/obj" file="Desk_308_2_1_DrawerMesh_03/Desk_308_2_1_DrawerMesh_03.obj"/>
+    <mesh name="Desk_308_2_1_handle_1_305mm_03" class="/" content_type="model/obj" file="Desk_308_2_1_handle_1_305mm_03/Desk_308_2_1_handle_1_305mm_03.obj"/>
+    <mesh name="Desk_308_2_1_DrawerMesh_02" class="/" content_type="model/obj" file="Desk_308_2_1_DrawerMesh_02/Desk_308_2_1_DrawerMesh_02.obj"/>
+    <mesh name="Desk_308_2_1_handle_1_305mm_02" class="/" content_type="model/obj" file="Desk_308_2_1_handle_1_305mm_02/Desk_308_2_1_handle_1_305mm_02.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="Desk_308_2_1">
+      <body name="Desk_308_2_1_DeskMesh" pos="0.00683 -0.42245 -0.00492">
+        <geom name="Desk_308_2_1_DeskMesh" class="__VISUAL_MJT__" type="mesh" density="180" material="material_SMOOTHWOODWood2" mesh="Desk_308_2_1_DeskMesh"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.336505 0.0475483 0.339474" pos="-0.349051 0.806871 -0.00342309" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.336505 0.0141685 0.695345" pos="0.00682087 0.840451 -0.00342304" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.328204 0.0355994 0.360174" pos="0.337646 0.0258766 -0.0117247" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.328204 0.0133574 0.360174" pos="0.337646 0.332687 -0.0117247" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.328204 0.0133574 0.360174" pos="0.337646 0.614087 -0.0117247" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.0110172 0.0356759 0.337131" pos="-0.34089 0.341364 -0.328911" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.336505 0.428 0.0136003" pos="0.683104 0.422719 -0.00342292" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_7" class="__DYNAMIC_MJT__" size="0.336505 0.428 0.0136003" pos="-0.0088961 0.422719 -0.00342304" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_8" class="__DYNAMIC_MJT__" size="0.336505 0.428 0.0136003" pos="-0.665896 0.422719 -0.00342321" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <geom name="Desk_308_2_1_DeskMesh_PrimitiveCollider_9" class="__DYNAMIC_MJT__" size="0.032785 0.428926 0.359836" pos="0.337778 0.419947 -0.307143" quat="0 0.707107 0 -0.707107" type="box" density="180" rgba="0 1 0 1"/>
+        <site name="Desk_308_2_1_DeskMesh_Receptacle_0" class="/" pos="0.00649984 0.898082 -0.00166234" quat="0 0.707107 0 -0.707107" size="0.335662 0.0530818 0.692846" type="box" rgba="1 0 0 1"/>
+        <body name="Desk_308_2_1_DrawerMesh_01" pos="0.331878 0.729508 0.148068">
+          <joint name="Desk_308_2_1_joint" class="/" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.305" damping="0.1" frictionloss="1.2"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01" class="__VISUAL_MJT__" type="mesh" density="100" material="material_SMOOTHWOODWood2" mesh="Desk_308_2_1_DrawerMesh_01"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.160107 0.00536788 0.33051" pos="0 -0.0883669 -0.00574079" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.00428653 0.0937347 0.33051" pos="-8.9407e-08 0 -0.161561" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.00472817 0.0937347 0.33051" pos="8.9407e-08 0 0.149638" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.00458097 0.0937347 0.33051" pos="-8.9407e-08 0 -0.161267" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.00692821 0.103354 0.339487" pos="8.9407e-08 0 0.159374" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.160107 0.0963005 0.00719741" pos="-0.323313 0.0025658 -0.00574061" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_01_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.160107 0.0963005 0.00719741" pos="0.329287 0.0025658 -0.005741" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <site name="Desk_308_2_1_DrawerMesh_01_Receptacle_0" class="/" pos="0.000340134 0.00532746 -0.00616126" quat="0 0.707107 0 -0.707107" size="0.150433 0.0871456 0.320094" type="box" rgba="1 0 0 1"/>
+          <body name="Desk_308_2_1_handle_1_305mm_01" pos="0 0.067 0.163">
+            <geom name="Desk_308_2_1_handle_1_305mm_01" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_Dark" mesh="Desk_308_2_1_handle_1_305mm_01"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_01_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.005 0.148619" pos="0 0 0.0337" quat="0.5 0.5 -0.5 -0.5" type="capsule" rgba="0 1 0 1"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_01_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.00300521 0.013226" pos="-0.14153 0 0.0159" quat="0 1 0 0" type="capsule" rgba="0 1 0 1"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_01_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.00300521 0.013226" pos="0.1402 0 0.0159" quat="0 1 0 0" type="capsule" rgba="0 1 0 1"/>
+          </body>
+        </body>
+        <body name="Desk_308_2_1_DrawerMesh_03" pos="0.331878 0.195109 0.148068">
+          <joint name="Desk_308_2_1_DrawerMesh_03__1" class="/" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.305" damping="0.1" frictionloss="1.2"/>
+          <geom name="Desk_308_2_1_DrawerMesh_03" class="__VISUAL_MJT__" type="mesh" density="100" material="material_SMOOTHWOODWood2" mesh="Desk_308_2_1_DrawerMesh_03"/>
+          <geom name="Desk_308_2_1_DrawerMesh_03_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.159938 0.00717509 0.331803" pos="0 -0.120522 -0.00576147" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_03_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0044665 0.127697 0.331803" pos="-8.9407e-08 0 -0.161233" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_03_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.00446641 0.127697 0.331803" pos="8.9407e-08 0 0.14971" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_03_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.159938 0.127697 0.00603285" pos="0.325771 0 -0.00576168" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_03_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.00655973 0.135369 0.339178" pos="0.000123024 0 0.159131" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_03_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.159938 0.127697 0.00603285" pos="-0.324829 0 -0.0057613" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <site name="Desk_308_2_1_DrawerMesh_03_Receptacle_0" class="/" pos="0 0.00677772 -0.00574785" quat="0 0.707107 0 -0.707107" size="0.151701 0.119896 0.320291" type="box" rgba="1 0 0 1"/>
+          <body name="Desk_308_2_1_handle_1_305mm_03" pos="0 0.092 0.163">
+            <geom name="Desk_308_2_1_handle_1_305mm_03" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_Dark" mesh="Desk_308_2_1_handle_1_305mm_03"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_03_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.005 0.148619" pos="0 0 0.0337" quat="0.5 0.5 -0.5 -0.5" type="capsule" rgba="0 1 0 1"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_03_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.00300521 0.013226" pos="-0.14153 0 0.0159" quat="0 1 0 0" type="capsule" rgba="0 1 0 1"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_03_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.00300521 0.013226" pos="0.1402 0 0.0159" quat="0 1 0 0" type="capsule" rgba="0 1 0 1"/>
+          </body>
+        </body>
+        <body name="Desk_308_2_1_DrawerMesh_02" pos="0.331878 0.478085 0.148068">
+          <joint name="Desk_308_2_1_DrawerMesh_02__1" class="/" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.305" damping="0.1" frictionloss="1.2"/>
+          <geom name="Desk_308_2_1_DrawerMesh_02" class="__VISUAL_MJT__" type="mesh" density="100" material="material_SMOOTHWOODWood2" mesh="Desk_308_2_1_DrawerMesh_02"/>
+          <geom name="Desk_308_2_1_DrawerMesh_02_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.159938 0.00717509 0.331803" pos="0 -0.120522 -0.00576147" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_02_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0044665 0.127697 0.331803" pos="-8.9407e-08 0 -0.161233" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_02_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.00446641 0.127697 0.331803" pos="8.9407e-08 0 0.14971" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_02_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.159938 0.127697 0.00603285" pos="0.325771 0 -0.00576168" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_02_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.00655973 0.135369 0.339178" pos="0.000123024 0 0.159131" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <geom name="Desk_308_2_1_DrawerMesh_02_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.159938 0.127697 0.00603285" pos="-0.324829 0 -0.0057613" quat="0 0.707107 0 -0.707107" type="box" density="100" rgba="0 1 0 1"/>
+          <site name="Desk_308_2_1_DrawerMesh_02_Receptacle_0" class="/" pos="0 0.00677773 -0.00574785" quat="0 0.707107 0 -0.707107" size="0.151701 0.119896 0.321291" type="box" rgba="1 0 0 1"/>
+          <body name="Desk_308_2_1_handle_1_305mm_02" pos="0 0.092 0.163">
+            <geom name="Desk_308_2_1_handle_1_305mm_02" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_Dark" mesh="Desk_308_2_1_handle_1_305mm_02"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_02_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.005 0.148619" pos="0 0 0.0337" quat="0.5 0.5 -0.5 -0.5" type="capsule" rgba="0 1 0 1"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_02_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.00300521 0.013226" pos="-0.14153 0 0.0159" quat="0 1 0 0" type="capsule" rgba="0 1 0 1"/>
+            <geom name="Desk_308_2_1_handle_1_305mm_02_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.00300521 0.013226" pos="0.1402 0 0.0159" quat="0 1 0 0" type="capsule" rgba="0 1 0 1"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="//unnamed_contact_0" body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_DrawerMesh_01"/>
+    <exclude body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_DrawerMesh_01"/>
+    <exclude body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_handle_1_305mm_01"/>
+    <exclude name="//unnamed_contact_1" body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_DrawerMesh_03"/>
+    <exclude body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_DrawerMesh_03"/>
+    <exclude body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_handle_1_305mm_03"/>
+    <exclude name="//unnamed_contact_2" body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_DrawerMesh_02"/>
+    <exclude body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_DrawerMesh_02"/>
+    <exclude body1="Desk_308_2_1_DeskMesh" body2="Desk_308_2_1_handle_1_305mm_02"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_01" body2="Desk_308_2_1_handle_1_305mm_01"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_01" body2="Desk_308_2_1_DrawerMesh_03"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_01" body2="Desk_308_2_1_handle_1_305mm_03"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_01" body2="Desk_308_2_1_DrawerMesh_02"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_01" body2="Desk_308_2_1_handle_1_305mm_02"/>
+    <exclude body1="Desk_308_2_1_handle_1_305mm_01" body2="Desk_308_2_1_DrawerMesh_03"/>
+    <exclude body1="Desk_308_2_1_handle_1_305mm_01" body2="Desk_308_2_1_handle_1_305mm_03"/>
+    <exclude body1="Desk_308_2_1_handle_1_305mm_01" body2="Desk_308_2_1_DrawerMesh_02"/>
+    <exclude body1="Desk_308_2_1_handle_1_305mm_01" body2="Desk_308_2_1_handle_1_305mm_02"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_03" body2="Desk_308_2_1_handle_1_305mm_03"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_03" body2="Desk_308_2_1_DrawerMesh_02"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_03" body2="Desk_308_2_1_handle_1_305mm_02"/>
+    <exclude body1="Desk_308_2_1_handle_1_305mm_03" body2="Desk_308_2_1_DrawerMesh_02"/>
+    <exclude body1="Desk_308_2_1_handle_1_305mm_03" body2="Desk_308_2_1_handle_1_305mm_02"/>
+    <exclude body1="Desk_308_2_1_DrawerMesh_02" body2="Desk_308_2_1_handle_1_305mm_02"/>
+  </contact>
+</mujoco>

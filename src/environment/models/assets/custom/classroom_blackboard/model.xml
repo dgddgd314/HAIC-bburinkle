@@ -1,0 +1,54 @@
+<mujoco model="classroom_blackboard">
+  <compiler angle="degree" autolimits="true"/>
+
+  <asset>
+    <material name="chalkboard_green" rgba="0.045 0.18 0.125 1"
+              roughness="0.94" specular="0.06" shininess="0.03"/>
+    <material name="chalkboard_frame" rgba="0.43 0.25 0.105 1"
+              roughness="0.68" specular="0.16" shininess="0.12"/>
+    <material name="chalkboard_metal" rgba="0.45 0.49 0.50 1"
+              metallic="0.25" roughness="0.55" specular="0.32"/>
+    <material name="chalk_white" rgba="0.88 0.88 0.80 1"
+              roughness="1" specular="0"/>
+    <material name="chalk_yellow" rgba="0.94 0.78 0.22 1"
+              roughness="1" specular="0"/>
+  </asset>
+
+  <worldbody>
+    <body name="classroom_blackboard">
+      <!-- 2.8 x 1.2 m writing surface. Local +Z is vertical and Y is depth. -->
+      <geom name="board_visual" type="box" pos="0 0 0"
+            size="1.40 0.025 0.60" material="chalkboard_green"
+            contype="0" conaffinity="0" density="0" group="0"/>
+      <geom name="frame_top" type="box" pos="0 0 0.635"
+            size="1.47 0.043 0.035" material="chalkboard_frame"
+            contype="0" conaffinity="0" density="0" group="0"/>
+      <geom name="frame_bottom" type="box" pos="0 0 -0.635"
+            size="1.47 0.043 0.035" material="chalkboard_frame"
+            contype="0" conaffinity="0" density="0" group="0"/>
+      <geom name="frame_left" type="box" pos="-1.435 0 0"
+            size="0.035 0.043 0.60" material="chalkboard_frame"
+            contype="0" conaffinity="0" density="0" group="0"/>
+      <geom name="frame_right" type="box" pos="1.435 0 0"
+            size="0.035 0.043 0.60" material="chalkboard_frame"
+            contype="0" conaffinity="0" density="0" group="0"/>
+      <geom name="chalk_tray" type="box" pos="0 -0.085 -0.665"
+            size="1.46 0.10 0.025" material="chalkboard_metal"
+            contype="0" conaffinity="0" density="0" group="0"/>
+      <geom name="white_chalk" type="capsule" pos="-0.38 -0.155 -0.625"
+            quat="0.707107 0 0.707107 0" size="0.012 0.065"
+            material="chalk_white" contype="0" conaffinity="0"
+            density="0" group="0"/>
+      <geom name="yellow_chalk" type="capsule" pos="-0.17 -0.155 -0.625"
+            quat="0.707107 0 0.707107 0" size="0.012 0.055"
+            material="chalk_yellow" contype="0" conaffinity="0"
+            density="0" group="0"/>
+
+      <!-- One thin collision panel keeps robots and movable props off the board. -->
+      <geom name="board_collision" type="box" pos="0 0 0"
+            size="1.47 0.05 0.67" rgba="0 0 0 0" group="3"
+            density="80" contype="1" conaffinity="1"
+            friction="0.8 0.02 0.002"/>
+    </body>
+  </worldbody>
+</mujoco>

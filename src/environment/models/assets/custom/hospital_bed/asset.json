@@ -1,0 +1,9 @@
+{
+  "display_name": "Hospital bed",
+  "root_body": "hospital_bed",
+  "aliases": ["hospital bed", "medical bed", "patient bed", "보건실 침대", "병원 침대"],
+  "categories": ["Medical", "Furniture"],
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.40078,
+  "dynamic": false
+}

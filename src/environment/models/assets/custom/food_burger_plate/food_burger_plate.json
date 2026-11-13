@@ -1,0 +1,21 @@
+{
+ "assetId": "food_burger_plate",
+ "category": "fast food plate",
+ "description": "A plate with a cheeseburger, a pile of French fries and a wrap.",
+ "description_long": "A plate with a cheeseburger, a pile of French fries and a wrap.",
+ "description_short": {
+  "one_word": "plate",
+  "two_words": "fast food plate"
+ },
+ "synset": "hamburger.n.01",
+ "onFloor": false,
+ "onWall": false,
+ "onCeiling": false,
+ "onObject": true,
+ "receptacle": false,
+ "license_info": {
+  "license": "unknown-user-supplied",
+  "uri": "",
+  "creator_display_name": ""
+ }
+}

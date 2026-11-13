@@ -1,0 +1,64 @@
+<mujoco model="Book_20">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="Book_Text_Mat" file="Book_Text_AlbedoTransparency.png"/>
+    <texture type="2d" name="Book_Pages_1_Mat" file="Book_Pages_AlbedoTransparency.png"/>
+    <texture type="2d" name="Book_Cover_Mat" file="Book_Cover_AlbedoTransparency.png"/>
+    <material name="material_Book_Text_Mat" class="/" texture="Book_Text_Mat"/>
+    <material name="material_Book_Pages_1_Mat" class="/" texture="Book_Pages_1_Mat"/>
+    <material name="material_Book_Cover_Mat" class="/" texture="Book_Cover_Mat"/>
+    <mesh name="Book_20_book_20_0" class="/" content_type="model/obj" file="Book_20_book_20/Book_20_book_20_0.obj"/>
+    <mesh name="Book_20_book_20_1" class="/" content_type="model/obj" file="Book_20_book_20/Book_20_book_20_1.obj"/>
+    <mesh name="Book_20_book_20_2" class="/" content_type="model/obj" file="Book_20_book_20/Book_20_book_20_2.obj"/>
+    <mesh name="Book_20_book_front_20_0" class="/" content_type="model/obj" file="Book_20_book_front_20/Book_20_book_front_20_0.obj"/>
+    <mesh name="Book_20_book_front_20_1" class="/" content_type="model/obj" file="Book_20_book_front_20/Book_20_book_front_20_1.obj"/>
+    <mesh name="Book_20_book_front_20_2" class="/" content_type="model/obj" file="Book_20_book_front_20/Book_20_book_front_20_2.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="Book_20">
+      <joint name="Book_20_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1"/>
+      <body name="Book_20_book_20" pos="0.00059 -0.01669 0">
+        <geom name="Book_20_book_20_0" class="__VISUAL_MJT__" type="mesh" density="800" material="material_Book_Text_Mat" mesh="Book_20_book_20_0"/>
+        <geom name="Book_20_book_20_1" class="__VISUAL_MJT__" type="mesh" density="800" material="material_Book_Pages_1_Mat" mesh="Book_20_book_20_1"/>
+        <geom name="Book_20_book_20_2" class="__VISUAL_MJT__" type="mesh" density="800" material="material_Book_Cover_Mat" mesh="Book_20_book_20_2"/>
+        <geom name="Book_20_book_20_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.126858 0.00866204 0.15256" pos="-0.00028751 0.0088478 -3.3417e-10" quat="0 5.81145e-07 0 -1" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_20_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0711372 0.00802151 0.15256" pos="0.0546359 0.0176546 6.35028e-08" quat="-0.0568856 5.80204e-07 3.30588e-08 -0.998381" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_20_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0334687 0.00808127 0.15256" pos="-0.0477244 0.0253905 -5.54696e-08" quat="0 5.81145e-07 0 -1" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_20_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0110899 0.00672586 0.15256" pos="-0.114113 0.0181603 -1.32633e-07" quat="0.250473 5.6262e-07 -1.45561e-07 -0.968124" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_20_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.013665 0.00789232 0.15256" pos="-0.0926817 0.0236011 -1.07723e-07" quat="0.104191 5.77982e-07 -6.055e-08 -0.994557" type="box" density="800" rgba="0 1 0 1"/>
+      </body>
+      <body name="Book_20_book_front_20" pos="-0.12561 -9.60669e-05 0">
+        <joint name="Book_20_book_front_20_joint_0" class="/" pos="0 0 0" axis="0 0 1" range="0 3.14159" damping="0.1"/>
+        <geom name="Book_20_book_front_20_0" class="__VISUAL_MJT__" type="mesh" density="800" material="material_Book_Text_Mat" mesh="Book_20_book_front_20_0"/>
+        <geom name="Book_20_book_front_20_1" class="__VISUAL_MJT__" type="mesh" density="800" material="material_Book_Pages_1_Mat" mesh="Book_20_book_front_20_1"/>
+        <geom name="Book_20_book_front_20_2" class="__VISUAL_MJT__" type="mesh" density="800" material="material_Book_Cover_Mat" mesh="Book_20_book_front_20_2"/>
+        <geom name="Book_20_book_front_20_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.126858 0.00866204 0.15256" pos="0.127677 0.00793687 -9.13213e-08" quat="3.57628e-07 0 -1 0" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_front_20_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0711375 0.00802152 0.15256" pos="0.1826 -0.000869919 -1.30606e-07" quat="3.57049e-07 0.0568856 -0.998381 -2.03439e-08" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_front_20_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0334687 0.00808127 0.15256" pos="0.0802415 -0.00860586 -5.73932e-08" quat="3.57628e-07 0 -1 0" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_front_20_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.0110899 0.00672586 0.15256" pos="0.0138525 -0.00137562 -9.90805e-09" quat="3.46228e-07 -0.250473 -0.968124 8.95762e-08" type="box" density="800" rgba="0 1 0 1"/>
+        <geom name="Book_20_book_front_20_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.013665 0.00789232 0.15256" pos="0.0352842 -0.00681648 -2.52372e-08" quat="3.55681e-07 -0.104191 -0.994557 3.72616e-08" type="box" density="800" rgba="0 1 0 1"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="//unnamed_contact_0" body1="Book_20_book_20" body2="Book_20_book_front_20"/>
+    <exclude body1="Book_20_book_20" body2="Book_20_book_front_20"/>
+  </contact>
+</mujoco>

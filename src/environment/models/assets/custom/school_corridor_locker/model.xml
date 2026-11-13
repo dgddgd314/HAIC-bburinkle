@@ -1,0 +1,12 @@
+<mujoco model="school_corridor_locker_model">
+  <compiler angle="radian" boundmass="0.01"/>
+  <default><default class="v"><geom group="0" contype="0" conaffinity="0"/></default><default class="c"><geom group="4" contype="1" conaffinity="1" friction="0.9 0.02 0.001"/></default></default>
+  <asset><material name="locker_blue" rgba="0.35 0.48 0.57 1" roughness="0.55" specular="0.2"/><material name="locker_dark" rgba="0.12 0.15 0.17 1" roughness="0.55"/></asset>
+  <worldbody><body name="school_corridor_locker">
+    <geom name="case_v" class="v" type="box" pos="0 0 0.85" size="0.56 0.22 0.85" material="locker_blue"/>
+    <geom name="seam_v" class="v" type="box" pos="0 -0.222 0.85" size="0.012 0.006 0.82" material="locker_dark"/>
+    <geom name="handle_l_v" class="v" type="box" pos="-0.10 -0.235 0.9" size="0.015 0.012 0.08" material="locker_dark"/>
+    <geom name="handle_r_v" class="v" type="box" pos="0.10 -0.235 0.9" size="0.015 0.012 0.08" material="locker_dark"/>
+    <geom name="case_c" class="c" type="box" pos="0 0 0.85" size="0.56 0.22 0.85"/>
+  </body></worldbody>
+</mujoco>

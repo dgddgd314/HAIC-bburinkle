@@ -1,0 +1,27 @@
+{
+    "assetId": "food_pizza",
+    "category": "pizza",
+    "description": "A whole round pizza with melted cheese, tomato sauce and toppings, sliced into wedges.",
+    "description_long": "A whole round pizza with melted cheese, tomato sauce and toppings, sliced into wedges.",
+    "description_short": {
+        "one_word": "pizza",
+        "two_words": "pizza"
+    },
+    "synset": "pizza.n.01",
+    "onFloor": false,
+    "onWall": false,
+    "onCeiling": false,
+    "onObject": true,
+    "receptacle": false,
+    "license_info": {
+        "license": "unknown-user-supplied",
+        "uri": "",
+        "creator_display_name": ""
+    },
+    "mass": 0.9999276283443459,
+    "boundingBox": {
+        "x": 0.40000001597307977,
+        "y": 0.4000000191307298,
+        "z": 0.06008000017617507
+    }
+}

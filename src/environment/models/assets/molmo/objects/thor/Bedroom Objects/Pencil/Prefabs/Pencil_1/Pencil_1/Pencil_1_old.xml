@@ -1,0 +1,30 @@
+<mujoco model="Pencil_1">
+  <compiler autolimits="true" boundmass="0" angle="radian"/>
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" group="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom contype="1" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture name="PensPencils_DefaultMaterial_AlbedoTransparency" type="2d" file="PensPencils_DefaultMaterial_AlbedoTransparency.png"/>
+    <material name="material_PensPencils_DefaultMaterial_AlbedoTransparency" class="/" texture="PensPencils_DefaultMaterial_AlbedoTransparency" specular="0.5" shininess="0.5" rgba="1 1 1 1"/>
+    <mesh name="Pencil_1_Cylinder.224" class="/" file="Pencil_1_Cylinder.224/Pencil_1_Cylinder.224.obj" scale="1.0000003576278687 1 1"/>
+  </asset>
+  <worldbody>
+    <body name="Pencil_1">
+      <joint name="Pencil_1_free" class="/" type="free" pos="0 0 0" axis="0 0 1" stiffness="0" range="0 0" armature="0" damping="0.10000000000000001" frictionloss="0"/>
+      <body name="Pencil_1_Cylinder.224" pos="-0 0 -0.0031900000000000001" quat="-0.50008636713027954 0.49991181492805481 0.50008821487426758 0.49991369247436523">
+        <geom name="Pencil_1_Cylinder.224" class="__VISUAL_MJT__" type="mesh" material="material_PensPencils_DefaultMaterial_AlbedoTransparency" shellinertia="false" mesh="Pencil_1_Cylinder.224"/>
+        <geom name="Pencil_1_Cylinder.224_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="capsule" size="0.0047275703400373459 0.08272959478199482" rgba="0 1 0 1" pos="-0.0031917386222630739 3.0873081868776353e-12 8.3819031715393066e-09" quat="0.00012340595952631568 0.70710780301124465 0.00012344810637060502 0.70710573781588371"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

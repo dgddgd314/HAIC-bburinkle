@@ -1,0 +1,9 @@
+{
+  "display_name": "Green traffic cone",
+  "root_body": "traffic_cone_green",
+  "aliases": ["green cone", "traffic cone", "초록색 라바콘"],
+  "categories": ["Sports", "Navigation", "Decor"],
+  "base_quat": [1, 0, 0, 0],
+  "floor_z": 0.360005,
+  "dynamic": false
+}

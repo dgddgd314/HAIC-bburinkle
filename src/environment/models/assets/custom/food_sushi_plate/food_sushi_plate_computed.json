@@ -1,0 +1,27 @@
+{
+    "assetId": "food_sushi_plate",
+    "category": "sushi",
+    "description": "A plate of assorted sushi pieces with rice, raw fish and garnish.",
+    "description_long": "A plate of assorted sushi pieces with rice, raw fish and garnish.",
+    "description_short": {
+        "one_word": "sushi",
+        "two_words": "sushi"
+    },
+    "synset": "sushi.n.01",
+    "onFloor": false,
+    "onWall": false,
+    "onCeiling": false,
+    "onObject": true,
+    "receptacle": false,
+    "license_info": {
+        "license": "unknown-user-supplied",
+        "uri": "",
+        "creator_display_name": ""
+    },
+    "mass": 0.400009413304077,
+    "boundingBox": {
+        "x": 0.2600000007583072,
+        "y": 0.25999999701971266,
+        "z": 0.08676000061607235
+    }
+}

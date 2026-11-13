@@ -1,0 +1,46 @@
+<mujoco model="classroom_wall_clock_model">
+  <compiler angle="degree"/>
+  <default>
+    <default class="visual">
+      <geom contype="0" conaffinity="0" group="0"/>
+    </default>
+    <default class="collision">
+      <geom contype="1" conaffinity="1" group="4"/>
+    </default>
+  </default>
+  <asset>
+    <material name="clock_rim" rgba="0.16 0.18 0.20 1" roughness="0.65"/>
+    <material name="clock_face" rgba="0.94 0.94 0.90 1" roughness="0.88"/>
+    <material name="clock_marks" rgba="0.07 0.08 0.09 1" roughness="0.7"/>
+  </asset>
+  <worldbody>
+    <body name="classroom_wall_clock">
+      <geom name="clock_rim_visual" class="visual" type="cylinder"
+            size="0.23 0.018" material="clock_rim"/>
+      <geom name="clock_face_visual" class="visual" type="cylinder"
+            size="0.205 0.019" pos="0 0 0.002" material="clock_face"/>
+      <geom name="clock_collision" class="collision" type="cylinder"
+            size="0.23 0.018"/>
+
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="0 0.165 0.025" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="0.0825 0.1429 0.025" euler="0 0 -30" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="0.1429 0.0825 0.025" euler="0 0 -60" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="0.165 0 0.025" euler="0 0 90" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="0.1429 -0.0825 0.025" euler="0 0 60" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="0.0825 -0.1429 0.025" euler="0 0 30" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="0 -0.165 0.025" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="-0.0825 -0.1429 0.025" euler="0 0 -30" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="-0.1429 -0.0825 0.025" euler="0 0 -60" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="-0.165 0 0.025" euler="0 0 90" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="-0.1429 0.0825 0.025" euler="0 0 60" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.010 0.030 0.006" pos="-0.0825 0.1429 0.025" euler="0 0 30" material="clock_marks"/>
+
+      <geom class="visual" type="box" size="0.007 0.090 0.007"
+            pos="0 0.075 0.034" material="clock_marks"/>
+      <geom class="visual" type="box" size="0.009 0.058 0.008"
+            pos="0.0475 0.0333 0.036" euler="0 0 -55" material="clock_marks"/>
+      <geom class="visual" type="cylinder" size="0.014 0.009"
+            pos="0 0 0.044" material="clock_marks"/>
+    </body>
+  </worldbody>
+</mujoco>

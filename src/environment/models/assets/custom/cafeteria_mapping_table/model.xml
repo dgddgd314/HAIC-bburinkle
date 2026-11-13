@@ -1,0 +1,26 @@
+<mujoco model="cafeteria_mapping_table_model">
+  <compiler angle="radian" boundmass="0.01"/>
+  <default>
+    <default class="visual"><geom contype="0" conaffinity="0" group="0"/></default>
+    <default class="collision"><geom contype="1" conaffinity="1" group="4" friction="0.9 0.02 0.001"/></default>
+  </default>
+  <asset>
+    <material name="cafeteria_oak" rgba="0.76 0.58 0.37 1" roughness="0.68" specular="0.16"/>
+    <material name="cafeteria_frame" rgba="0.34 0.37 0.38 1" roughness="0.5" specular="0.28"/>
+  </asset>
+  <worldbody>
+    <body name="cafeteria_mapping_table">
+      <geom name="top_visual" class="visual" type="box" pos="0 0 0.76656" size="0.886655 0.421905 0.035" material="cafeteria_oak"/>
+      <geom name="frame_visual" class="visual" type="box" pos="0 0 0.704" size="0.79 0.34 0.025" material="cafeteria_frame"/>
+      <geom name="leg_fl_visual" class="visual" type="box" pos="-0.80 -0.335 0.352" size="0.032 0.032 0.352" material="cafeteria_frame"/>
+      <geom name="leg_fr_visual" class="visual" type="box" pos="-0.80 0.335 0.352" size="0.032 0.032 0.352" material="cafeteria_frame"/>
+      <geom name="leg_bl_visual" class="visual" type="box" pos="0.80 -0.335 0.352" size="0.032 0.032 0.352" material="cafeteria_frame"/>
+      <geom name="leg_br_visual" class="visual" type="box" pos="0.80 0.335 0.352" size="0.032 0.032 0.352" material="cafeteria_frame"/>
+      <geom name="top_collision" class="collision" type="box" pos="0 0 0.76656" size="0.886655 0.421905 0.035"/>
+      <geom name="leg_fl_collision" class="collision" type="box" pos="-0.80 -0.335 0.352" size="0.032 0.032 0.352"/>
+      <geom name="leg_fr_collision" class="collision" type="box" pos="-0.80 0.335 0.352" size="0.032 0.032 0.352"/>
+      <geom name="leg_bl_collision" class="collision" type="box" pos="0.80 -0.335 0.352" size="0.032 0.032 0.352"/>
+      <geom name="leg_br_collision" class="collision" type="box" pos="0.80 0.335 0.352" size="0.032 0.032 0.352"/>
+    </body>
+  </worldbody>
+</mujoco>

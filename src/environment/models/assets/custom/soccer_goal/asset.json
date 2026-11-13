@@ -1,0 +1,17 @@
+{
+  "display_name": "Soccer goal post",
+  "aliases": [
+    "soccer goal",
+    "football goal",
+    "goal post",
+    "축구 골대",
+    "골대"
+  ],
+  "categories": [
+    "Sports & Recreation"
+  ],
+  "root_body": "soccer_goal",
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.0,
+  "dynamic": false
+}

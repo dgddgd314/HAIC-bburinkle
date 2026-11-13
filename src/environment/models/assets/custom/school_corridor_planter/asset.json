@@ -1,0 +1,7 @@
+{
+  "display_name": "School corridor planter",
+  "root_body": "school_corridor_planter",
+  "aliases": ["hallway plant", "indoor planter", "복도 화분"],
+  "categories": ["Plants", "Office & School"],
+  "base_quat": [1, 0, 0, 0], "floor_z": 0.0, "dynamic": false
+}

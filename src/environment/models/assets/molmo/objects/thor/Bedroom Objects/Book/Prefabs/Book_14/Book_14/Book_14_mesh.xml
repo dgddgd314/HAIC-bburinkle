@@ -1,0 +1,86 @@
+<mujoco model="Book_14">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="Book_Text_Mat" file="Book_Text_AlbedoTransparency.png"/>
+    <texture type="2d" name="Book_Pages_1_Mat" file="Book_Pages_AlbedoTransparency.png"/>
+    <texture type="2d" name="Book_Cover_Mat" file="Book_Cover_AlbedoTransparency.png"/>
+    <material name="material_Book_Text_Mat" class="/" texture="Book_Text_Mat"/>
+    <material name="material_Book_Pages_1_Mat" class="/" texture="Book_Pages_1_Mat"/>
+    <material name="material_Book_Cover_Mat" class="/" texture="Book_Cover_Mat"/>
+    <mesh name="Book_14_book_14_0" class="/" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_0.obj"/>
+    <mesh name="Book_14_book_14_1" class="/" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_1.obj"/>
+    <mesh name="Book_14_book_14_2" class="/" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_2.obj"/>
+    <mesh name="Book_14_book_front_14_0" class="/" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_0.obj"/>
+    <mesh name="Book_14_book_front_14_1" class="/" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_1.obj"/>
+    <mesh name="Book_14_book_front_14_2" class="/" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_2.obj"/>
+    <mesh name="Book_14_book_14_0_collision_2" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_0/Book_14_book_14_0_collision_2.obj"/>
+    <mesh name="Book_14_book_14_0_collision_0" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_0/Book_14_book_14_0_collision_0.obj"/>
+    <mesh name="Book_14_book_14_0_collision_1" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_0/Book_14_book_14_0_collision_1.obj"/>
+    <mesh name="Book_14_book_14_1_collision_1" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_1/Book_14_book_14_1_collision_1.obj"/>
+    <mesh name="Book_14_book_14_1_collision_0" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_1/Book_14_book_14_1_collision_0.obj"/>
+    <mesh name="Book_14_book_14_1_collision_2" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_1/Book_14_book_14_1_collision_2.obj"/>
+    <mesh name="Book_14_book_14_2_collision_1" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_2/Book_14_book_14_2_collision_1.obj"/>
+    <mesh name="Book_14_book_14_2_collision_0" content_type="model/obj" file="Book_14_book_14/Book_14_book_14_2/Book_14_book_14_2_collision_0.obj"/>
+    <mesh name="Book_14_book_front_14_0_collision_0" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_0/Book_14_book_front_14_0_collision_0.obj"/>
+    <mesh name="Book_14_book_front_14_0_collision_2" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_0/Book_14_book_front_14_0_collision_2.obj"/>
+    <mesh name="Book_14_book_front_14_0_collision_1" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_0/Book_14_book_front_14_0_collision_1.obj"/>
+    <mesh name="Book_14_book_front_14_1_collision_1" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_1/Book_14_book_front_14_1_collision_1.obj"/>
+    <mesh name="Book_14_book_front_14_1_collision_0" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_1/Book_14_book_front_14_1_collision_0.obj"/>
+    <mesh name="Book_14_book_front_14_1_collision_2" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_1/Book_14_book_front_14_1_collision_2.obj"/>
+    <mesh name="Book_14_book_front_14_2_collision_1" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_2/Book_14_book_front_14_2_collision_1.obj"/>
+    <mesh name="Book_14_book_front_14_2_collision_0" content_type="model/obj" file="Book_14_book_front_14/Book_14_book_front_14_2/Book_14_book_front_14_2_collision_0.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="Book_14">
+      <joint name="Book_14_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1"/>
+      <body name="Book_14_book_14" pos="-8e-05 -0.00707 0">
+        <geom name="Book_14_book_14_0" class="__VISUAL_MJT__" type="mesh" material="material_Book_Text_Mat" mesh="Book_14_book_14_0"/>
+        <geom name="Book_14_book_14_1" class="__VISUAL_MJT__" type="mesh" material="material_Book_Pages_1_Mat" mesh="Book_14_book_14_1"/>
+        <geom name="Book_14_book_14_2" class="__VISUAL_MJT__" type="mesh" material="material_Book_Cover_Mat" mesh="Book_14_book_14_2"/>
+        <geom name="Book_14_book_14_Book_14_book_14_0_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.102947 0.746763 0.212333 1" mesh="Book_14_book_14_0_collision_2"/>
+        <geom name="Book_14_book_14_Book_14_book_14_0_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.874394 0.590139 0.781287 1" mesh="Book_14_book_14_0_collision_0"/>
+        <geom name="Book_14_book_14_Book_14_book_14_0_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" rgba="0.338371 0.671967 0.15216 1" mesh="Book_14_book_14_0_collision_1"/>
+        <geom name="Book_14_book_14_Book_14_book_14_1_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.942364 0.683133 0.703516 1" mesh="Book_14_book_14_1_collision_1"/>
+        <geom name="Book_14_book_14_Book_14_book_14_1_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.729537 0.852468 0.637486 1" mesh="Book_14_book_14_1_collision_0"/>
+        <geom name="Book_14_book_14_Book_14_book_14_1_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" rgba="0.643373 0.967876 0.062873 1" mesh="Book_14_book_14_1_collision_2"/>
+        <geom name="Book_14_book_14_Book_14_book_14_2_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.490856 0.582316 0.443194 1" mesh="Book_14_book_14_2_collision_1"/>
+        <geom name="Book_14_book_14_Book_14_book_14_2_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.508584 0.558148 0.41171 1" mesh="Book_14_book_14_2_collision_0"/>
+      </body>
+      <body name="Book_14_book_front_14" pos="-0.07363 -2.33005e-05 0">
+        <joint name="Book_14_book_front_14_joint_0" class="/" pos="0 0 0" axis="0 0 1" range="0 3.14159" damping="0.1"/>
+        <geom name="Book_14_book_front_14_0" class="__VISUAL_MJT__" type="mesh" material="material_Book_Text_Mat" mesh="Book_14_book_front_14_0"/>
+        <geom name="Book_14_book_front_14_1" class="__VISUAL_MJT__" type="mesh" material="material_Book_Pages_1_Mat" mesh="Book_14_book_front_14_1"/>
+        <geom name="Book_14_book_front_14_2" class="__VISUAL_MJT__" type="mesh" material="material_Book_Cover_Mat" mesh="Book_14_book_front_14_2"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_0_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.275487 0.459233 0.878669 1" mesh="Book_14_book_front_14_0_collision_0"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_0_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.862087 0.508245 0.905774 1" mesh="Book_14_book_front_14_0_collision_2"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_0_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" rgba="0.0253162 0.290506 0.0273624 1" mesh="Book_14_book_front_14_0_collision_1"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_1_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.238598 0.416174 0.913524 1" mesh="Book_14_book_front_14_1_collision_1"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_1_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.0548683 0.558589 0.999808 1" mesh="Book_14_book_front_14_1_collision_0"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_1_MeshCollider_2" class="__DYNAMIC_MJT__" type="mesh" rgba="0.826477 0.590845 0.686699 1" mesh="Book_14_book_front_14_1_collision_2"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_2_MeshCollider_0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.654474 0.775004 0.835119 1" mesh="Book_14_book_front_14_2_collision_1"/>
+        <geom name="Book_14_book_front_14_Book_14_book_front_14_2_MeshCollider_1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.656318 0.408662 0.447677 1" mesh="Book_14_book_front_14_2_collision_0"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude name="//unnamed_contact_0" body1="Book_14_book_14" body2="Book_14_book_front_14"/>
+    <exclude body1="Book_14_book_14" body2="Book_14_book_front_14"/>
+  </contact>
+</mujoco>

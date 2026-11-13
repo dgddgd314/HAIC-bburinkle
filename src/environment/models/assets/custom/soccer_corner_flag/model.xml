@@ -1,0 +1,11 @@
+<mujoco model="soccer_corner_flag_model">
+  <compiler angle="radian" boundmass="0.01"/>
+  <default><default class="v"><geom group="0" contype="0" conaffinity="0"/></default><default class="c"><geom group="4" contype="1" conaffinity="1" friction="0.8 0.02 0.001"/></default></default>
+  <worldbody><body name="soccer_corner_flag">
+    <geom name="base_v" class="v" type="cylinder" pos="0 0 0.025" size="0.12 0.025" rgba="0.14 0.16 0.17 1"/>
+    <geom name="pole_v" class="v" type="cylinder" pos="0 0 0.67" size="0.018 0.65" rgba="0.93 0.93 0.88 1"/>
+    <geom name="flag_v" class="v" type="box" pos="0.17 0 1.12" size="0.17 0.008 0.14" rgba="0.88 0.18 0.12 1"/>
+    <geom name="base_c" class="c" type="cylinder" pos="0 0 0.025" size="0.12 0.025"/>
+    <geom name="pole_c" class="c" type="cylinder" pos="0 0 0.67" size="0.018 0.65"/>
+  </body></worldbody>
+</mujoco>

@@ -1,0 +1,59 @@
+<mujoco model="RoboTHOR_chair_antnas">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="HammeredMetal_Dark" file="HammeredMetal_AlbedoTransparency.png"/>
+    <texture type="2d" name="RoboTHOR_Dining_Table_Antas_Wood_Mat" file="WoodGrains2.png"/>
+    <material name="material_HammeredMetal_Dark" class="/" texture="HammeredMetal_Dark" rgba="0.264706 0.264706 0.264706 1"/>
+    <material name="material_RoboTHOR_Dining_Table_Antas_Wood_Mat" class="/" texture="RoboTHOR_Dining_Table_Antas_Wood_Mat" rgba="0.745283 0.546521 0.302585 1"/>
+    <mesh name="RoboTHOR_chair_antnas_robothor_chair_antnas_0" class="/" content_type="model/obj" file="RoboTHOR_chair_antnas_robothor_chair_antnas/RoboTHOR_chair_antnas_robothor_chair_antnas_0.obj"/>
+    <mesh name="RoboTHOR_chair_antnas_robothor_chair_antnas_1" class="/" content_type="model/obj" file="RoboTHOR_chair_antnas_robothor_chair_antnas/RoboTHOR_chair_antnas_robothor_chair_antnas_1.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="RoboTHOR_chair_antnas">
+      <joint name="RoboTHOR_chair_antnas_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1"/>
+      <body name="RoboTHOR_chair_antnas_robothor_chair_antnas" pos="0.00113 -0.40273 0.00519">
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_0" class="__VISUAL_MJT__" type="mesh" material="material_HammeredMetal_Dark" mesh="RoboTHOR_chair_antnas_robothor_chair_antnas_0"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_1" class="__VISUAL_MJT__" type="mesh" material="material_RoboTHOR_Dining_Table_Antas_Wood_Mat" mesh="RoboTHOR_chair_antnas_robothor_chair_antnas_1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.217158 0.0165988 0.2305" pos="0 0.36692 0.0352852" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.0210383 0.196675 0.00837517" pos="-0.208432 0.186844 0.262363" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.0210383 0.196675 0.00837517" pos="0.211268 0.186844 0.262363" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.00994664 0.0197742 0.00837517" pos="0.222359 0.00994278 -0.234337" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.00994664 0.0197742 0.00837517" pos="-0.219041 0.00994278 -0.234336" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_5" class="__DYNAMIC_MJT__" size="0.00994664 0.18596 0.00837517" pos="-0.207625 0.18605 -0.204677" quat="-0.0699072 0.9969 -0.0360198 0.00252588" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_6" class="__DYNAMIC_MJT__" size="0.00994664 0.18596 0.00837517" pos="0.21139 0.185654 -0.204577" quat="-0.0699169 0.997039 0.0319323 -0.00223924" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_7" class="__DYNAMIC_MJT__" size="0.0103756 0.100051 0.00746252" pos="-0.199365 0.475843 -0.187752" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_8" class="__DYNAMIC_MJT__" size="0.0103756 0.100051 0.00746252" pos="0.205335 0.475843 -0.187752" quat="0 1 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_9" class="__DYNAMIC_MJT__" size="0.109613 0.0137606 0.00746252" pos="0.1043 0.559608 -0.2252" quat="0 0.990078 0 0.14052" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_10" class="__DYNAMIC_MJT__" size="0.109613 0.0137606 0.00746252" pos="-0.1013 0.559608 -0.2236" quat="0 0.990079 0 -0.140512" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_11" class="__DYNAMIC_MJT__" size="0.0103756 0.100282 0.00746252" pos="0.213 0.668391 -0.203427" quat="0.065827 0.997831 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_12" class="__DYNAMIC_MJT__" size="0.0103756 0.100282 0.00746252" pos="-0.2099 0.668391 -0.203427" quat="0.065827 0.997831 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_13" class="__DYNAMIC_MJT__" size="0.0103756 0.122031 0.00746252" pos="-0.0871 0.684352 -0.248784" quat="0.065827 0.997831 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_14" class="__DYNAMIC_MJT__" size="0.0103756 0.122031 0.00746252" pos="0.016 0.683152 -0.257784" quat="0.065827 0.997831 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_15" class="__DYNAMIC_MJT__" size="0.0103756 0.122031 0.00746252" pos="0.1095 0.684952 -0.243984" quat="0.065827 0.997831 0 0" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_16" class="__DYNAMIC_MJT__" size="0.109613 0.0137606 0.00746252" pos="0.0866 0.798908 -0.2652" quat="0 0.999297 0 0.037479" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_17" class="__DYNAMIC_MJT__" size="0.109613 0.0137606 0.00746252" pos="-0.0996 0.801508 -0.2626" quat="-3.85772e-10 0.998802 1.02858e-08 -0.0489442" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_18" class="__DYNAMIC_MJT__" size="0.0203962 0.0137606 0.00746252" pos="-0.1992 0.801508 -0.2403" quat="-1.31268e-09 0.966205 3.49998e-08 -0.257775" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_19" class="__DYNAMIC_MJT__" size="0.0203962 0.0137606 0.00746252" pos="0.2085 0.801508 -0.2403" quat="1.80681e-08 0.949614 3.00042e-08 0.313422" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_20" class="__DYNAMIC_MJT__" size="0.0113245 0.0278544 0.00746252" pos="-0.207066 0.775192 -0.229906" quat="0.165481 0.951929 -0.0441488 -0.253966" type="box" rgba="0 1 0 1"/>
+        <geom name="RoboTHOR_chair_antnas_robothor_chair_antnas_PrimitiveCollider_21" class="__DYNAMIC_MJT__" size="0.0106065 0.0294932 0.00746257" pos="0.216366 0.772336 -0.230093" quat="0.165405 0.935098 0.0545923 0.308631" type="box" rgba="0 1 0 1"/>
+        <site name="RoboTHOR_chair_antnas_robothor_chair_antnas_ReceptacleCollider_0" class="/" pos="0.00133952 0.437827 0.0404914" quat="0 1 0 0" size="0.188787 0.0549265 0.224047" type="box" rgba="1 0 0 1"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

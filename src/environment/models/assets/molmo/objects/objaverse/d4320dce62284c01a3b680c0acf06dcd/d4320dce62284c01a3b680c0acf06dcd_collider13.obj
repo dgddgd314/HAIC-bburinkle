@@ -1,0 +1,12 @@
+# Created by Open3D 
+# object name: d4320dce62284c01a3b680c0acf06dcd_collider13
+# number of vertices: 4
+# number of triangles: 4
+v 0.012368 0.273273 -0.136342
+v -0.012042 -0.636001 -0.13631
+v -0.012169 0.273273 -0.136342
+v 0.012241 -0.63601 -0.13631
+f 1 2 4
+f 3 2 1
+f 2 3 4
+f 3 1 4

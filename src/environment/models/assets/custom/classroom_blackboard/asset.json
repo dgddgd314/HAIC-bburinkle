@@ -1,0 +1,22 @@
+{
+  "display_name": "School green chalkboard",
+  "aliases": [
+    "classroom blackboard",
+    "green chalkboard",
+    "school board",
+    "칠판",
+    "학교 칠판"
+  ],
+  "categories": [
+    "Office & School"
+  ],
+  "root_body": "classroom_blackboard",
+  "base_quat": [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "floor_z": 0.69,
+  "dynamic": false
+}

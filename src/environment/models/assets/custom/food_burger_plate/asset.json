@@ -1,0 +1,8 @@
+{
+  "display_name": "Burger and fries plate",
+  "root_body": "food_burger_plate",
+  "aliases": ["burger", "fries", "fast food", "햄버거", "감자튀김"],
+  "categories": ["Food & Dining"],
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.04977
+}

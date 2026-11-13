@@ -1,0 +1,67 @@
+<mujoco model="hospital_bed">
+  <compiler angle="radian" autolimits="true"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" group="0" mass="1e-08"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001"
+              solref="0.025 1.0" solimp="0.998 0.998 0.001 0.5 2.0" rgba="0 1 0 1"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="white_sheet" rgba="0.82 0.82 0.8 1" specular="0.15" shininess="0.1"/>
+    <material name="grey_beige" rgba="0.63 0.62 0.52 1" specular="0.45" shininess="0.45"/>
+    <material name="wheels" rgba="0.09 0.09 0.1 1" specular="0.3" shininess="0.25"/>
+    <material name="grey_beige_lighter" rgba="0.72 0.71 0.6 1" specular="0.45" shininess="0.45"/>
+    <material name="bed_blue" rgba="0.3 0.37 0.68 1" specular="0.1" shininess="0.05"/>
+    <mesh name="hospital_bed_white_sheet" file="visual_white_sheet.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_grey_beige" file="visual_grey_beige.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_wheels" file="visual_wheels.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_grey_beige_lighter" file="visual_grey_beige_lighter.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_bed_blue" file="visual_bed_blue.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider00" file="collider00.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider01" file="collider01.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider02" file="collider02.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider03" file="collider03.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider04" file="collider04.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider05" file="collider05.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider06" file="collider06.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider07" file="collider07.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider08" file="collider08.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider09" file="collider09.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider10" file="collider10.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider11" file="collider11.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider12" file="collider12.obj" scale="0.84349 0.84620 0.89375"/>
+    <mesh name="hospital_bed_collider13" file="collider13.obj" scale="0.84349 0.84620 0.89375"/>
+  </asset>
+
+  <worldbody>
+    <body name="hospital_bed" pos="0 0 0">
+      <freejoint name="hospital_bed_free"/>
+      <geom name="hospital_bed_visual_0" class="__VISUAL_MJT__" type="mesh" material="white_sheet" mesh="hospital_bed_white_sheet"/>
+      <geom name="hospital_bed_visual_1" class="__VISUAL_MJT__" type="mesh" material="grey_beige" mesh="hospital_bed_grey_beige"/>
+      <geom name="hospital_bed_visual_2" class="__VISUAL_MJT__" type="mesh" material="wheels" mesh="hospital_bed_wheels"/>
+      <geom name="hospital_bed_visual_3" class="__VISUAL_MJT__" type="mesh" material="grey_beige_lighter" mesh="hospital_bed_grey_beige_lighter"/>
+      <geom name="hospital_bed_visual_4" class="__VISUAL_MJT__" type="mesh" material="bed_blue" mesh="hospital_bed_bed_blue"/>
+      <geom name="hospital_bed_collider00" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider00" density="86.9"/>
+      <geom name="hospital_bed_collider01" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider01" density="86.9"/>
+      <geom name="hospital_bed_collider02" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider02" density="86.9"/>
+      <geom name="hospital_bed_collider03" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider03" density="86.9"/>
+      <geom name="hospital_bed_collider04" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider04" density="86.9"/>
+      <geom name="hospital_bed_collider05" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider05" density="86.9"/>
+      <geom name="hospital_bed_collider06" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider06" density="86.9"/>
+      <geom name="hospital_bed_collider07" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider07" density="86.9"/>
+      <geom name="hospital_bed_collider08" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider08" density="86.9"/>
+      <geom name="hospital_bed_collider09" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider09" density="86.9"/>
+      <geom name="hospital_bed_collider10" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider10" density="86.9"/>
+      <geom name="hospital_bed_collider11" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider11" density="86.9"/>
+      <geom name="hospital_bed_collider12" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider12" density="86.9"/>
+      <geom name="hospital_bed_collider13" class="__STRUCTURAL_MJT__" type="mesh" mesh="hospital_bed_collider13" density="86.9"/>
+    </body>
+  </worldbody>
+</mujoco>

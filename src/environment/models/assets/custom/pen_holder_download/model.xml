@@ -1,0 +1,61 @@
+<mujoco model="downloaded_pen_holder">
+  <compiler angle="radian" autolimits="true" meshdir="."/>
+  <asset>
+    <mesh name="pen_holder_source_pplane1_openpbr_shader1_0" file="pplane1_openpbr_shader1_0.obj"/>
+    <material name="pen_holder_graphite_coated_metal" rgba="0.30 0.33 0.36 1" metallic="0.22" roughness="0.34"/>
+  </asset>
+  <worldbody>
+    <body name="downloaded_pen_holder">
+      <geom name="pen_holder_source_visual_00" type="mesh" mesh="pen_holder_source_pplane1_openpbr_shader1_0" material="pen_holder_graphite_coated_metal" contype="0" conaffinity="0" density="0" group="0"/>
+      <geom name="pen_holder_bottom_collision" type="cylinder" pos="0 0 0.0120" size="0.0800 0.0120" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_00" type="box" pos="0.0752113 0.0000000 0.0923" euler="0 0 0.0000000" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_01" type="box" pos="0.0745678 0.0098170 0.0923" euler="0 0 0.1308997" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_02" type="box" pos="0.0726485 0.0194661 0.0923" euler="0 0 0.2617994" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_03" type="box" pos="0.0694861 0.0287821 0.0923" euler="0 0 0.3926991" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_04" type="box" pos="0.0651349 0.0376056 0.0923" euler="0 0 0.5235988" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_05" type="box" pos="0.0596691 0.0457857 0.0923" euler="0 0 0.6544985" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_06" type="box" pos="0.0531824 0.0531824 0.0923" euler="0 0 0.7853982" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_07" type="box" pos="0.0457857 0.0596691 0.0923" euler="0 0 0.9162979" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_08" type="box" pos="0.0376056 0.0651349 0.0923" euler="0 0 1.0471976" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_09" type="box" pos="0.0287821 0.0694861 0.0923" euler="0 0 1.1780972" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_10" type="box" pos="0.0194661 0.0726485 0.0923" euler="0 0 1.3089969" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_11" type="box" pos="0.0098170 0.0745678 0.0923" euler="0 0 1.4398966" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_12" type="box" pos="0.0000000 0.0752113 0.0923" euler="0 0 1.5707963" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_13" type="box" pos="-0.0098170 0.0745678 0.0923" euler="0 0 1.7016960" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_14" type="box" pos="-0.0194661 0.0726485 0.0923" euler="0 0 1.8325957" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_15" type="box" pos="-0.0287821 0.0694861 0.0923" euler="0 0 1.9634954" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_16" type="box" pos="-0.0376056 0.0651349 0.0923" euler="0 0 2.0943951" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_17" type="box" pos="-0.0457857 0.0596691 0.0923" euler="0 0 2.2252948" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_18" type="box" pos="-0.0531824 0.0531824 0.0923" euler="0 0 2.3561945" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_19" type="box" pos="-0.0596691 0.0457857 0.0923" euler="0 0 2.4870942" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_20" type="box" pos="-0.0651349 0.0376056 0.0923" euler="0 0 2.6179939" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_21" type="box" pos="-0.0694861 0.0287821 0.0923" euler="0 0 2.7488936" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_22" type="box" pos="-0.0726485 0.0194661 0.0923" euler="0 0 2.8797933" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_23" type="box" pos="-0.0745678 0.0098170 0.0923" euler="0 0 3.0106930" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_24" type="box" pos="-0.0752113 0.0000000 0.0923" euler="0 0 3.1415927" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_25" type="box" pos="-0.0745678 -0.0098170 0.0923" euler="0 0 3.2724923" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_26" type="box" pos="-0.0726485 -0.0194661 0.0923" euler="0 0 3.4033920" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_27" type="box" pos="-0.0694861 -0.0287821 0.0923" euler="0 0 3.5342917" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_28" type="box" pos="-0.0651349 -0.0376056 0.0923" euler="0 0 3.6651914" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_29" type="box" pos="-0.0596691 -0.0457857 0.0923" euler="0 0 3.7960911" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_30" type="box" pos="-0.0531824 -0.0531824 0.0923" euler="0 0 3.9269908" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_31" type="box" pos="-0.0457857 -0.0596691 0.0923" euler="0 0 4.0578905" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_32" type="box" pos="-0.0376056 -0.0651349 0.0923" euler="0 0 4.1887902" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_33" type="box" pos="-0.0287821 -0.0694861 0.0923" euler="0 0 4.3196899" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_34" type="box" pos="-0.0194661 -0.0726485 0.0923" euler="0 0 4.4505896" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_35" type="box" pos="-0.0098170 -0.0745678 0.0923" euler="0 0 4.5814893" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_36" type="box" pos="-0.0000000 -0.0752113 0.0923" euler="0 0 4.7123890" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_37" type="box" pos="0.0098170 -0.0745678 0.0923" euler="0 0 4.8432887" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_38" type="box" pos="0.0194661 -0.0726485 0.0923" euler="0 0 4.9741884" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_39" type="box" pos="0.0287821 -0.0694861 0.0923" euler="0 0 5.1050881" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_40" type="box" pos="0.0376056 -0.0651349 0.0923" euler="0 0 5.2359878" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_41" type="box" pos="0.0457857 -0.0596691 0.0923" euler="0 0 5.3668874" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_42" type="box" pos="0.0531824 -0.0531824 0.0923" euler="0 0 5.4977871" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_43" type="box" pos="0.0596691 -0.0457857 0.0923" euler="0 0 5.6286868" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_44" type="box" pos="0.0651349 -0.0376056 0.0923" euler="0 0 5.7595865" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_45" type="box" pos="0.0694861 -0.0287821 0.0923" euler="0 0 5.8904862" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_46" type="box" pos="0.0726485 -0.0194661 0.0923" euler="0 0 6.0213859" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+      <geom name="pen_holder_wall_collision_47" type="box" pos="0.0745678 -0.0098170 0.0923" euler="0 0 6.1522856" size="0.0048 0.0053 0.0684" rgba="0 0 0 0" group="3" density="180" friction="0.90 0.015 0.001"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,2668 @@
+{
+  "version": 6,
+  "base_scene": 861,
+  "objects": [
+    {
+      "id": "soccer_ball_center",
+      "catalog_id": "custom:soccer_ball_model",
+      "asset_id": "soccer_ball_model",
+      "active": true,
+      "room_id": "soccer_blue",
+      "dynamic": true,
+      "pos": [
+        9.25,
+        8.15,
+        0.11
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "soccer_goal_model_38f1faa2",
+      "catalog_id": "custom:soccer_goal_model",
+      "asset_id": "soccer_goal_model",
+      "active": true,
+      "pos": [
+        9.25,
+        1.4,
+        0.0
+      ],
+      "yaw": 180.0
+    },
+    {
+      "id": "school_room7_blackboard",
+      "catalog_id": "custom:classroom_blackboard_model",
+      "asset_id": "classroom_blackboard_model",
+      "active": true,
+      "pos": [
+        22.95,
+        17.5,
+        1.82
+      ],
+      "yaw": -90.0
+    },
+    {
+      "id": "school_room7_student_table_front_left",
+      "catalog_id": "custom:classroom_student_desk_model",
+      "asset_id": "classroom_student_desk_model",
+      "active": true,
+      "pos": [
+        21.18,
+        15.45,
+        0.40469
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "school_room7_student_table_front_right",
+      "catalog_id": "custom:classroom_student_desk_model",
+      "asset_id": "classroom_student_desk_model",
+      "active": true,
+      "pos": [
+        21.18,
+        19.55,
+        0.40469
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "school_room7_student_table_back_left",
+      "catalog_id": "custom:classroom_student_desk_model",
+      "asset_id": "classroom_student_desk_model",
+      "active": true,
+      "pos": [
+        19.26,
+        15.45,
+        0.40469
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "school_room7_student_table_back_right",
+      "catalog_id": "custom:classroom_student_desk_model",
+      "asset_id": "classroom_student_desk_model",
+      "active": true,
+      "pos": [
+        19.26,
+        19.55,
+        0.40469
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "school_room7_chair_front_left",
+      "catalog_id": "thor:RoboTHOR_chair_antnas",
+      "asset_id": "RoboTHOR_chair_antnas",
+      "active": true,
+      "pos": [
+        20.860000000000007,
+        15.45,
+        0.412035
+      ],
+      "yaw": -90.0
+    },
+    {
+      "id": "school_room7_chair_front_right",
+      "catalog_id": "thor:RoboTHOR_chair_antnas",
+      "asset_id": "RoboTHOR_chair_antnas",
+      "active": false,
+      "pos": [
+        20.46,
+        19.55,
+        0.412035
+      ],
+      "yaw": -90.0
+    },
+    {
+      "id": "school_room7_chair_back_left",
+      "catalog_id": "thor:RoboTHOR_chair_antnas",
+      "asset_id": "RoboTHOR_chair_antnas",
+      "active": true,
+      "pos": [
+        18.940000000000005,
+        15.45,
+        0.412035
+      ],
+      "yaw": -90.0
+    },
+    {
+      "id": "school_room7_chair_back_right",
+      "catalog_id": "thor:RoboTHOR_chair_antnas",
+      "asset_id": "RoboTHOR_chair_antnas",
+      "active": true,
+      "pos": [
+        18.940000000000005,
+        19.55,
+        0.412035
+      ],
+      "yaw": -90.0
+    },
+    {
+      "id": "school_room7_teacher_desk",
+      "catalog_id": "thor:Desk_308_2_1",
+      "asset_id": "Desk_308_2_1",
+      "active": true,
+      "pos": [
+        22.2,
+        17.5,
+        0.4248
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.68409,
+          1.38587,
+          0.85624
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "school_room7_books_front_left_1",
+      "catalog_id": "thor:Book_5",
+      "asset_id": "Book_5",
+      "active": true,
+      "pos": [
+        21.04,
+        15.18,
+        0.82094
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "school_room7_books_front_left_2",
+      "catalog_id": "thor:Book_17",
+      "asset_id": "Book_17",
+      "active": true,
+      "pos": [
+        21.045,
+        15.18,
+        0.86333
+      ],
+      "yaw": 1.5
+    },
+    {
+      "id": "school_room7_books_front_left_3",
+      "catalog_id": "thor:Book_8",
+      "asset_id": "Book_8",
+      "active": true,
+      "pos": [
+        21.035,
+        15.175,
+        0.89612
+      ],
+      "yaw": -1.0
+    },
+    {
+      "id": "school_room7_books_front_right_1",
+      "catalog_id": "thor:Book_26",
+      "asset_id": "Book_26",
+      "active": true,
+      "pos": [
+        19.08,
+        19.24,
+        0.82469
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "school_room7_books_front_right_2",
+      "catalog_id": "thor:Book_14",
+      "asset_id": "Book_14",
+      "active": true,
+      "pos": [
+        19.085,
+        19.24,
+        0.85584
+      ],
+      "yaw": -1.5
+    },
+    {
+      "id": "school_room7_books_front_right_3",
+      "catalog_id": "thor:Book_23",
+      "asset_id": "Book_23",
+      "active": true,
+      "pos": [
+        19.08,
+        19.235,
+        0.87839
+      ],
+      "yaw": 1.0
+    },
+    {
+      "id": "school_room7_books_back_left_stack_1",
+      "catalog_id": "thor:Book_20",
+      "asset_id": "Book_20",
+      "active": true,
+      "pos": [
+        19.08,
+        15.18,
+        0.81829
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "school_room7_books_back_left_stack_2",
+      "catalog_id": "thor:Book_11",
+      "asset_id": "Book_11",
+      "active": true,
+      "pos": [
+        19.085,
+        15.18,
+        0.84571
+      ],
+      "yaw": 1.5
+    },
+    {
+      "id": "school_room7_books_back_left_loose",
+      "catalog_id": "thor:Book_29",
+      "asset_id": "Book_29",
+      "active": true,
+      "pos": [
+        19.39,
+        15.42,
+        0.80919
+      ],
+      "yaw": 3.0
+    },
+    {
+      "id": "school_room7_empty_desk_pencil_cup",
+      "catalog_id": "custom:pencil_holder_square_model",
+      "asset_id": "pencil_holder_square_model",
+      "active": true,
+      "pos": [
+        21.18,
+        19.45,
+        0.8016
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "school_room7_wall_clock",
+      "catalog_id": "custom:classroom_wall_clock_model",
+      "asset_id": "classroom_wall_clock_model",
+      "active": true,
+      "pos": [
+        22.97,
+        17.5,
+        2.75
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "school_room7_front_left_pencil",
+      "catalog_id": "thor:Pencil_1",
+      "asset_id": "Pencil_1",
+      "active": true,
+      "pos": [
+        21.36,
+        15.44,
+        0.8051
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "school_room7_front_left_pen",
+      "catalog_id": "thor:Pen_1",
+      "asset_id": "Pen_1",
+      "active": true,
+      "pos": [
+        21.39,
+        15.66,
+        0.8066
+      ],
+      "yaw": 2.0
+    },
+    {
+      "id": "school_room7_back_left_calculator",
+      "catalog_id": "objathor:b96042deae774f45a81bbe60727769cf",
+      "asset_id": "b96042deae774f45a81bbe60727769cf",
+      "active": true,
+      "pos": [
+        19.4,
+        15.82,
+        0.8105
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "school_room7_back_left_pencil",
+      "catalog_id": "thor:Pencil_2",
+      "asset_id": "Pencil_2",
+      "active": true,
+      "pos": [
+        19.48,
+        15.48,
+        0.8051
+      ],
+      "yaw": 1.0
+    },
+    {
+      "id": "school_room7_back_right_notebook",
+      "catalog_id": "objathor:b986434fb7bb4cc7b8045fbbe1940eba",
+      "asset_id": "b986434fb7bb4cc7b8045fbbe1940eba",
+      "active": true,
+      "pos": [
+        19.32,
+        19.75,
+        0.8424
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "school_room7_back_right_pen",
+      "catalog_id": "thor:Pen_2",
+      "asset_id": "Pen_2",
+      "active": true,
+      "pos": [
+        19.48,
+        19.48,
+        0.8066
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "nurse_bed_a",
+      "catalog_id": "custom:hospital_bed_model",
+      "asset_id": "hospital_bed",
+      "active": true,
+      "room_id": "room7",
+      "pos": [
+        21.18,
+        8.45,
+        0.40078
+      ],
+      "yaw": 0.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "nurse_iv_a",
+      "catalog_id": "objathor:5cc65c6aed374220b67f7d60e679153e",
+      "asset_id": "5cc65c6aed374220b67f7d60e679153e",
+      "active": true,
+      "room_id": "room7",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        20.58,
+        8.45,
+        0.75
+      ],
+      "yaw": 200.0
+    },
+    {
+      "id": "nurse_bed_b",
+      "catalog_id": "custom:hospital_bed_model",
+      "asset_id": "hospital_bed",
+      "active": true,
+      "room_id": "room7",
+      "pos": [
+        21.18,
+        12.55,
+        0.40078
+      ],
+      "yaw": 0.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "nurse_iv_b",
+      "catalog_id": "objathor:5cc65c6aed374220b67f7d60e679153e",
+      "asset_id": "5cc65c6aed374220b67f7d60e679153e",
+      "active": true,
+      "room_id": "room7",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        20.58,
+        12.55,
+        0.75
+      ],
+      "yaw": 200.0
+    },
+    {
+      "id": "nurse_bed_c",
+      "catalog_id": "custom:hospital_bed_model",
+      "asset_id": "hospital_bed",
+      "active": true,
+      "room_id": "room7",
+      "pos": [
+        19.26,
+        8.45,
+        0.40078
+      ],
+      "yaw": 0.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "nurse_iv_c",
+      "catalog_id": "objathor:5cc65c6aed374220b67f7d60e679153e",
+      "asset_id": "5cc65c6aed374220b67f7d60e679153e",
+      "active": true,
+      "room_id": "room7",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        18.66,
+        8.45,
+        0.75
+      ],
+      "yaw": 200.0
+    },
+    {
+      "id": "nurse_bed_d",
+      "catalog_id": "custom:hospital_bed_model",
+      "asset_id": "hospital_bed",
+      "active": true,
+      "room_id": "room7",
+      "pos": [
+        19.26,
+        12.55,
+        0.40078
+      ],
+      "yaw": 0.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "nurse_iv_d",
+      "catalog_id": "objathor:5cc65c6aed374220b67f7d60e679153e",
+      "asset_id": "5cc65c6aed374220b67f7d60e679153e",
+      "active": true,
+      "room_id": "room7",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        18.66,
+        12.55,
+        0.75
+      ],
+      "yaw": 200.0
+    },
+    {
+      "id": "nurse_desk",
+      "catalog_id": "custom:infirmary_mapping_desk_model",
+      "asset_id": "infirmary_mapping_desk_model",
+      "active": true,
+      "room_id": "room7",
+      "pos": [
+        22.2,
+        10.5,
+        0.0
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.68409,
+          1.38587,
+          0.85624
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "nurse_chair",
+      "catalog_id": "thor:RoboTHOR_office_chair_jules",
+      "asset_id": "RoboTHOR_office_chair_jules",
+      "active": true,
+      "room_id": "room7",
+      "pos": [
+        22.55,
+        10.5,
+        0.471
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "nurse_supplies_box",
+      "catalog_id": "objathor:3c53be0431e2486da35f35b990c0f67c",
+      "asset_id": "3c53be0431e2486da35f35b990c0f67c",
+      "active": true,
+      "room_id": "room7",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        22.2,
+        10.9,
+        1.006
+      ],
+      "yaw": 70.0
+    },
+    {
+      "id": "nurse_torso_model",
+      "catalog_id": "objathor:234f4171c5d64816a9159635e557eec9",
+      "asset_id": "234f4171c5d64816a9159635e557eec9",
+      "active": true,
+      "room_id": "room7",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        22.22,
+        10.1,
+        1.106
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "nurse_wall_cabinet",
+      "catalog_id": "objathor:262bf1ce75564566bb4e6456fc83ea00",
+      "asset_id": "262bf1ce75564566bb4e6456fc83ea00",
+      "active": true,
+      "room_id": "room7",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        22.95,
+        10.5,
+        1.82
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "restaurant_counter",
+      "catalog_id": "custom:cafeteria_mapping_counter_model",
+      "asset_id": "cafeteria_mapping_counter_model",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        22.2,
+        3.5,
+        0.0
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.68409,
+          1.38587,
+          0.85624
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "restaurant_coffee_machine",
+      "catalog_id": "thor:coffee_machine_30",
+      "asset_id": "coffee_machine_30",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        22.23,
+        4.0,
+        1.086
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "restaurant_menu_wall",
+      "catalog_id": "objathor:fbf2ca604ced43a5b001879961987fae",
+      "asset_id": "fbf2ca604ced43a5b001879961987fae",
+      "active": true,
+      "room_id": "room5",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "pos": [
+        22.98,
+        3.5,
+        1.82
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "restaurant_table_fl",
+      "catalog_id": "custom:cafeteria_mapping_table_model",
+      "asset_id": "cafeteria_mapping_table_model",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        1.45,
+        0.0
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "restaurant_chair_fl",
+      "catalog_id": "thor:RoboTHOR_chair_extendable",
+      "asset_id": "RoboTHOR_chair_extendable",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        20.85,
+        1.45,
+        0.494
+      ],
+      "yaw": 270.0
+    },
+    {
+      "id": "restaurant_table_fr",
+      "catalog_id": "custom:cafeteria_mapping_table_model",
+      "asset_id": "cafeteria_mapping_table_model",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        5.55,
+        0.0
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "restaurant_chair_fr",
+      "catalog_id": "thor:RoboTHOR_chair_extendable",
+      "asset_id": "RoboTHOR_chair_extendable",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        20.85,
+        5.55,
+        0.494
+      ],
+      "yaw": 270.0
+    },
+    {
+      "id": "restaurant_table_bl",
+      "catalog_id": "custom:cafeteria_mapping_table_model",
+      "asset_id": "cafeteria_mapping_table_model",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        1.45,
+        0.0
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "restaurant_chair_bl",
+      "catalog_id": "thor:RoboTHOR_chair_extendable",
+      "asset_id": "RoboTHOR_chair_extendable",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        18.93,
+        1.45,
+        0.494
+      ],
+      "yaw": 270.0
+    },
+    {
+      "id": "restaurant_table_br",
+      "catalog_id": "custom:cafeteria_mapping_table_model",
+      "asset_id": "cafeteria_mapping_table_model",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        5.55,
+        0.0
+      ],
+      "yaw": 90.0,
+      "mapping_collision": {
+        "full_size": [
+          0.84381,
+          1.77331,
+          0.80156
+        ],
+        "z_bottom": 0.0
+      }
+    },
+    {
+      "id": "restaurant_chair_br",
+      "catalog_id": "thor:RoboTHOR_chair_extendable",
+      "asset_id": "RoboTHOR_chair_extendable",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        18.93,
+        5.55,
+        0.494
+      ],
+      "yaw": 270.0
+    },
+    {
+      "id": "restaurant_sushi_fl",
+      "catalog_id": "custom:food_sushi_plate_model",
+      "asset_id": "food_sushi_plate",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        1.85,
+        0.84493
+      ],
+      "yaw": 25.0
+    },
+    {
+      "id": "restaurant_burger_fl",
+      "catalog_id": "custom:food_burger_plate_model",
+      "asset_id": "food_burger_plate",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        1.45,
+        0.85132
+      ],
+      "yaw": 15.0
+    },
+    {
+      "id": "restaurant_pizza_fl",
+      "catalog_id": "custom:food_pizza_model",
+      "asset_id": "food_pizza",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        1.05,
+        0.83159
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "restaurant_pizza_fr",
+      "catalog_id": "custom:food_pizza_model",
+      "asset_id": "food_pizza",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        5.95,
+        0.83159
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "restaurant_chicken_fr",
+      "catalog_id": "custom:food_roast_chicken_model",
+      "asset_id": "food_roast_chicken",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        5.15,
+        0.8851
+      ],
+      "yaw": 330.0
+    },
+    {
+      "id": "restaurant_pasta_fr",
+      "catalog_id": "custom:food_pasta_bowl_model",
+      "asset_id": "food_pasta_bowl",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        21.18,
+        5.55,
+        0.83855
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "restaurant_pizza_bl",
+      "catalog_id": "custom:food_pizza_model",
+      "asset_id": "food_pizza",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        1.85,
+        0.83159
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "restaurant_pasta_bl",
+      "catalog_id": "custom:food_pasta_bowl_model",
+      "asset_id": "food_pasta_bowl",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        1.45,
+        0.83855
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "restaurant_sushi_bl",
+      "catalog_id": "custom:food_sushi_plate_model",
+      "asset_id": "food_sushi_plate",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        1.05,
+        0.84493
+      ],
+      "yaw": 25.0
+    },
+    {
+      "id": "restaurant_chicken_br",
+      "catalog_id": "custom:food_roast_chicken_model",
+      "asset_id": "food_roast_chicken",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        5.95,
+        0.8851
+      ],
+      "yaw": 150.0
+    },
+    {
+      "id": "restaurant_burger_br",
+      "catalog_id": "custom:food_burger_plate_model",
+      "asset_id": "food_burger_plate",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        5.55,
+        0.85132
+      ],
+      "yaw": 15.0
+    },
+    {
+      "id": "restaurant_pasta_br",
+      "catalog_id": "custom:food_pasta_bowl_model",
+      "asset_id": "food_pasta_bowl",
+      "active": true,
+      "room_id": "room5",
+      "pos": [
+        19.26,
+        5.15,
+        0.83855
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "corridor_bench_west",
+      "catalog_id": "custom:school_corridor_bench_model",
+      "asset_id": "school_corridor_bench_model",
+      "active": true,
+      "room_id": "room0",
+      "pos": [
+        13.4,
+        4.1,
+        0.0
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "corridor_planter_east",
+      "catalog_id": "custom:school_corridor_planter_model",
+      "asset_id": "school_corridor_planter_model",
+      "active": true,
+      "room_id": "room0",
+      "pos": [
+        17.74,
+        9.2,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "corridor_locker_east",
+      "catalog_id": "custom:school_corridor_locker_model",
+      "asset_id": "school_corridor_locker_model",
+      "active": true,
+      "room_id": "room0",
+      "pos": [
+        17.77,
+        14.4,
+        0.0
+      ],
+      "yaw": -90.0
+    },
+    {
+      "id": "corridor_notice_west",
+      "catalog_id": "custom:school_notice_board_model",
+      "asset_id": "school_notice_board_model",
+      "active": true,
+      "room_id": "room0",
+      "pos": [
+        13.18,
+        18.0,
+        0.0
+      ],
+      "yaw": 90.0
+    },
+    {
+      "id": "soccer_corner_flag_sw",
+      "catalog_id": "custom:soccer_corner_flag_model",
+      "asset_id": "soccer_corner_flag_model",
+      "active": true,
+      "room_id": "soccer_blue",
+      "pos": [
+        5.78,
+        0.28,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "soccer_corner_flag_se",
+      "catalog_id": "custom:soccer_corner_flag_model",
+      "asset_id": "soccer_corner_flag_model",
+      "active": true,
+      "room_id": "soccer_blue",
+      "pos": [
+        12.72,
+        0.28,
+        0.0
+      ],
+      "yaw": 180.0
+    },
+    {
+      "id": "soccer_corner_flag_nw",
+      "catalog_id": "custom:soccer_corner_flag_model",
+      "asset_id": "soccer_corner_flag_model",
+      "active": true,
+      "room_id": "soccer_blue",
+      "pos": [
+        5.78,
+        10.22,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "soccer_corner_flag_ne",
+      "catalog_id": "custom:soccer_corner_flag_model",
+      "asset_id": "soccer_corner_flag_model",
+      "active": true,
+      "room_id": "soccer_blue",
+      "pos": [
+        12.72,
+        10.22,
+        0.0
+      ],
+      "yaw": 180.0
+    },
+    {
+      "id": "soccer_pitch_markings",
+      "catalog_id": "custom:soccer_pitch_markings_model",
+      "asset_id": "soccer_pitch_markings_model",
+      "active": true,
+      "room_id": "soccer_blue",
+      "pos": [
+        9.25,
+        5.25,
+        0.0
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "extension_cone_blue",
+      "catalog_id": "custom:traffic_cone_blue_model",
+      "asset_id": "traffic_cone_blue_model",
+      "active": true,
+      "room_id": "yellow_extension",
+      "pos": [
+        14.0,
+        24.8,
+        0.360005
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "extension_cone_green",
+      "catalog_id": "custom:traffic_cone_green_model",
+      "asset_id": "traffic_cone_green_model",
+      "active": true,
+      "room_id": "yellow_extension",
+      "pos": [
+        15.5,
+        24.8,
+        0.360005
+      ],
+      "yaw": 0.0
+    },
+    {
+      "id": "extension_cone_orange",
+      "catalog_id": "custom:traffic_cone_orange_model",
+      "asset_id": "traffic_cone_orange_model",
+      "active": true,
+      "room_id": "yellow_extension",
+      "pos": [
+        17.0,
+        24.8,
+        0.360005
+      ],
+      "yaw": 0.0
+    }
+  ],
+  "structure": {
+    "removed_base_walls": [
+      "wall|room1|east|4|2",
+      "wall|room1|east|4|2|exterior",
+      "wall|room1|east|4|3",
+      "wall|room1|east|4|3|exterior",
+      "wall|room0|west|2",
+      "wall|room3|east|2",
+      "wall|room3|west|0",
+      "wall|room8|east|3",
+      "wall|room1|south|5|exterior",
+      "wall|room1|south|5",
+      "wall|room1|east|4|1",
+      "wall|room1|east|4|1|exterior",
+      "wall|room1|east|4|0",
+      "wall|room1|east|4|0|exterior",
+      "wall|room1|north|3|exterior",
+      "wall|room1|north|3",
+      "wall|room1|west|0",
+      "wall|room5|east|2",
+      "wall|room0|north|5|exterior",
+      "wall|room0|north|5",
+      "wall|room3|south|3|1",
+      "wall|room3|south|3|1|exterior",
+      "wall|room3|south|3|0",
+      "wall|room3|south|3|0|exterior",
+      "wall|room0|east|6",
+      "wall|room6|west|0",
+      "wall|room0|east|7",
+      "wall|room7|west|0",
+      "wall|room4|south|3|exterior",
+      "wall|room4|south|3",
+      "wall|room2|north|1|1",
+      "wall|room2|north|1|1|exterior",
+      "wall|room2|north|1|0",
+      "wall|room2|north|1|0|exterior",
+      "wall|room3|north|1|exterior",
+      "wall|room3|north|1",
+      "wall|room4|north|1|0",
+      "wall|room4|north|1|0|exterior",
+      "wall|room4|north|1|1",
+      "wall|room4|north|1|1|exterior",
+      "wall|room4|west|0|exterior",
+      "wall|room4|west|0",
+      "wall|room8|north|1|exterior",
+      "wall|room8|north|1",
+      "wall|room0|west|3|exterior",
+      "wall|room0|west|3",
+      "wall|room0|west|4",
+      "wall|room4|east|2",
+      "wall|room2|west|0|exterior",
+      "wall|room2|west|0",
+      "wall|room8|east|2|exterior",
+      "wall|room8|east|2",
+      "wall|room8|east|4|exterior",
+      "wall|room8|east|4",
+      "wall|room8|south|5|exterior",
+      "wall|room8|south|5",
+      "wall|room8|west|0|0",
+      "wall|room8|west|0|0|exterior",
+      "wall|room8|west|0|1",
+      "wall|room8|west|0|1|exterior",
+      "wall|room8|west|0|2",
+      "wall|room8|west|0|2|exterior",
+      "wall|room8|west|0|3",
+      "wall|room8|west|0|3|exterior"
+    ],
+    "removed_base_doors": [
+      "door|8|room3|room8",
+      "door|7|room1|room5",
+      "door|5|room0|room7",
+      "door|4|room0|room6",
+      "door|2|room0|room3",
+      "door|0|exterior|room0",
+      "door|3|room0|room4"
+    ],
+    "walls": [
+      {
+        "id": "wall_415f2a6941",
+        "active": false,
+        "start": [
+          13.0,
+          5.0
+        ],
+        "end": [
+          18.0,
+          14.8162
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_6a23383e42",
+        "active": false,
+        "start": [
+          18.0,
+          6.9764
+        ],
+        "end": [
+          18.0,
+          0.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_7b26d0bdbd",
+        "active": false,
+        "start": [
+          18.0,
+          21.0
+        ],
+        "end": [
+          18.0,
+          25.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_2a7a755986",
+        "active": false,
+        "start": [
+          18.0,
+          25.0
+        ],
+        "end": [
+          13.0,
+          25.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_9b5ac5fd57",
+        "active": false,
+        "start": [
+          13.0,
+          25.0
+        ],
+        "end": [
+          13.0,
+          21.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_c6c8251dd4",
+        "active": false,
+        "start": [
+          18.0,
+          9.6961
+        ],
+        "end": [
+          18.0,
+          9.9084
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_2f0cb9f243",
+        "active": true,
+        "start": [
+          18.0,
+          7.0
+        ],
+        "end": [
+          18.0,
+          0.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_9b4e77a3a9",
+        "active": false,
+        "start": [
+          18.0,
+          2.9459
+        ],
+        "end": [
+          18.0,
+          2.7051
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_51183c68ec",
+        "active": false,
+        "start": [
+          18.0,
+          8.4565
+        ],
+        "end": [
+          20.1355,
+          7.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_6805337192",
+        "active": false,
+        "start": [
+          18.0,
+          7.3728
+        ],
+        "end": [
+          18.0,
+          7.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_7f39ce6368",
+        "active": false,
+        "start": [
+          18.0,
+          4.0139
+        ],
+        "end": [
+          18.0,
+          7.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_3234e55379",
+        "active": false,
+        "start": [
+          18.0,
+          3.6487
+        ],
+        "end": [
+          16.5252,
+          0.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_6cc69d9ea0",
+        "active": true,
+        "start": [
+          23.0,
+          0.0
+        ],
+        "end": [
+          23.0,
+          7.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_39caf0dc50",
+        "active": false,
+        "start": [
+          18.0,
+          21.0
+        ],
+        "end": [
+          13.0,
+          21.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "wall_ddb7ae6951",
+        "active": false,
+        "start": [
+          13.0,
+          8.0
+        ],
+        "end": [
+          7.0,
+          8.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005
+      },
+      {
+        "id": "school_room7_centered_door_wall",
+        "active": true,
+        "start": [
+          18.0,
+          14.0
+        ],
+        "end": [
+          18.0,
+          21.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005,
+        "converted_from": [
+          "wall|room0|east|6",
+          "wall|room6|west|0"
+        ],
+        "room_id": "room6"
+      },
+      {
+        "id": "school_room8_centered_door_wall",
+        "active": true,
+        "start": [
+          18.0,
+          7.0
+        ],
+        "end": [
+          18.0,
+          14.0
+        ],
+        "height": 3.2,
+        "thickness": 0.005,
+        "converted_from": [
+          "wall|room0|east|7",
+          "wall|room7|west|0"
+        ],
+        "room_id": "room7"
+      },
+      {
+        "id": "soccer_blue_outer_wall",
+        "active": true,
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "soccer_blue",
+        "start": [
+          5.5,
+          0.0
+        ],
+        "end": [
+          5.5,
+          10.5
+        ]
+      },
+      {
+        "id": "soccer_blue_hall_wall",
+        "active": true,
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "soccer_blue",
+        "start": [
+          13.0,
+          0.0
+        ],
+        "end": [
+          13.0,
+          10.5
+        ]
+      },
+      {
+        "id": "maze_red_soccer_divider",
+        "active": true,
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "maze_red",
+        "start": [
+          5.5,
+          10.5
+        ],
+        "end": [
+          13.0,
+          10.5
+        ]
+      },
+      {
+        "id": "maze_red_outer_wall",
+        "active": true,
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "maze_red",
+        "start": [
+          5.5,
+          10.5
+        ],
+        "end": [
+          5.5,
+          21.0
+        ]
+      },
+      {
+        "id": "maze_red_left_end_wall",
+        "active": true,
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "maze_red",
+        "start": [
+          5.5,
+          21.0
+        ],
+        "end": [
+          13.0,
+          21.0
+        ]
+      },
+      {
+        "id": "maze_red_hall_wall",
+        "active": true,
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "maze_red",
+        "start": [
+          13.0,
+          10.5
+        ],
+        "end": [
+          13.0,
+          21.0
+        ]
+      },
+      {
+        "id": "yellow_room_shared_wall",
+        "active": true,
+        "start": [
+          13.0,
+          21.0
+        ],
+        "end": [
+          18.0,
+          21.0
+        ],
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "yellow_extension"
+      },
+      {
+        "id": "yellow_room_west_wall",
+        "active": true,
+        "start": [
+          13.0,
+          21.0
+        ],
+        "end": [
+          13.0,
+          26.0
+        ],
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "yellow_extension"
+      },
+      {
+        "id": "yellow_room_east_wall",
+        "active": true,
+        "start": [
+          18.0,
+          21.0
+        ],
+        "end": [
+          18.0,
+          26.0
+        ],
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "yellow_extension"
+      },
+      {
+        "id": "yellow_room_outer_wall",
+        "active": true,
+        "start": [
+          13.0,
+          26.0
+        ],
+        "end": [
+          18.0,
+          26.0
+        ],
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "yellow_extension"
+      },
+      {
+        "id": "soccer_blue_south_wall",
+        "active": true,
+        "height": 3.2,
+        "thickness": 0.08,
+        "room_id": "soccer_blue",
+        "start": [
+          5.5,
+          0.0
+        ],
+        "end": [
+          13.0,
+          0.0
+        ]
+      },
+      {
+        "id": "maze_room2_partition_1_east",
+        "active": false,
+        "start": [
+          6.9,
+          19.25
+        ],
+        "end": [
+          13.0,
+          19.25
+        ],
+        "height": 0.42,
+        "thickness": 0.06,
+        "room_id": "maze_red"
+      },
+      {
+        "id": "maze_room2_partition_2_west",
+        "active": false,
+        "start": [
+          5.5,
+          17.5
+        ],
+        "end": [
+          11.6,
+          17.5
+        ],
+        "height": 0.42,
+        "thickness": 0.06,
+        "room_id": "maze_red"
+      },
+      {
+        "id": "maze_room2_partition_3_east",
+        "active": false,
+        "start": [
+          6.9,
+          15.75
+        ],
+        "end": [
+          13.0,
+          15.75
+        ],
+        "height": 0.42,
+        "thickness": 0.06,
+        "room_id": "maze_red"
+      },
+      {
+        "id": "maze_room2_partition_4_west",
+        "active": false,
+        "start": [
+          5.5,
+          14.0
+        ],
+        "end": [
+          11.6,
+          14.0
+        ],
+        "height": 0.42,
+        "thickness": 0.06,
+        "room_id": "maze_red"
+      },
+      {
+        "id": "maze_room2_partition_5_east",
+        "active": false,
+        "start": [
+          6.9,
+          12.25
+        ],
+        "end": [
+          13.0,
+          12.25
+        ],
+        "height": 0.42,
+        "thickness": 0.06,
+        "room_id": "maze_red"
+      }
+    ],
+    "doors": [
+      {
+        "id": "door_d27ede5c05",
+        "active": false,
+        "start": [
+          17.9,
+          4.3
+        ],
+        "end": [
+          17.9,
+          2.9
+        ],
+        "height": 2.1,
+        "thickness": 0.012
+      },
+      {
+        "id": "door_836a8015db",
+        "active": true,
+        "start": [
+          18.0,
+          4.3274
+        ],
+        "end": [
+          18.0,
+          2.8585
+        ],
+        "height": 2.1,
+        "thickness": 0.012
+      },
+      {
+        "id": "school_room7_centered_door",
+        "active": true,
+        "start": [
+          18.0,
+          18.3
+        ],
+        "end": [
+          18.0,
+          16.7
+        ],
+        "height": 2.1,
+        "thickness": 0.012
+      },
+      {
+        "id": "school_room8_centered_door",
+        "active": true,
+        "start": [
+          18.0,
+          11.3
+        ],
+        "end": [
+          18.0,
+          9.7
+        ],
+        "height": 2.1,
+        "thickness": 0.012
+      },
+      {
+        "id": "maze_red_entrance",
+        "active": true,
+        "start": [
+          13.0,
+          19.525
+        ],
+        "end": [
+          13.0,
+          20.725
+        ],
+        "height": 2.1,
+        "thickness": 0.012,
+        "role": "classroom-facing upper 1.2 m maze entrance"
+      },
+      {
+        "id": "maze_red_exit",
+        "active": true,
+        "start": [
+          13.0,
+          10.775
+        ],
+        "end": [
+          13.0,
+          11.975
+        ],
+        "height": 2.1,
+        "thickness": 0.012,
+        "role": "classroom-facing lower 1.2 m maze exit"
+      },
+      {
+        "id": "yellow_room_door",
+        "active": true,
+        "start": [
+          14.8,
+          21.0
+        ],
+        "end": [
+          16.2,
+          21.0
+        ],
+        "height": 2.1,
+        "thickness": 0.012
+      },
+      {
+        "id": "soccer_blue_entrance",
+        "active": true,
+        "start": [
+          13.0,
+          8.35
+        ],
+        "end": [
+          13.0,
+          9.85
+        ],
+        "height": 2.1,
+        "thickness": 0.012,
+        "role": "upper entrance near maze room"
+      }
+    ],
+    "floors": [
+      {
+        "id": "soccer_blue_floor",
+        "active": true,
+        "polygon": [
+          [
+            5.5,
+            0.0
+          ],
+          [
+            5.5,
+            10.5
+          ],
+          [
+            13.0,
+            10.5
+          ],
+          [
+            13.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "id": "maze_red_floor",
+        "active": true,
+        "polygon": [
+          [
+            6.65,
+            13.9
+          ],
+          [
+            11.85,
+            13.9
+          ],
+          [
+            11.85,
+            14.65
+          ],
+          [
+            5.5,
+            14.65
+          ],
+          [
+            5.5,
+            17.6
+          ],
+          [
+            11.85,
+            17.6
+          ],
+          [
+            11.85,
+            18.1
+          ],
+          [
+            5.5,
+            18.1
+          ],
+          [
+            5.5,
+            20.75
+          ],
+          [
+            13.0,
+            20.75
+          ],
+          [
+            13.0,
+            19.6
+          ],
+          [
+            6.65,
+            19.6
+          ],
+          [
+            6.65,
+            19.25
+          ],
+          [
+            13.0,
+            19.25
+          ],
+          [
+            13.0,
+            16.45
+          ],
+          [
+            6.65,
+            16.45
+          ],
+          [
+            6.65,
+            15.8
+          ],
+          [
+            13.0,
+            15.8
+          ],
+          [
+            13.0,
+            12.75
+          ],
+          [
+            11.85,
+            12.75
+          ],
+          [
+            6.65,
+            12.75
+          ],
+          [
+            6.65,
+            11.9
+          ],
+          [
+            13.0,
+            11.9
+          ],
+          [
+            13.0,
+            10.75
+          ],
+          [
+            5.5,
+            10.75
+          ],
+          [
+            5.5,
+            13.9
+          ]
+        ]
+      },
+      {
+        "id": "maze_red_hazard_floor",
+        "active": true,
+        "z": -1.5,
+        "collision": true,
+        "polygon": [
+          [
+            5.5,
+            10.5
+          ],
+          [
+            5.5,
+            21.0
+          ],
+          [
+            13.0,
+            21.0
+          ],
+          [
+            13.0,
+            10.5
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_1_south",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            6.65,
+            19.25
+          ],
+          [
+            13.0,
+            19.25
+          ],
+          [
+            13.0,
+            19.3
+          ],
+          [
+            6.65,
+            19.3
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_1_north",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            6.65,
+            19.55
+          ],
+          [
+            13.0,
+            19.55
+          ],
+          [
+            13.0,
+            19.6
+          ],
+          [
+            6.65,
+            19.6
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_2_south",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            5.5,
+            17.6
+          ],
+          [
+            11.85,
+            17.6
+          ],
+          [
+            11.85,
+            17.65
+          ],
+          [
+            5.5,
+            17.65
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_2_north",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            5.5,
+            18.05
+          ],
+          [
+            11.85,
+            18.05
+          ],
+          [
+            11.85,
+            18.1
+          ],
+          [
+            5.5,
+            18.1
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_3_south",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            6.65,
+            15.8
+          ],
+          [
+            13.0,
+            15.8
+          ],
+          [
+            13.0,
+            15.85
+          ],
+          [
+            6.65,
+            15.85
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_3_north",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            6.65,
+            16.4
+          ],
+          [
+            13.0,
+            16.4
+          ],
+          [
+            13.0,
+            16.45
+          ],
+          [
+            6.65,
+            16.45
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_4_north",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            5.5,
+            14.6
+          ],
+          [
+            11.85,
+            14.6
+          ],
+          [
+            11.85,
+            14.65
+          ],
+          [
+            5.5,
+            14.65
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_4_south",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            5.5,
+            13.9
+          ],
+          [
+            11.85,
+            13.9
+          ],
+          [
+            11.85,
+            13.95
+          ],
+          [
+            5.5,
+            13.95
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_5_north",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            6.65,
+            12.7
+          ],
+          [
+            13.0,
+            12.7
+          ],
+          [
+            13.0,
+            12.75
+          ],
+          [
+            6.65,
+            12.75
+          ]
+        ]
+      },
+      {
+        "id": "maze_cliff_edge_5_south",
+        "active": true,
+        "z": 0.002,
+        "collision": false,
+        "polygon": [
+          [
+            6.65,
+            11.9
+          ],
+          [
+            13.0,
+            11.9
+          ],
+          [
+            13.0,
+            11.95
+          ],
+          [
+            6.65,
+            11.95
+          ]
+        ]
+      },
+      {
+        "id": "yellow_extension_floor",
+        "active": true,
+        "polygon": [
+          [
+            13.0,
+            21.0
+          ],
+          [
+            13.0,
+            26.0
+          ],
+          [
+            18.0,
+            26.0
+          ],
+          [
+            18.0,
+            21.0
+          ]
+        ]
+      }
+    ],
+    "auto_floor": false,
+    "wall_defaults": {
+      "height": 3.2,
+      "thickness": 0.005
+    },
+    "door_defaults": {
+      "height": 2.1,
+      "thickness": 0.012
+    },
+    "removed_base_floors": [
+      "room1",
+      "room2",
+      "room3",
+      "room4",
+      "room8"
+    ],
+    "wall_finishes": {
+      "soccer_blue_outer_wall": {
+        "mode": "color",
+        "rgba": [
+          0.36,
+          0.52,
+          0.5,
+          1.0
+        ]
+      },
+      "soccer_blue_hall_wall": {
+        "mode": "color",
+        "rgba": [
+          0.36,
+          0.52,
+          0.5,
+          1.0
+        ]
+      },
+      "soccer_blue_south_wall": {
+        "mode": "color",
+        "rgba": [
+          0.36,
+          0.52,
+          0.5,
+          1.0
+        ]
+      },
+      "maze_red_soccer_divider": {
+        "mode": "color",
+        "rgba": [
+          0.66,
+          0.58,
+          0.45,
+          1.0
+        ]
+      },
+      "maze_red_outer_wall": {
+        "mode": "color",
+        "rgba": [
+          0.66,
+          0.58,
+          0.45,
+          1.0
+        ]
+      },
+      "maze_red_left_end_wall": {
+        "mode": "color",
+        "rgba": [
+          0.66,
+          0.58,
+          0.45,
+          1.0
+        ]
+      },
+      "maze_red_hall_wall": {
+        "mode": "color",
+        "rgba": [
+          0.66,
+          0.58,
+          0.45,
+          1.0
+        ]
+      },
+      "maze_room2_partition_1_east": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_WoodFine0038_1_seamless_albedo_S.png",
+        "texture_category": "Wood Panel",
+        "repeat": 2.0
+      },
+      "maze_room2_partition_2_west": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_WoodFine0038_1_seamless_albedo_S.png",
+        "texture_category": "Wood Panel",
+        "repeat": 2.0
+      },
+      "maze_room2_partition_3_east": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_WoodFine0038_1_seamless_albedo_S.png",
+        "texture_category": "Wood Panel",
+        "repeat": 2.0
+      },
+      "maze_room2_partition_4_west": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_WoodFine0038_1_seamless_albedo_S.png",
+        "texture_category": "Wood Panel",
+        "repeat": 2.0
+      },
+      "maze_room2_partition_5_east": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_WoodFine0038_1_seamless_albedo_S.png",
+        "texture_category": "Wood Panel",
+        "repeat": 2.0
+      }
+    },
+    "room_concepts": {
+      "room6": "classroom (map room 7)",
+      "room7": "infirmary (map room 8)",
+      "room5": "cafeteria (continuous room beyond the infirmary)",
+      "soccer_blue": "relocated indoor soccer gym",
+      "maze_red": "elevated constant-width G1 path with three widening cliff shortcuts",
+      "yellow_extension": "new empty multipurpose room"
+    },
+    "room_wall_finishes": {
+      "room6": {
+        "mode": "color",
+        "rgba": [
+          0.92,
+          0.88,
+          0.76,
+          1.0
+        ]
+      },
+      "room7": {
+        "mode": "color",
+        "rgba": [
+          0.78,
+          0.91,
+          0.87,
+          1.0
+        ],
+        "source_style": "Porcelain_Turquoise_Mat companion mint wall"
+      },
+      "room5": {
+        "mode": "color",
+        "rgba": [
+          0.91,
+          0.78,
+          0.62,
+          1.0
+        ]
+      },
+      "room8": {
+        "mode": "color",
+        "rgba": [
+          0.76,
+          0.82,
+          0.86,
+          1.0
+        ]
+      },
+      "soccer_blue": {
+        "mode": "color",
+        "rgba": [
+          0.36,
+          0.52,
+          0.5,
+          1.0
+        ]
+      },
+      "maze_red": {
+        "mode": "color",
+        "rgba": [
+          0.66,
+          0.58,
+          0.45,
+          1.0
+        ]
+      },
+      "yellow_extension": {
+        "mode": "color",
+        "rgba": [
+          0.58,
+          0.64,
+          0.72,
+          1.0
+        ]
+      }
+    },
+    "room_finish_panels": [
+      {
+        "id": "room6_south_finish_skin",
+        "active": true,
+        "room_id": "room6",
+        "start": [
+          18.0,
+          14.002
+        ],
+        "end": [
+          23.0,
+          14.002
+        ],
+        "height": 3.2,
+        "thickness": 0.002
+      },
+      {
+        "id": "room7_north_finish_skin",
+        "active": true,
+        "room_id": "room7",
+        "start": [
+          18.0,
+          13.993
+        ],
+        "end": [
+          23.0,
+          13.993
+        ],
+        "height": 3.2,
+        "thickness": 0.002
+      },
+      {
+        "id": "room7_south_finish_skin",
+        "active": true,
+        "room_id": "room7",
+        "start": [
+          18.0,
+          7.002
+        ],
+        "end": [
+          23.0,
+          7.002
+        ],
+        "height": 3.2,
+        "thickness": 0.002
+      },
+      {
+        "id": "room5_north_finish_skin",
+        "active": true,
+        "room_id": "room5",
+        "start": [
+          18.0,
+          6.993
+        ],
+        "end": [
+          23.0,
+          6.993
+        ],
+        "height": 3.2,
+        "thickness": 0.002
+      },
+      {
+        "id": "soccer_blue_north_finish_skin",
+        "active": true,
+        "room_id": "soccer_blue",
+        "start": [
+          5.5,
+          10.455
+        ],
+        "end": [
+          13.0,
+          10.455
+        ],
+        "height": 3.2,
+        "thickness": 0.002
+      }
+    ],
+    "window_replacements": [],
+    "floor_finishes": {
+      "base_floor_room5": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/KitchenTiles4.png",
+        "texture_category": "Tile & Stone",
+        "repeat": 2.0
+      },
+      "base_floor_room6": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_WoodFine0038_1_seamless_albedo_S.png",
+        "texture_category": "Wood & Parquet",
+        "repeat": 4.0
+      },
+      "base_floor_room7": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/bathroomTilesBlue.png",
+        "texture_category": "Tile & Stone",
+        "repeat": 4.0,
+        "source_material": "Porcelain_Turquoise_Mat"
+      },
+      "base_floor_room8": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_Grass0130_1_seamless_albedo_S.png",
+        "texture_category": "Outdoor",
+        "repeat": 12.0
+      },
+      "soccer_blue_floor": {
+        "mode": "texture",
+        "texture_path": "project://src/environment/test_zone/surface_textures/floor/Outdoor/Grass-2048.jpg",
+        "texture_category": "Outdoor",
+        "repeat": 4.0
+      },
+      "maze_red_floor": {
+        "mode": "texture",
+        "texture_path": "assets://objects/thor/Textures/TexturesCom_WoodFine0031_1_seamless_albedo_S.png",
+        "texture_category": "Wood & Parquet",
+        "repeat": 3.5
+      },
+      "maze_red_hazard_floor": {
+        "mode": "texture",
+        "texture_path": "project://src/environment/test_zone/surface_textures/floor/Hazard/lava_pit_tile.png",
+        "texture_category": "Outdoor",
+        "repeat": 4.0
+      },
+      "maze_cliff_edge_1_south": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_1_north": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_2_south": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_2_north": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_3_south": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_3_north": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_4_north": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_4_south": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_5_north": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "maze_cliff_edge_5_south": {
+        "mode": "color",
+        "rgba": [
+          1.0,
+          0.72,
+          0.02,
+          1.0
+        ]
+      },
+      "yellow_extension_floor": {
+        "mode": "texture",
+        "texture_path": "project://src/environment/test_zone/surface_textures/floor/Rubber/rubber_tiles_diff_2k.jpg",
+        "texture_category": "Plastic & Rubber",
+        "repeat": 2.5
+      }
+    },
+    "wall_default_finish": {
+      "mode": "texture",
+      "texture_path": "assets://objects/thor/Textures/WallDrywallWhite.png",
+      "texture_category": "Paint & Plaster",
+      "repeat": 2.0
+    },
+    "floor_default_finish": {
+      "mode": "texture",
+      "texture_path": "assets://objects/thor/Textures/bathroomTilesGrey.png",
+      "texture_category": "Tile & Stone",
+      "repeat": 4.0
+    }
+  }
+}

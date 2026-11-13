@@ -1,0 +1,32 @@
+<mujoco model="traffic_cone_blue">
+  <compiler angle="radian" autolimits="true"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" group="0" mass="1e-08"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom contype="1" conaffinity="15" group="4" friction="0.9 0.9 0.001"
+              solref="0.025 1.0" solimp="0.998 0.998 0.001 0.5 2.0" rgba="0 1 0 1"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <material name="traffic_cone_blue_mat" rgba="0.100 0.350 0.780 1.000"
+              specular="0.2" shininess="0.3"/>
+    <mesh name="traffic_cone_blue_visual" file="visual.obj" scale="-1.6 1.6 1.6"/>
+    <mesh name="traffic_cone_blue_collider0" file="collider0.obj" scale="-1.6 1.6 1.6"/>
+    <mesh name="traffic_cone_blue_collider1" file="collider1.obj" scale="-1.6 1.6 1.6"/>
+  </asset>
+
+  <worldbody>
+    <body name="traffic_cone_blue" pos="0 0 0">
+      <freejoint name="traffic_cone_blue_free"/>
+      <geom name="traffic_cone_blue_visual" class="__VISUAL_MJT__" type="mesh" material="traffic_cone_blue_mat" mesh="traffic_cone_blue_visual" pos="-0.000108 -0.000108 0.000000" quat="0.707107 0.707107 0.000000 0.000000"/>
+      <geom name="traffic_cone_blue_collider0" class="__DYNAMIC_MJT__" type="mesh" mesh="traffic_cone_blue_collider0" density="121.4" pos="-0.000108 -0.000108 0.000000" quat="0.707107 0.707107 0.000000 0.000000"/>
+      <geom name="traffic_cone_blue_collider1" class="__DYNAMIC_MJT__" type="mesh" mesh="traffic_cone_blue_collider1" density="121.4" pos="-0.000108 -0.000108 0.000000" quat="0.707107 0.707107 0.000000 0.000000"/>
+    </body>
+  </worldbody>
+</mujoco>

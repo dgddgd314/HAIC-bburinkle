@@ -1,0 +1,40 @@
+<mujoco model="RoboTHOR_chair_extendable">
+  <compiler autolimits="true" boundmass="0" angle="radian"/>
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" group="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom contype="1" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture name="RoboTHOR_Chair_Extendable_Fabric_Mat" type="2d" file="Fabric2_AlbedoTransparency.png"/>
+    <material name="material_RoboTHOR_Chair_Extendable_Fabric_Mat" class="/" texture="RoboTHOR_Chair_Extendable_Fabric_Mat" specular="0.5" shininess="0.5" rgba="0.88679240000000004 0.88679240000000004 0.88679240000000004 1"/>
+    <texture name="RoboTHOR_Dining_Table_Extendable_Wood_Mat" type="2d" file="WoodGrains1.png"/>
+    <material name="material_RoboTHOR_Dining_Table_Extendable_Wood_Mat" class="/" texture="RoboTHOR_Dining_Table_Extendable_Wood_Mat" specular="0.5" shininess="0.5" rgba="0.98113209999999995 0.75091269999999999 0.38412249999999998 1"/>
+    <mesh name="RoboTHOR_chair_extendable_robothor_chair_extendable_0" class="/" file="RoboTHOR_chair_extendable_robothor_chair_extendable/RoboTHOR_chair_extendable_robothor_chair_extendable_0.obj" scale="1 1 1"/>
+    <mesh name="RoboTHOR_chair_extendable_robothor_chair_extendable_1" class="/" file="RoboTHOR_chair_extendable_robothor_chair_extendable/RoboTHOR_chair_extendable_robothor_chair_extendable_1.obj" scale="1 1 1"/>
+  </asset>
+  <worldbody>
+    <body name="RoboTHOR_chair_extendable">
+      <joint name="RoboTHOR_chair_extendable_free" class="/" type="free" pos="0 0 0" axis="0 0 1" stiffness="0" range="0 0" armature="0" damping="0.10000000000000001" frictionloss="0"/>
+      <body name="RoboTHOR_chair_extendable_robothor_chair_extendable" pos="-0 -0.49439 0.00182" quat="1 0 0 0">
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_0" class="__VISUAL_MJT__" type="mesh" material="material_RoboTHOR_Chair_Extendable_Fabric_Mat" mesh="RoboTHOR_chair_extendable_robothor_chair_extendable_0"/>
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_1" class="__VISUAL_MJT__" type="mesh" material="material_RoboTHOR_Dining_Table_Extendable_Wood_Mat" mesh="RoboTHOR_chair_extendable_robothor_chair_extendable_1"/>
+        <site name="RoboTHOR_chair_extendable_robothor_chair_extendable_ReceptacleCollider_0" class="/" type="box" rgba="1 0 0 1" size="0.20677417516708374 0.045867592096328735 0.19592106342315674" pos="-0 0.53776758909225464 0.04735720157623291" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="box" size="0.24252787232398987 0.036710962653160095 0.22692906856536865" rgba="0 1 0 1" pos="-0 0.45529806613922119 0.023185133934020996" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_PrimitiveCollider_1" class="__DYNAMIC_MJT__" type="box" size="0.014460042119026184 0.23763003945350647 0.018723130226135254" rgba="0 1 0 1" pos="-0.22806783020496368 0.23676007986068726 0.23139107227325439" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_PrimitiveCollider_2" class="__DYNAMIC_MJT__" type="box" size="0.014460042119026184 0.23763003945350647 0.018723130226135254" rgba="0 1 0 1" pos="0.22583217918872833 0.23676007986068726 0.23139107227325439" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_PrimitiveCollider_3" class="__DYNAMIC_MJT__" type="box" size="0.014460042119026184 0.23763003945350647 0.018723130226135254" rgba="0 1 0 1" pos="0.1946321576833725 0.23676007986068726 -0.18320894241333008" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_PrimitiveCollider_4" class="__DYNAMIC_MJT__" type="box" size="0.014460042119026184 0.23763003945350647 0.018723130226135254" rgba="0 1 0 1" pos="-0.18786783516407013 0.23676007986068726 -0.18320882320404053" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_chair_extendable_robothor_chair_extendable_PrimitiveCollider_5" class="__DYNAMIC_MJT__" type="box" size="0.20922258496284485 0.27105796337127686 0.038720004260540009" rgba="0 1 0 1" pos="-0 0.71615105867385864 -0.18978716433048248" quat="0.046865777456868311 0.99890119576630976 0 0"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

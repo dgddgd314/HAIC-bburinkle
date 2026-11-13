@@ -1,0 +1,1416 @@
+{
+  "version": 2,
+  "generated_at": "2026-08-27T08:04:29.419762+00:00",
+  "repacked_for": "haic (self-contained; xml_path is relative to the haic root)",
+  "path_base": "project",
+  "assets_dir": "src/environment/models/assets/molmo",
+  "custom_dir": "src/environment/models/assets/custom",
+  "summary": {
+    "custom": 26,
+    "objathor": 8,
+    "thor": 18,
+    "importable": 52
+  },
+  "assets": [
+    {
+      "catalog_id": "custom:cafeteria_mapping_counter_model",
+      "asset_id": "cafeteria_mapping_counter_model",
+      "display_name": "Mapping-matched cafeteria service counter",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/cafeteria_mapping_counter/model.xml",
+      "root_body": "cafeteria_mapping_counter",
+      "aliases": [
+        "service counter",
+        "cafeteria counter",
+        "배식대",
+        "식당 카운터"
+      ],
+      "categories": [
+        "Dining",
+        "Cabinets & Storage"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Storage"
+    },
+    {
+      "catalog_id": "custom:cafeteria_mapping_table_model",
+      "asset_id": "cafeteria_mapping_table_model",
+      "display_name": "Mapping-matched cafeteria table",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/cafeteria_mapping_table/model.xml",
+      "root_body": "cafeteria_mapping_table",
+      "aliases": [
+        "cafeteria table",
+        "dining table",
+        "식당 테이블",
+        "급식실 식탁"
+      ],
+      "categories": [
+        "Dining",
+        "Tables & Desks"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Tables & Desks"
+    },
+    {
+      "catalog_id": "custom:classroom_blackboard_model",
+      "asset_id": "classroom_blackboard_model",
+      "display_name": "School green chalkboard",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/classroom_blackboard/model.xml",
+      "root_body": "classroom_blackboard",
+      "aliases": [
+        "classroom blackboard",
+        "green chalkboard",
+        "school board",
+        "칠판",
+        "학교 칠판"
+      ],
+      "categories": [
+        "Office & School"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.69,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:classroom_student_desk_model",
+      "asset_id": "classroom_student_desk_model",
+      "display_name": "Light oak classroom student desk",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/classroom_student_desk/model.xml",
+      "root_body": "classroom_student_desk",
+      "aliases": [
+        "light brown school desk",
+        "wooden student desk",
+        "classroom table",
+        "밝은 갈색 학생 책상",
+        "학교 책상"
+      ],
+      "categories": [
+        "Office & School",
+        "Tables & Desks"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "floor_z": 0.40469,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:classroom_wall_clock_model",
+      "asset_id": "classroom_wall_clock_model",
+      "display_name": "Simple classroom wall clock",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/classroom_wall_clock/model.xml",
+      "root_body": "classroom_wall_clock",
+      "aliases": [
+        "school clock",
+        "white round clock",
+        "classroom clock",
+        "교실 벽시계",
+        "학교 시계"
+      ],
+      "categories": [
+        "Office & School",
+        "Decor & Art"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "floor_z": 0.23,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:food_burger_plate_model",
+      "asset_id": "food_burger_plate_model",
+      "display_name": "Burger and fries plate",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/food_burger_plate/model.xml",
+      "root_body": "food_burger_plate",
+      "aliases": [
+        "burger",
+        "fries",
+        "fast food",
+        "햄버거",
+        "감자튀김"
+      ],
+      "categories": [
+        "Food & Dining"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.04977,
+      "browse_category": "Kitchen & Dining",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "custom:food_pasta_bowl_model",
+      "asset_id": "food_pasta_bowl_model",
+      "display_name": "Pasta bowl",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/food_pasta_bowl/model.xml",
+      "root_body": "food_pasta_bowl",
+      "aliases": [
+        "pasta",
+        "spaghetti",
+        "food bowl",
+        "파스타"
+      ],
+      "categories": [
+        "Food & Dining"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.037,
+      "browse_category": "Kitchen & Dining",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "custom:food_pizza_model",
+      "asset_id": "food_pizza_model",
+      "display_name": "Pizza on board",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/food_pizza/model.xml",
+      "root_body": "food_pizza",
+      "aliases": [
+        "pizza",
+        "food",
+        "피자"
+      ],
+      "categories": [
+        "Food & Dining"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.03004,
+      "browse_category": "Kitchen & Dining",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "custom:food_roast_chicken_model",
+      "asset_id": "food_roast_chicken_model",
+      "display_name": "Roast chicken platter",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/food_roast_chicken/model.xml",
+      "root_body": "food_roast_chicken",
+      "aliases": [
+        "roast chicken",
+        "food platter",
+        "통닭",
+        "치킨"
+      ],
+      "categories": [
+        "Food & Dining"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.08355,
+      "browse_category": "Kitchen & Dining",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "custom:food_sushi_plate_model",
+      "asset_id": "food_sushi_plate_model",
+      "display_name": "Sushi plate",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/food_sushi_plate/model.xml",
+      "root_body": "food_sushi_plate",
+      "aliases": [
+        "sushi",
+        "food plate",
+        "초밥"
+      ],
+      "categories": [
+        "Food & Dining"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.04338,
+      "browse_category": "Kitchen & Dining",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "custom:hospital_bed_model",
+      "asset_id": "hospital_bed_model",
+      "display_name": "Hospital bed",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/hospital_bed/model.xml",
+      "root_body": "hospital_bed",
+      "aliases": [
+        "hospital bed",
+        "medical bed",
+        "patient bed",
+        "보건실 침대",
+        "병원 침대"
+      ],
+      "categories": [
+        "Medical",
+        "Furniture"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.40078,
+      "dynamic": false,
+      "browse_category": "Beds & Bedding"
+    },
+    {
+      "catalog_id": "custom:infirmary_mapping_desk_model",
+      "asset_id": "infirmary_mapping_desk_model",
+      "display_name": "Mapping-matched infirmary desk",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/infirmary_mapping_desk/model.xml",
+      "root_body": "infirmary_mapping_desk",
+      "aliases": [
+        "infirmary desk",
+        "medical office desk",
+        "보건실 책상"
+      ],
+      "categories": [
+        "Medical",
+        "Tables & Desks"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Tables & Desks"
+    },
+    {
+      "catalog_id": "custom:pen_holder_download_model",
+      "asset_id": "pen_holder_download_model",
+      "display_name": "Downloaded pen holder with stationery",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/pen_holder_download/model.xml",
+      "root_body": "downloaded_pen_holder",
+      "aliases": [
+        "pen holder",
+        "pencil holder",
+        "연필꽂이",
+        "필기구 통"
+      ],
+      "categories": [
+        "Office & School"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:school_corridor_bench_model",
+      "asset_id": "school_corridor_bench_model",
+      "display_name": "School corridor bench",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/school_corridor_bench/model.xml",
+      "root_body": "school_corridor_bench",
+      "aliases": [
+        "hallway bench",
+        "school bench",
+        "복도 벤치"
+      ],
+      "categories": [
+        "Office & School",
+        "Seating"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:school_corridor_locker_model",
+      "asset_id": "school_corridor_locker_model",
+      "display_name": "School corridor locker",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/school_corridor_locker/model.xml",
+      "root_body": "school_corridor_locker",
+      "aliases": [
+        "school locker",
+        "hallway cabinet",
+        "복도 사물함"
+      ],
+      "categories": [
+        "Office & School",
+        "Cabinets & Storage"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:school_corridor_planter_model",
+      "asset_id": "school_corridor_planter_model",
+      "display_name": "School corridor planter",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/school_corridor_planter/model.xml",
+      "root_body": "school_corridor_planter",
+      "aliases": [
+        "hallway plant",
+        "indoor planter",
+        "복도 화분"
+      ],
+      "categories": [
+        "Plants",
+        "Office & School"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Plants & Nature"
+    },
+    {
+      "catalog_id": "custom:school_notice_board_model",
+      "asset_id": "school_notice_board_model",
+      "display_name": "School corridor notice board",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/school_notice_board/model.xml",
+      "root_body": "school_notice_board",
+      "aliases": [
+        "notice board",
+        "bulletin board",
+        "학교 게시판"
+      ],
+      "categories": [
+        "Office & School",
+        "Wall Decor"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:soccer_ball_model",
+      "asset_id": "soccer_ball_model",
+      "display_name": "Soccer ball",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/soccer_ball/model.xml",
+      "root_body": "soccer_ball",
+      "aliases": [
+        "football",
+        "football ball",
+        "축구공",
+        "공"
+      ],
+      "categories": [
+        "Sports & Recreation"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.11,
+      "dynamic": true,
+      "browse_category": "Sports & Recreation"
+    },
+    {
+      "catalog_id": "custom:soccer_corner_flag_model",
+      "asset_id": "soccer_corner_flag_model",
+      "display_name": "Indoor soccer corner flag",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/soccer_corner_flag/model.xml",
+      "root_body": "soccer_corner_flag",
+      "aliases": [
+        "soccer flag",
+        "corner flag",
+        "축구 코너 플래그"
+      ],
+      "categories": [
+        "Sports",
+        "Decor"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Sports & Recreation"
+    },
+    {
+      "catalog_id": "custom:soccer_goal_model",
+      "asset_id": "soccer_goal_model",
+      "display_name": "Soccer goal post",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/soccer_goal/model.xml",
+      "root_body": "soccer_goal",
+      "aliases": [
+        "soccer goal",
+        "football goal",
+        "goal post",
+        "축구 골대",
+        "골대"
+      ],
+      "categories": [
+        "Sports & Recreation"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Sports & Recreation"
+    },
+    {
+      "catalog_id": "custom:soccer_pitch_markings_model",
+      "asset_id": "soccer_pitch_markings_model",
+      "display_name": "Indoor soccer pitch markings",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/soccer_pitch_markings/model.xml",
+      "root_body": "soccer_pitch_markings",
+      "aliases": [
+        "soccer field lines",
+        "football pitch markings",
+        "축구장 라인",
+        "센터 서클"
+      ],
+      "categories": [
+        "Sports",
+        "Floor Decor"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Sports & Recreation"
+    },
+    {
+      "catalog_id": "custom:traffic_cone_blue_model",
+      "asset_id": "traffic_cone_blue_model",
+      "display_name": "Blue traffic cone",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/traffic_cone_blue/model.xml",
+      "root_body": "traffic_cone_blue",
+      "aliases": [
+        "blue cone",
+        "traffic cone",
+        "파란색 라바콘"
+      ],
+      "categories": [
+        "Sports",
+        "Navigation",
+        "Decor"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Sports & Recreation"
+    },
+    {
+      "catalog_id": "custom:traffic_cone_green_model",
+      "asset_id": "traffic_cone_green_model",
+      "display_name": "Green traffic cone",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/traffic_cone_green/model.xml",
+      "root_body": "traffic_cone_green",
+      "aliases": [
+        "green cone",
+        "traffic cone",
+        "초록색 라바콘"
+      ],
+      "categories": [
+        "Sports",
+        "Navigation",
+        "Decor"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Sports & Recreation"
+    },
+    {
+      "catalog_id": "custom:traffic_cone_orange_model",
+      "asset_id": "traffic_cone_orange_model",
+      "display_name": "Orange traffic cone",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/traffic_cone_orange/model.xml",
+      "root_body": "traffic_cone_orange",
+      "aliases": [
+        "orange cone",
+        "traffic cone",
+        "주황색 라바콘"
+      ],
+      "categories": [
+        "Sports",
+        "Navigation",
+        "Decor"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Sports & Recreation"
+    },
+    {
+      "catalog_id": "objathor:234f4171c5d64816a9159635e557eec9",
+      "asset_id": "234f4171c5d64816a9159635e557eec9",
+      "display_name": "Internal organ model",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/234f4171c5d64816a9159635e557eec9/234f4171c5d64816a9159635e557eec9.xml",
+      "root_body": "234f4171c5d64816a9159635e557eec9",
+      "aliases": [
+        "Torso",
+        "Anatomy model",
+        "Internal organ model",
+        "Colorful human torso model",
+        "Detailed educational human torso model"
+      ],
+      "categories": [
+        "anatomical model"
+      ],
+      "search_terms": [
+        "ObjaAnatomicalModel",
+        "anatomical model",
+        "figure.n.04",
+        "plastic",
+        "paint",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Other",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "objathor:262bf1ce75564566bb4e6456fc83ea00",
+      "asset_id": "262bf1ce75564566bb4e6456fc83ea00",
+      "display_name": "Wooden cabinet with glass",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/262bf1ce75564566bb4e6456fc83ea00/262bf1ce75564566bb4e6456fc83ea00/262bf1ce75564566bb4e6456fc83ea00.xml",
+      "root_body": "262bf1ce75564566bb4e6456fc83ea00",
+      "aliases": [
+        "Cabinet",
+        "Wooden cabinet",
+        "Wooden cabinet with glass",
+        "Wooden cabinet with glass shelves",
+        "Wooden display cabinet with glass doors"
+      ],
+      "categories": [
+        "display cabinet"
+      ],
+      "search_terms": [
+        "ObjaDisplayCabinet",
+        "display cabinet",
+        "cabinet.n.01",
+        "wood",
+        "glass",
+        "metal",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Storage",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "objathor:3c53be0431e2486da35f35b990c0f67c",
+      "asset_id": "3c53be0431e2486da35f35b990c0f67c",
+      "display_name": "Red medical box",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/3c53be0431e2486da35f35b990c0f67c/3c53be0431e2486da35f35b990c0f67c.xml",
+      "root_body": "3c53be0431e2486da35f35b990c0f67c",
+      "aliases": [
+        "Box",
+        "Red box",
+        "Red medical box",
+        "Red medical supply box",
+        "Red medical supply box with handle"
+      ],
+      "categories": [
+        "medical supply box"
+      ],
+      "search_terms": [
+        "ObjaMedicalSupplyBox",
+        "medical supply box",
+        "first-aid_kit.n.01",
+        "metal",
+        "plastic",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Containers & Misc.",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "objathor:5cc65c6aed374220b67f7d60e679153e",
+      "asset_id": "5cc65c6aed374220b67f7d60e679153e",
+      "display_name": "Metal Medical Stand",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/5cc65c6aed374220b67f7d60e679153e/5cc65c6aed374220b67f7d60e679153e.xml",
+      "root_body": "5cc65c6aed374220b67f7d60e679153e",
+      "aliases": [
+        "Stand",
+        "Metal Stand",
+        "Metal Medical Stand",
+        "Metal Medical IV Stand",
+        "Metal medical IV stand with crutch"
+      ],
+      "categories": [
+        "medical equipment"
+      ],
+      "search_terms": [
+        "ObjaMedicalEquipment",
+        "medical equipment",
+        "medical_instrument.n.01",
+        "metal",
+        "plastic",
+        "rubber",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Lab & Tools",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "objathor:67c182845e994ab0b623919a89a0baf5",
+      "asset_id": "67c182845e994ab0b623919a89a0baf5",
+      "display_name": "Beige pendant light",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/67c182845e994ab0b623919a89a0baf5/67c182845e994ab0b623919a89a0baf5.xml",
+      "root_body": "67c182845e994ab0b623919a89a0baf5",
+      "aliases": [
+        "Light",
+        "Beige light",
+        "Beige pendant light",
+        "Beige scalloped pendant light",
+        "Beige scalloped fabric pendant light"
+      ],
+      "categories": [
+        "pendant light"
+      ],
+      "search_terms": [
+        "ObjaPendantLight",
+        "pendant light",
+        "chandelier.n.01",
+        "fabric",
+        "metal",
+        "plastic",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Other",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "objathor:b96042deae774f45a81bbe60727769cf",
+      "asset_id": "b96042deae774f45a81bbe60727769cf",
+      "display_name": "Gray scientific calculator",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/b96042deae774f45a81bbe60727769cf/b96042deae774f45a81bbe60727769cf.xml",
+      "root_body": "b96042deae774f45a81bbe60727769cf",
+      "aliases": [
+        "Calculator",
+        "Gray calculator",
+        "Gray scientific calculator",
+        "Dark gray scientific calculator",
+        "Dark gray scientific calculator with buttons"
+      ],
+      "categories": [
+        "calculator"
+      ],
+      "search_terms": [
+        "ObjaCalculator",
+        "calculator",
+        "calculator.n.02",
+        "plastic",
+        "rubber",
+        "metal",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Other",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "objathor:b986434fb7bb4cc7b8045fbbe1940eba",
+      "asset_id": "b986434fb7bb4cc7b8045fbbe1940eba",
+      "display_name": "open pink notebook",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/b986434fb7bb4cc7b8045fbbe1940eba/b986434fb7bb4cc7b8045fbbe1940eba.xml",
+      "root_body": "b986434fb7bb4cc7b8045fbbe1940eba",
+      "aliases": [
+        "notebook",
+        "pink notebook",
+        "open pink notebook",
+        "open notebook pink spine",
+        "open notebook with pink spine"
+      ],
+      "categories": [
+        "notebook"
+      ],
+      "search_terms": [
+        "ObjaNotebook",
+        "notebook",
+        "notebook.n.01",
+        "paper",
+        "cardboard",
+        "plastic",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "objathor:fbf2ca604ced43a5b001879961987fae",
+      "asset_id": "fbf2ca604ced43a5b001879961987fae",
+      "display_name": "Black wooden chalkboard",
+      "provider": "objathor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/objaverse/fbf2ca604ced43a5b001879961987fae/fbf2ca604ced43a5b001879961987fae.xml",
+      "root_body": "fbf2ca604ced43a5b001879961987fae",
+      "aliases": [
+        "Chalkboard",
+        "Wooden chalkboard",
+        "Black wooden chalkboard",
+        "Wood-framed black chalkboard menu",
+        "Rustic wooden chalkboard with menu"
+      ],
+      "categories": [
+        "chalkboard"
+      ],
+      "search_terms": [
+        "ObjaChalkboard",
+        "chalkboard",
+        "blackboard.n.01",
+        "wood",
+        "chalk",
+        "air"
+      ],
+      "path_category": "Packaged Objathor object",
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_11",
+      "asset_id": "Book_11",
+      "display_name": "Book_11",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_11/Book_11/Book_11.xml",
+      "root_body": "Book_11",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_14",
+      "asset_id": "Book_14",
+      "display_name": "Book_14",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_14/Book_14/Book_14.xml",
+      "root_body": "Book_14",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_17",
+      "asset_id": "Book_17",
+      "display_name": "Book_17",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_17/Book_17/Book_17.xml",
+      "root_body": "Book_17",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_20",
+      "asset_id": "Book_20",
+      "display_name": "Book_20",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_20/Book_20/Book_20.xml",
+      "root_body": "Book_20",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_23",
+      "asset_id": "Book_23",
+      "display_name": "Book_23",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_23/Book_23/Book_23.xml",
+      "root_body": "Book_23",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_26",
+      "asset_id": "Book_26",
+      "display_name": "Book_26",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_26/Book_26/Book_26.xml",
+      "root_body": "Book_26",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_29",
+      "asset_id": "Book_29",
+      "display_name": "Book_29",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_29/Book_29/Book_29.xml",
+      "root_body": "Book_29",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_5",
+      "asset_id": "Book_5",
+      "display_name": "Book_5",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_5/Book_5/Book_5.xml",
+      "root_body": "Book_5",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Book_8",
+      "asset_id": "Book_8",
+      "display_name": "Book_8",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Book/Prefabs/Book_8/Book_8/Book_8.xml",
+      "root_body": "Book_8",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Book",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Desk_308_2_1",
+      "asset_id": "Desk_308_2_1",
+      "display_name": "Desk_308_2_1",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Living Room and Bedroom Objects/Desk/Prefabs/Desk_308_2_1/Desk_308_2_1/Desk_308_2_1.xml",
+      "root_body": "Desk_308_2_1",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Desk",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Tables & Desks",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Pen_1",
+      "asset_id": "Pen_1",
+      "display_name": "Pen_1",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Pen/Prefabs/Pen_1/Pen_1/Pen_1.xml",
+      "root_body": "Pen_1",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Pen",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Pen_2",
+      "asset_id": "Pen_2",
+      "display_name": "Pen_2",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Pen/Prefabs/Pen_2/Pen_2/Pen_2.xml",
+      "root_body": "Pen_2",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Pen",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Pencil_1",
+      "asset_id": "Pencil_1",
+      "display_name": "Pencil_1",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Pencil/Prefabs/Pencil_1/Pencil_1/Pencil_1.xml",
+      "root_body": "Pencil_1",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Pencil",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:Pencil_2",
+      "asset_id": "Pencil_2",
+      "display_name": "Pencil_2",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Bedroom Objects/Pencil/Prefabs/Pencil_2/Pencil_2/Pencil_2.xml",
+      "root_body": "Pencil_2",
+      "aliases": [],
+      "categories": [],
+      "path_category": "Pencil",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:RoboTHOR_chair_antnas",
+      "asset_id": "RoboTHOR_chair_antnas",
+      "display_name": "RoboTHOR_chair_antnas",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/RoboTHOR Objects/RoboTHOR_Assets_Furniture/Chair/Prefabs/RoboTHOR_chair_antnas/RoboTHOR_chair_antnas/RoboTHOR_chair_antnas.xml",
+      "root_body": "RoboTHOR_chair_antnas",
+      "aliases": [],
+      "categories": [],
+      "path_category": "RoboTHOR_Assets_Furniture / Chair",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Seating",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:RoboTHOR_chair_extendable",
+      "asset_id": "RoboTHOR_chair_extendable",
+      "display_name": "RoboTHOR_chair_extendable",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/RoboTHOR Objects/RoboTHOR_Assets_Furniture/Chair/Prefabs/RoboTHOR_chair_extendable/RoboTHOR_chair_extendable/RoboTHOR_chair_extendable.xml",
+      "root_body": "RoboTHOR_chair_extendable",
+      "aliases": [],
+      "categories": [],
+      "path_category": "RoboTHOR_Assets_Furniture / Chair",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Seating",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:RoboTHOR_office_chair_jules",
+      "asset_id": "RoboTHOR_office_chair_jules",
+      "display_name": "RoboTHOR_office_chair_jules",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/RoboTHOR Objects/RoboTHOR_Assets_Furniture/OfficeChair/Prefabs/RoboTHOR_office_chair_jules/RoboTHOR_office_chair_jules/RoboTHOR_office_chair_jules.xml",
+      "root_body": "RoboTHOR_office_chair_jules",
+      "aliases": [],
+      "categories": [],
+      "path_category": "RoboTHOR_Assets_Furniture / OfficeChair",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Office & School",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "thor:coffee_machine_30",
+      "asset_id": "coffee_machine_30",
+      "display_name": "coffee_machine_30",
+      "provider": "thor",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/molmo/objects/thor/Kitchen Objects/CoffeeMachine/Prefabs/coffee_machine_30/coffee_machine_30/coffee_machine_30.xml",
+      "root_body": "coffee_machine_30",
+      "aliases": [],
+      "categories": [],
+      "path_category": "CoffeeMachine",
+      "base_quat": [
+        0.0,
+        0.0,
+        0.70710678,
+        0.70710678
+      ],
+      "browse_category": "Lab & Tools",
+      "dynamic": false
+    },
+    {
+      "catalog_id": "custom:pencil_holder_square_model",
+      "asset_id": "pencil_holder_square_model",
+      "display_name": "Matte gray square pencil holder",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/pencil_holder_square/model.xml",
+      "root_body": "square_pencil_holder",
+      "aliases": [
+        "square pencil holder",
+        "pen cup",
+        "연필꽂이",
+        "사각 연필통"
+      ],
+      "categories": [
+        "Office & School"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.0,
+      "dynamic": false,
+      "browse_category": "Office & School"
+    },
+    {
+      "catalog_id": "custom:wooden_pencil_model",
+      "asset_id": "wooden_pencil_model",
+      "display_name": "Downloads textured wooden pencil",
+      "provider": "custom",
+      "format": "mjcf",
+      "importable": true,
+      "xml_path": "src/environment/models/assets/custom/wooden_pencil/model.xml",
+      "root_body": "wooden_pencil",
+      "aliases": [
+        "wooden pencil",
+        "natural pencil",
+        "school pencil",
+        "downloaded pencil",
+        "나무 연필",
+        "목재 연필"
+      ],
+      "categories": [
+        "Office & School"
+      ],
+      "path_category": "External MJCF object library",
+      "base_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "floor_z": 0.007,
+      "dynamic": true,
+      "browse_category": "Office & School"
+    }
+  ]
+}

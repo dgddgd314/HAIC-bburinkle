@@ -1,0 +1,8 @@
+{
+  "display_name": "Roast chicken platter",
+  "root_body": "food_roast_chicken",
+  "aliases": ["roast chicken", "food platter", "통닭", "치킨"],
+  "categories": ["Food & Dining"],
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.08355
+}

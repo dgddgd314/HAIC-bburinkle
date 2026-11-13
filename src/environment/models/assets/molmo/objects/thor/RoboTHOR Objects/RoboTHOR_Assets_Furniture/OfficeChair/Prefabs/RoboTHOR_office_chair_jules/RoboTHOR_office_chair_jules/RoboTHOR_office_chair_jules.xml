@@ -1,0 +1,52 @@
+<mujoco model="RoboTHOR_office_chair_jules">
+  <compiler autolimits="true" boundmass="0" angle="radian"/>
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" group="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom contype="1" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="material_BlackPlastic" class="/" specular="0.5" shininess="0.5" rgba="0.19852939999999999 0.19852939999999999 0.19852939999999999 1"/>
+    <texture name="BrushedAluminum_AlbedoTransparency" type="2d" file="BrushedAluminum_AlbedoTransparency.png"/>
+    <material name="material_BrushedAluminum_AlbedoTransparency" class="/" texture="BrushedAluminum_AlbedoTransparency" specular="0.5" shininess="0.5" rgba="1 1 1 1"/>
+    <texture name="RoboTHOR_Office_Chair_Jules_Wood_Mat" type="2d" file="WoodGrains2.png"/>
+    <material name="material_RoboTHOR_Office_Chair_Jules_Wood_Mat" class="/" texture="RoboTHOR_Office_Chair_Jules_Wood_Mat" specular="0.5" shininess="0.5" rgba="0.89411770000000002 0.89411770000000002 0.89411770000000002 1"/>
+    <mesh name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_0" class="/" file="RoboTHOR_office_chair_jules_robothor_office_chair_jules/RoboTHOR_office_chair_jules_robothor_office_chair_jules_0.obj" scale="1 1 1"/>
+    <mesh name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_1" class="/" file="RoboTHOR_office_chair_jules_robothor_office_chair_jules/RoboTHOR_office_chair_jules_robothor_office_chair_jules_1.obj" scale="1 1 1"/>
+    <mesh name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_2" class="/" file="RoboTHOR_office_chair_jules_robothor_office_chair_jules/RoboTHOR_office_chair_jules_robothor_office_chair_jules_2.obj" scale="1 1 1"/>
+  </asset>
+  <worldbody>
+    <body name="RoboTHOR_office_chair_jules">
+      <joint name="RoboTHOR_office_chair_jules_free" class="/" type="free" pos="0 0 0" axis="0 0 1" stiffness="0" range="0 0" armature="0" damping="0.10000000000000001" frictionloss="0"/>
+      <body name="RoboTHOR_office_chair_jules_robothor_office_chair_jules" pos="-0.024 -0.4647 0.00296" quat="1 0 0 0">
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_0" class="__VISUAL_MJT__" type="mesh" material="material_BlackPlastic" mesh="RoboTHOR_office_chair_jules_robothor_office_chair_jules_0"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_1" class="__VISUAL_MJT__" type="mesh" material="material_BrushedAluminum_AlbedoTransparency" mesh="RoboTHOR_office_chair_jules_robothor_office_chair_jules_1"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_2" class="__VISUAL_MJT__" type="mesh" material="material_RoboTHOR_Office_Chair_Jules_Wood_Mat" mesh="RoboTHOR_office_chair_jules_robothor_office_chair_jules_2"/>
+        <site name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_ReceptacleCollider_0" class="/" type="box" rgba="1 0 0 1" size="0.20885524153709412 0.039731204509735107 0.22785401344299316" pos="-0 0.51013123989105225 0.022145986557006836" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="box" size="0.025677997618913651 0.02483426034450531 0.018378481268882751" rgba="0 1 0 1" pos="-0.26879999041557312 0.018600240349769592 0" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_1" class="__DYNAMIC_MJT__" type="box" size="0.025677997618913651 0.02483426034450531 0.018378481268882751" rgba="0 1 0 1" pos="-0.082000002264976501 0.018600240349769592 0.25549998879432678" quat="0 0.8072486465569565 0 -0.59021150669227207"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_2" class="__DYNAMIC_MJT__" type="box" size="0.025677997618913651 0.02483426034450531 0.018378481268882751" rgba="0 1 0 1" pos="0.21490000188350677 0.018600240349769592 0.15549999475479126" quat="0 0.31521996220485493 0 -0.94901863808229281"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_3" class="__DYNAMIC_MJT__" type="box" size="0.025677997618913651 0.02483426034450531 0.018378481268882751" rgba="0 1 0 1" pos="0.21330000460147858 0.018600240349769592 -0.15549999475479126" quat="0 -0.29546499507729124 0 -0.95535356632190171"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_4" class="__DYNAMIC_MJT__" type="box" size="0.025677997618913651 0.02483426034450531 0.018378481268882751" rgba="0 1 0 1" pos="-0.07890000194311142 0.018600240349769592 -0.25009998679161072" quat="0 -0.83629355101413383 0 -0.54828194985077749"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_5" class="__DYNAMIC_MJT__" type="box" size="0.12323677539825439 0.011721553280949593 0.014847327023744583" rgba="0 1 0 1" pos="-0.15875899791717529 0.040300242602825165 0" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_6" class="__DYNAMIC_MJT__" type="box" size="0.12323677539825439 0.011721553280949593 0.014847327023744583" rgba="0 1 0 1" pos="-0.048563510179519653 0.040300242602825165 0.15136544406414032" quat="0 0.58910199247546347 0 0.80805868751065291"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_7" class="__DYNAMIC_MJT__" type="box" size="0.12323677539825439 0.011721553280949593 0.014847327023744583" rgba="0 1 0 1" pos="0.11820748448371887 0.040300242602825165 0.084028646349906921" quat="0 0.95149220741436413 0 0.30767284447890564"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_8" class="__DYNAMIC_MJT__" type="box" size="0.12323677539825439 0.011721553280949593 0.014847327023744583" rgba="0 1 0 1" pos="0.11807933449745178 0.040300242602825165 -0.085470236837863922" quat="0 0.95261817359950451 0 -0.30416872838598025"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_9" class="__DYNAMIC_MJT__" type="box" size="0.12323677539825439 0.011721553280949593 0.014847327023744583" rgba="0 1 0 1" pos="-0.046587448567152023 0.040300242602825165 -0.14104878902435303" quat="0 0.59131933134804415 0 -0.80643750432014383"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_10" class="__DYNAMIC_MJT__" type="box" size="0.055073082447052002 0.0079564880579710007 0.057159751653671265" rgba="0 1 0 1" pos="-0.0012000000569969416 0.039000242948532104 0" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_11" class="__DYNAMIC_MJT__" type="box" size="0.021980054676532745 0.19476713240146637 0.022074747830629349" rgba="0 1 0 1" pos="-0.0011999607086181641 0.22581088542938232 0" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_12" class="__DYNAMIC_MJT__" type="box" size="0.2114919126033783 0.027055740356445312 0.23707255721092224" rgba="0 1 0 1" pos="0.00029364228248596191 0.44124895334243774 0.030208438634872437" quat="0 1 0 0"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_13" class="__DYNAMIC_MJT__" type="box" size="0.2114919126033783 0.018795622512698174 0.073272012174129486" rgba="0 1 0 1" pos="0.00029364996589720249 0.4987754225730896 -0.23212705552577972" quat="-0.44397874526939196 0.89603731716319501 -1.7802843186728387e-08 5.5641432254453879e-09"/>
+        <geom name="RoboTHOR_office_chair_jules_robothor_office_chair_jules_PrimitiveCollider_14" class="__DYNAMIC_MJT__" type="box" size="0.2114919126033783 0.018795635551214218 0.21593733131885529" rgba="0 1 0 1" pos="0.00029364228248596191 0.71969807147979736 -0.24803620576858521" quat="-0.70710678118654757 0.70710678118654757 0 0"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,9 @@
+{
+  "display_name": "Mapping-matched cafeteria table",
+  "root_body": "cafeteria_mapping_table",
+  "aliases": ["cafeteria table", "dining table", "식당 테이블", "급식실 식탁"],
+  "categories": ["Dining", "Tables & Desks"],
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.0,
+  "dynamic": false
+}

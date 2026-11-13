@@ -1,0 +1,23 @@
+{
+  "display_name": "Light oak classroom student desk",
+  "aliases": [
+    "light brown school desk",
+    "wooden student desk",
+    "classroom table",
+    "밝은 갈색 학생 책상",
+    "학교 책상"
+  ],
+  "categories": [
+    "Office & School",
+    "Tables & Desks"
+  ],
+  "root_body": "classroom_student_desk",
+  "base_quat": [
+    0.0,
+    0.0,
+    0.70710678,
+    0.70710678
+  ],
+  "floor_z": 0.40469,
+  "dynamic": false
+}

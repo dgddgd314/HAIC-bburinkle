@@ -1,0 +1,7 @@
+{
+  "display_name": "School corridor notice board",
+  "root_body": "school_notice_board",
+  "aliases": ["notice board", "bulletin board", "학교 게시판"],
+  "categories": ["Office & School", "Wall Decor"],
+  "base_quat": [1, 0, 0, 0], "floor_z": 0.0, "dynamic": false
+}

@@ -1,0 +1,59 @@
+<mujoco model="Book_23">
+  <compiler autolimits="true" boundmass="0" angle="radian"/>
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" group="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom contype="1" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture name="Book_Text_Mat" type="2d" file="Book_Text_AlbedoTransparency.png"/>
+    <material name="material_Book_Text_Mat" class="/" texture="Book_Text_Mat" specular="0.5" shininess="0.5" rgba="1 1 1 1"/>
+    <texture name="Book_Pages_1_Mat" type="2d" file="Book_Pages_AlbedoTransparency.png"/>
+    <material name="material_Book_Pages_1_Mat" class="/" texture="Book_Pages_1_Mat" specular="0.5" shininess="0.5" rgba="1 1 1 1"/>
+    <texture name="Book_Cover_Mat" type="2d" file="Book_Cover_AlbedoTransparency.png"/>
+    <material name="material_Book_Cover_Mat" class="/" texture="Book_Cover_Mat" specular="0.5" shininess="0.5" rgba="1 1 1 1"/>
+    <mesh name="Book_23_book_front_23_0" class="/" file="Book_23_book_front_23/Book_23_book_front_23_0.obj" scale="1 1 1"/>
+    <mesh name="Book_23_book_front_23_1" class="/" file="Book_23_book_front_23/Book_23_book_front_23_1.obj" scale="1 1 1"/>
+    <mesh name="Book_23_book_front_23_2" class="/" file="Book_23_book_front_23/Book_23_book_front_23_2.obj" scale="1 1 1"/>
+    <mesh name="Book_23_book_23_0" class="/" file="Book_23_book_23/Book_23_book_23_0.obj" scale="1 1 1"/>
+    <mesh name="Book_23_book_23_1" class="/" file="Book_23_book_23/Book_23_book_23_1.obj" scale="1 1 1"/>
+    <mesh name="Book_23_book_23_2" class="/" file="Book_23_book_23/Book_23_book_23_2.obj" scale="1 1 1"/>
+  </asset>
+  <worldbody>
+    <body name="Book_23">
+      <joint name="Book_23_free" class="/" type="free" pos="0 0 0" axis="0 0 1" stiffness="0" range="0 0" armature="0" damping="0.10000000000000001" frictionloss="0"/>
+      <body name="Book_23_book_front_23" pos="-0.10838999636411667 6.939575195312464e-05 0" quat="1 0 0 0">
+        <geom name="Book_23_book_front_23_0" class="__VISUAL_MJT__" type="mesh" material="material_Book_Text_Mat" shellinertia="false" mesh="Book_23_book_front_23_0"/>
+        <geom name="Book_23_book_front_23_1" class="__VISUAL_MJT__" type="mesh" material="material_Book_Pages_1_Mat" shellinertia="false" mesh="Book_23_book_front_23_1"/>
+        <geom name="Book_23_book_front_23_2" class="__VISUAL_MJT__" type="mesh" material="material_Book_Cover_Mat" shellinertia="false" mesh="Book_23_book_front_23_2"/>
+        <joint name="Book_23_book_front_23_joint_0" class="/" type="hinge" pos="-0 0 0" axis="0 0 1" stiffness="0" range="0 3.1415926535897931" damping="0.10000000000000001" frictionloss="0"/>
+        <geom name="Book_23_book_front_23_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="box" size="0.10894954949617386 0.006949777714908123 0.15758933126926422" rgba="0 1 0 1" pos="0.10930860042572021 0.006367463618516922 1.2704833807219984e-07" quat="-5.8114522971654169e-07 0 -0.99999999999983125 0"/>
+        <geom name="Book_23_book_front_23_PrimitiveCollider_1" class="__DYNAMIC_MJT__" type="box" size="0.061047088354825974 0.0064421980641782284 0.15758989751338959" rgba="0 1 0 1" pos="0.1564360111951828 -0.00035017915070056915 1.8182407757194596e-07" quat="-5.8020419803342493e-07 0.056885629134336028 -0.99838070153506731 3.3058811747220677e-08"/>
+        <geom name="Book_23_book_front_23_PrimitiveCollider_2" class="__DYNAMIC_MJT__" type="box" size="0.028743905946612358 0.0064838067628443241 0.15758933126926422" rgba="0 1 0 1" pos="0.068571135401725769 -0.0069037689827382565 7.9699574939695594e-08" quat="-5.8114522971654169e-07 0 -0.99999999999983125 0"/>
+        <geom name="Book_23_book_front_23_PrimitiveCollider_3" class="__DYNAMIC_MJT__" type="box" size="0.0093857366591691971 0.0054912902414798737 0.15758933126926422" rgba="0 1 0 1" pos="0.011439323425292969 -0.0014419807121157646 1.3295821332803825e-08" quat="-5.6262039385750396e-07 -0.2504732517977421 -0.96812352008074221 -1.455613390334879e-07"/>
+        <geom name="Book_23_book_front_23_PrimitiveCollider_4" class="__DYNAMIC_MJT__" type="box" size="0.011705152690410614 0.0063528870232403278 0.15758933126926422" rgba="0 1 0 1" pos="0.029938444495201111 -0.0056811105459928513 3.4797167813849228e-08" quat="-5.7798223154528374e-07 -0.10419090783660198 -0.99455731595712837 -6.0550049995651127e-08"/>
+      </body>
+      <body name="Book_23_book_23" pos="0.00011 -0.01353 0" quat="1 0 0 0">
+        <geom name="Book_23_book_23_0" class="__VISUAL_MJT__" type="mesh" material="material_Book_Text_Mat" shellinertia="false" mesh="Book_23_book_23_0"/>
+        <geom name="Book_23_book_23_1" class="__VISUAL_MJT__" type="mesh" material="material_Book_Pages_1_Mat" shellinertia="false" mesh="Book_23_book_23_1"/>
+        <geom name="Book_23_book_23_2" class="__VISUAL_MJT__" type="mesh" material="material_Book_Cover_Mat" shellinertia="false" mesh="Book_23_book_23_2"/>
+        <geom name="Book_23_book_23_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="box" size="0.10894954949617386 0.006949777714908123 0.15758933126926422" rgba="0 1 0 1" pos="-0.00059092044830322266 0.0070984167978167534 3.8743760977233421e-10" quat="0 -3.2782551784292138e-07 0 -0.99999999999994627"/>
+        <geom name="Book_23_book_23_PrimitiveCollider_1" class="__DYNAMIC_MJT__" type="box" size="0.061046857386827469 0.0064421892166137695 0.15758936107158661" rgba="0 1 0 1" pos="0.046536315232515335 0.013817987404763699 -3.0511579041103687e-08" quat="-0.056885629134342579 -3.2729465978100665e-07 -1.8648560336150477e-08 -0.99838070153518221"/>
+        <geom name="Book_23_book_23_PrimitiveCollider_2" class="__DYNAMIC_MJT__" type="box" size="0.028743905946612358 0.0064838067628443241 0.15758933126926422" rgba="0 1 0 1" pos="-0.041330292820930481 0.020371558144688606 2.7098248978063566e-08" quat="0 -3.2782551784292138e-07 0 -0.99999999999994627"/>
+        <geom name="Book_23_book_23_PrimitiveCollider_3" class="__DYNAMIC_MJT__" type="box" size="0.0093857273459434509 0.0054912874475121498 0.15758933126926422" rgba="0 1 0 1" pos="-0.098462112247943878 0.014909762889146805 6.4556786583125358e-08" quat="0.25047325179777091 -3.1737558274231116e-07 8.211152348985999e-08 -0.96812352008085367"/>
+        <geom name="Book_23_book_23_PrimitiveCollider_4" class="__DYNAMIC_MJT__" type="box" size="0.011705152690410614 0.0063528870232403278 0.15758933126926422" rgba="0 1 0 1" pos="-0.079961076378822327 0.019148899242281914 5.2426560870344474e-08" quat="0.10419090783661396 -3.260412580916922e-07 3.4156439278946177e-08 -0.99455731595724273"/>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude name="//unnamed_contact_0" body1="Book_23_book_23" body2="Book_23_book_front_23"/>
+  </contact>
+</mujoco>

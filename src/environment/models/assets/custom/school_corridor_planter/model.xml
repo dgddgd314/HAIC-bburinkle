@@ -1,0 +1,17 @@
+<mujoco model="school_corridor_planter_model">
+  <compiler angle="radian" boundmass="0.01"/>
+  <default><default class="v"><geom group="0" contype="0" conaffinity="0"/></default><default class="c"><geom group="4" contype="1" conaffinity="1" friction="0.8 0.02 0.001"/></default></default>
+  <asset>
+    <material name="pot" rgba="0.46 0.25 0.15 1" roughness="0.85"/>
+    <material name="leaf1" rgba="0.17 0.38 0.20 1" roughness="0.9"/>
+    <material name="leaf2" rgba="0.28 0.52 0.29 1" roughness="0.9"/>
+  </asset>
+  <worldbody><body name="school_corridor_planter">
+    <geom name="pot_v" class="v" type="cylinder" pos="0 0 0.24" size="0.25 0.24" material="pot"/>
+    <geom name="stem_v" class="v" type="capsule" fromto="0 0 0.40 0 0 1.12" size="0.025" rgba="0.19 0.28 0.13 1"/>
+    <geom name="leaf_a" class="v" type="ellipsoid" pos="0.10 0 0.83" size="0.22 0.10 0.34" quat="0.9914 0 0.1305 0" material="leaf1"/>
+    <geom name="leaf_b" class="v" type="ellipsoid" pos="-0.11 0.04 1.02" size="0.20 0.09 0.31" quat="0.9914 0 -0.1305 0" material="leaf2"/>
+    <geom name="leaf_c" class="v" type="ellipsoid" pos="0 -0.06 1.20" size="0.18 0.09 0.28" material="leaf1"/>
+    <geom name="pot_c" class="c" type="cylinder" pos="0 0 0.24" size="0.25 0.24"/>
+  </body></worldbody>
+</mujoco>

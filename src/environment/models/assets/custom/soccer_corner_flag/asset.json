@@ -1,0 +1,7 @@
+{
+  "display_name": "Indoor soccer corner flag",
+  "root_body": "soccer_corner_flag",
+  "aliases": ["soccer flag", "corner flag", "축구 코너 플래그"],
+  "categories": ["Sports", "Decor"],
+  "base_quat": [1, 0, 0, 0], "floor_z": 0.0, "dynamic": false
+}

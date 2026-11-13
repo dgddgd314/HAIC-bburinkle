@@ -1,0 +1,62 @@
+<mujoco model="67c182845e994ab0b623919a89a0baf5">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+      <default class="__ARTICULABLE_DYNAMIC_MJT__">
+        <geom contype="0" conaffinity="7" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998" density="500"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="67c182845e994ab0b623919a89a0baf5_albedo" file="67c182845e994ab0b623919a89a0baf5_visual_0.png"/>
+    <material name="67c182845e994ab0b623919a89a0baf5_mat" texture="67c182845e994ab0b623919a89a0baf5_albedo"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_visual_mesh" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_visual.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider0" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider0.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider1" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider1.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider2" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider2.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider3" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider3.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider4" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider4.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider5" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider5.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider6" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider6.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider7" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider7.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider8" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider8.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider9" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider9.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider10" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider10.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider11" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider11.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider12" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider12.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider13" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider13.obj" scale="-1 1 1"/>
+    <mesh name="67c182845e994ab0b623919a89a0baf5_collider14" content_type="model/obj" file="67c182845e994ab0b623919a89a0baf5_collider14.obj" scale="-1 1 1"/>
+  </asset>
+
+  <worldbody>
+    <body name="67c182845e994ab0b623919a89a0baf5">
+      <geom name="67c182845e994ab0b623919a89a0baf5_visual" class="__VISUAL_MJT__" type="mesh" mass="1e-08" material="67c182845e994ab0b623919a89a0baf5_mat" mesh="67c182845e994ab0b623919a89a0baf5_visual_mesh"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider0" class="__DYNAMIC_MJT__" type="mesh" rgba="0.517464 0.684871 0.581487 1" mesh="67c182845e994ab0b623919a89a0baf5_collider0"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider1" class="__DYNAMIC_MJT__" type="mesh" rgba="0.219165 0.859182 0.531663 1" mesh="67c182845e994ab0b623919a89a0baf5_collider1"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider2" class="__DYNAMIC_MJT__" type="mesh" rgba="0.688237 0.649616 0.826989 1" mesh="67c182845e994ab0b623919a89a0baf5_collider2"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider3" class="__DYNAMIC_MJT__" type="mesh" rgba="0.366602 0.81565 0.273115 1" mesh="67c182845e994ab0b623919a89a0baf5_collider3"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider4" class="__DYNAMIC_MJT__" type="mesh" rgba="0.664566 0.493575 0.262096 1" mesh="67c182845e994ab0b623919a89a0baf5_collider4"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider5" class="__DYNAMIC_MJT__" type="mesh" rgba="0.152129 0.363848 0.084587 1" mesh="67c182845e994ab0b623919a89a0baf5_collider5"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider6" class="__DYNAMIC_MJT__" type="mesh" rgba="0.963318 0.598567 0.607656 1" mesh="67c182845e994ab0b623919a89a0baf5_collider6"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider7" class="__DYNAMIC_MJT__" type="mesh" rgba="0.146843 0.315986 0.63238 1" mesh="67c182845e994ab0b623919a89a0baf5_collider7"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider8" class="__DYNAMIC_MJT__" type="mesh" rgba="0.954088 0.737531 0.217376 1" mesh="67c182845e994ab0b623919a89a0baf5_collider8"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider9" class="__DYNAMIC_MJT__" type="mesh" rgba="0.847817 0.0958106 0.605004 1" mesh="67c182845e994ab0b623919a89a0baf5_collider9"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider10" class="__DYNAMIC_MJT__" type="mesh" rgba="0.376028 0.00387509 0.151934 1" mesh="67c182845e994ab0b623919a89a0baf5_collider10"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider11" class="__DYNAMIC_MJT__" type="mesh" rgba="0.74198 0.336916 0.309716 1" mesh="67c182845e994ab0b623919a89a0baf5_collider11"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider12" class="__DYNAMIC_MJT__" type="mesh" rgba="0.370586 0.395652 0.0141233 1" mesh="67c182845e994ab0b623919a89a0baf5_collider12"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider13" class="__DYNAMIC_MJT__" type="mesh" rgba="0.5138 0.24198 0.721079 1" mesh="67c182845e994ab0b623919a89a0baf5_collider13"/>
+      <geom name="67c182845e994ab0b623919a89a0baf5_collider14" class="__DYNAMIC_MJT__" type="mesh" rgba="0.0662307 0.601878 0.630013 1" mesh="67c182845e994ab0b623919a89a0baf5_collider14"/>
+    </body>
+  </worldbody>
+</mujoco>

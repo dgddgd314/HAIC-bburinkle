@@ -1,0 +1,30 @@
+<mujoco model="Pencil_2">
+  <compiler autolimits="true" boundmass="0" angle="radian"/>
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0" group="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom contype="1" conaffinity="15" group="4" friction="0.90000000000000002 0.90000000000000002 0.001" solref="0.025000000000000001 1" solimp="0.998 0.998 0.001"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <texture name="PensPencils_DefaultMaterial_AlbedoTransparency" type="2d" file="PensPencils_DefaultMaterial_AlbedoTransparency.png"/>
+    <material name="material_PensPencils_DefaultMaterial_AlbedoTransparency" class="/" texture="PensPencils_DefaultMaterial_AlbedoTransparency" specular="0.5" shininess="0.5" rgba="1 1 1 1"/>
+    <mesh name="Pencil_2_Cylinder.225" class="/" file="Pencil_2_Cylinder.225/Pencil_2_Cylinder.225.obj" scale="1.0000003576278687 1.0000003576278687 1.0000002384185791"/>
+  </asset>
+  <worldbody>
+    <body name="Pencil_2">
+      <joint name="Pencil_2_free" class="/" type="free" pos="0 0 0" axis="0 0 1" stiffness="0" range="0 0" armature="0" damping="0.10000000000000001" frictionloss="0"/>
+      <body name="Pencil_2_Cylinder.225" pos="-0 0 -0.0031900000000000001" quat="0.50008726119995117 -0.49991270899772644 -0.50008726119995117 -0.49991270899772644">
+        <geom name="Pencil_2_Cylinder.225" class="__VISUAL_MJT__" type="mesh" material="material_PensPencils_DefaultMaterial_AlbedoTransparency" shellinertia="false" mesh="Pencil_2_Cylinder.225"/>
+        <geom name="Pencil_2_Cylinder.225_PrimitiveCollider_0" class="__DYNAMIC_MJT__" type="capsule" size="0.0047275712713599205 0.093661793507635593" rgba="0 1 0 1" pos="-0.0031917185988277197 -4.6200360204196045e-10 1.0477376299888874e-08" quat="0.00012342703846635896 0.7071078135498251 0.0001234059650435104 0.707105727280949"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

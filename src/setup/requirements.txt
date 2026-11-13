@@ -1,0 +1,14 @@
+# Python packages the simulator needs -- do not edit (add yours to custom/requirements.txt).
+# Installed by setup/install_conda_env.sh into your conda env ($HAIC_ENV).
+numpy==1.26.4
+scipy==1.15.3
+matplotlib==3.5.1
+mujoco==3.7.0
+onnxruntime==1.23.2
+opencv-python==4.11.0.86
+pillow==12.3.0
+shapely==2.1.2
+python-xlib==0.33
+pyyaml>=6.0
+catkin-pkg==1.1.1
+streamlit==1.63.0                # main.py --llm-web (web/instruction_page.py)

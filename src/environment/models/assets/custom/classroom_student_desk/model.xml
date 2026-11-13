@@ -1,0 +1,50 @@
+<mujoco model="classroom_student_desk_model">
+  <compiler angle="radian" boundmass="0.01"/>
+
+  <default>
+    <default class="visual">
+      <geom contype="0" conaffinity="0" group="0"/>
+    </default>
+    <default class="collision">
+      <geom contype="1" conaffinity="1" group="4"
+            friction="0.9 0.02 0.001" solref="0.025" solimp="0.998 0.998"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture name="light_oak" type="2d" file="light_oak.png"/>
+    <material name="light_oak_material" texture="light_oak"
+              texrepeat="2 2" texuniform="true"
+              rgba="0.94 0.78 0.55 1" roughness="0.72" specular="0.18"/>
+    <mesh name="desk_mesh" file="DeskMesh/desk.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="classroom_student_desk">
+      <body name="classroom_student_desk_mesh" pos="0 -0.39822 -0.00421">
+        <geom name="classroom_student_desk_visual" class="visual"
+              type="mesh" mesh="desk_mesh" material="light_oak_material"/>
+        <geom name="classroom_student_desk_top_collision" class="collision"
+              type="box" size="0.423274 0.0536841 0.884573"
+              pos="-9.31323e-10 0.745253 0.0042083"
+              quat="0 0.707107 0 -0.707107"/>
+        <geom name="classroom_student_desk_leg_1" class="collision"
+              type="box" size="0.0427166 0.400713 0.039109"
+              pos="0.831412 0.398224 -0.368648"
+              quat="0 0.707107 0 -0.707107"/>
+        <geom name="classroom_student_desk_leg_2" class="collision"
+              type="box" size="0.0427166 0.400713 0.039109"
+              pos="0.831412 0.398224 0.368152"
+              quat="0 0.707107 0 -0.707107"/>
+        <geom name="classroom_student_desk_leg_3" class="collision"
+              type="box" size="0.0427166 0.400713 0.039109"
+              pos="-0.829488 0.398224 -0.368648"
+              quat="0 0.707107 0 -0.707107"/>
+        <geom name="classroom_student_desk_leg_4" class="collision"
+              type="box" size="0.0427166 0.400713 0.039109"
+              pos="-0.829488 0.398224 0.368152"
+              quat="0 0.707107 0 -0.707107"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,27 @@
+{
+    "assetId": "food_pasta_bowl",
+    "category": "pasta",
+    "description": "A bowl of spaghetti in tomato sauce topped with meatballs and sliced sausage.",
+    "description_long": "A bowl of spaghetti in tomato sauce topped with meatballs and sliced sausage.",
+    "description_short": {
+        "one_word": "pasta",
+        "two_words": "pasta"
+    },
+    "synset": "spaghetti.n.01",
+    "onFloor": false,
+    "onWall": false,
+    "onCeiling": false,
+    "onObject": true,
+    "receptacle": false,
+    "license_info": {
+        "license": "unknown-user-supplied",
+        "uri": "",
+        "creator_display_name": ""
+    },
+    "mass": 0.7000443938145178,
+    "boundingBox": {
+        "x": 0.3000000145972689,
+        "y": 0.3000000208086361,
+        "z": 0.07399999879153649
+    }
+}

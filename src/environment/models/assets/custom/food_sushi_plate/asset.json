@@ -1,0 +1,8 @@
+{
+  "display_name": "Sushi plate",
+  "root_body": "food_sushi_plate",
+  "aliases": ["sushi", "food plate", "초밥"],
+  "categories": ["Food & Dining"],
+  "base_quat": [1.0, 0.0, 0.0, 0.0],
+  "floor_z": 0.04338
+}

@@ -1,0 +1,56 @@
+<mujoco model="coffee_machine_30">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="/">
+      <default class="__VISUAL_MJT__">
+        <geom contype="0" conaffinity="0"/>
+      </default>
+      <default class="__STRUCTURAL_MJT__">
+        <geom contype="8" conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+      <default class="__DYNAMIC_MJT__">
+        <geom conaffinity="15" group="4" friction="0.9 0.9 0.001" solref="0.025" solimp="0.998 0.998"/>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="Coffee_Machine_Decal_Mat" file="Coffee_Machine_Decal_AlbedoTransparency.png"/>
+    <texture type="2d" name="Coffee_Machine_Metal_Mat" file="MetalBumpy_AlbedoTransparency.png"/>
+    <texture type="2d" name="Coffee_Machine_Secondary5_Color_Mat" file="BrushedIron_AlbedoTransparency.png"/>
+    <texture type="2d" name="Coffee_Machine_Primary5_Color_Mat" file="BrushedAluminum_AlbedoTransparency.png"/>
+    <material name="material_coffee_machine_backup_mat" class="/" rgba="0.5 0.5 0.5 1"/>
+    <material name="material_Coffee_Machine_Readout_Mat_Off" class="/" rgba="0 0 0 1"/>
+    <material name="material_Coffee_Machine_Decal_Mat" class="/" texture="Coffee_Machine_Decal_Mat"/>
+    <material name="material_Coffee_Machine_Metal_Mat" class="/" texture="Coffee_Machine_Metal_Mat" rgba="0.661765 0.661765 0.661765 1"/>
+    <material name="material_Coffee_Machine_Secondary5_Color_Mat" class="/" texture="Coffee_Machine_Secondary5_Color_Mat" rgba="0.551471 0.551471 0.551471 1"/>
+    <material name="material_Coffee_Machine_Primary5_Color_Mat" class="/" texture="Coffee_Machine_Primary5_Color_Mat" rgba="0.323529 0.323529 0.323529 1"/>
+    <mesh name="coffee_machine_30_coffee_machine_30_0" class="/" content_type="model/obj" file="coffee_machine_30_coffee_machine_30/coffee_machine_30_coffee_machine_30_0.obj" inertia="shell"/>
+    <mesh name="coffee_machine_30_coffee_machine_30_1" class="/" content_type="model/obj" file="coffee_machine_30_coffee_machine_30/coffee_machine_30_coffee_machine_30_1.obj" inertia="shell"/>
+    <mesh name="coffee_machine_30_coffee_machine_30_2" class="/" content_type="model/obj" file="coffee_machine_30_coffee_machine_30/coffee_machine_30_coffee_machine_30_2.obj" inertia="shell"/>
+    <mesh name="coffee_machine_30_coffee_machine_30_3" class="/" content_type="model/obj" file="coffee_machine_30_coffee_machine_30/coffee_machine_30_coffee_machine_30_3.obj"/>
+    <mesh name="coffee_machine_30_coffee_machine_30_4" class="/" content_type="model/obj" file="coffee_machine_30_coffee_machine_30/coffee_machine_30_coffee_machine_30_4.obj"/>
+    <mesh name="coffee_machine_30_coffee_machine_30_5" class="/" content_type="model/obj" file="coffee_machine_30_coffee_machine_30/coffee_machine_30_coffee_machine_30_5.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="coffee_machine_30">
+      <joint name="coffee_machine_30_free" class="/" type="free" limited="false" actuatorfrclimited="false" damping="0.1"/>
+      <body name="coffee_machine_30_coffee_machine_30" pos="-0.00671 -0.23211 -0.07359">
+        <geom name="coffee_machine_30_coffee_machine_30_0" class="__VISUAL_MJT__" type="mesh" material="material_coffee_machine_backup_mat" mesh="coffee_machine_30_coffee_machine_30_0"/>
+        <geom name="coffee_machine_30_coffee_machine_30_1" class="__VISUAL_MJT__" type="mesh" material="material_Coffee_Machine_Readout_Mat_Off" mesh="coffee_machine_30_coffee_machine_30_1"/>
+        <geom name="coffee_machine_30_coffee_machine_30_2" class="__VISUAL_MJT__" type="mesh" material="material_Coffee_Machine_Decal_Mat" mesh="coffee_machine_30_coffee_machine_30_2"/>
+        <geom name="coffee_machine_30_coffee_machine_30_3" class="__VISUAL_MJT__" type="mesh" material="material_Coffee_Machine_Metal_Mat" mesh="coffee_machine_30_coffee_machine_30_3"/>
+        <geom name="coffee_machine_30_coffee_machine_30_4" class="__VISUAL_MJT__" type="mesh" material="material_Coffee_Machine_Secondary5_Color_Mat" mesh="coffee_machine_30_coffee_machine_30_4"/>
+        <geom name="coffee_machine_30_coffee_machine_30_5" class="__VISUAL_MJT__" type="mesh" material="material_Coffee_Machine_Primary5_Color_Mat" mesh="coffee_machine_30_coffee_machine_30_5"/>
+        <geom name="coffee_machine_30_coffee_machine_30_PrimitiveCollider_0" class="__DYNAMIC_MJT__" size="0.116194 0.204141 0.13503" pos="-0.100185 0.204141 -0.0103696" type="box" rgba="0 1 0 1"/>
+        <geom name="coffee_machine_30_coffee_machine_30_PrimitiveCollider_1" class="__DYNAMIC_MJT__" size="0.112683 0.0376262 0.214471" pos="0.103051 0.0376262 0.0690713" type="box" rgba="0 1 0 1"/>
+        <geom name="coffee_machine_30_coffee_machine_30_PrimitiveCollider_2" class="__DYNAMIC_MJT__" size="0.128335 0.0376262 0.150528" pos="-0.0452191 0.0376262 0.0980492" quat="0.965926 0 0.258819 0" type="box" rgba="0 1 0 1"/>
+        <geom name="coffee_machine_30_coffee_machine_30_PrimitiveCollider_3" class="__DYNAMIC_MJT__" size="0.116194 0.214628 0.117551" pos="0.102015 0.214628 -0.0278488" type="box" rgba="0 1 0 1"/>
+        <geom name="coffee_machine_30_coffee_machine_30_PrimitiveCollider_4" class="__DYNAMIC_MJT__" size="0.116194 0.071649 0.156005" pos="0.102015 0.392566 0.0644412" type="box" rgba="0 1 0 1"/>
+        <site name="coffee_machine_30_coffee_machine_30_ReceptacleCollider_0" class="/" pos="0.1077 0.142042 0.163" size="0.0572884 0.0660425 0.0565724" type="box" rgba="1 0 0 1"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

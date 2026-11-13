@@ -1,0 +1,41 @@
+missions:
+  run: [1, 2, 3, 4, 5, 6]
+  wait_for_space: true
+  step: false
+  gap_falls_allowed: 2           # mission 3: falls into a gap a mission may have (the simulator puts
+                                 # G1 back at the start); one more ends the mission at once (FAIL)
+
+scenario:
+  file: scenarios/default.yaml
+
+referee:
+  goal_radius_m: 0.5           # mission 1 passes when the pelvis ends within this of the goal
+  # Mission 2 passes when the pelvis ends inside the cone_box_m square centred
+  # cone_box_offset_m in front of the target cone.
+  cone_box_m: 0.5
+  cone_box_offset_m: 0.75
+  # Mission 4: the room the held object (a pencil) belongs in; G1 must end inside it
+  # (through the door, x >= 18.25), and every room must be named right.
+  m4_room: classroom
+
+randomize:                       # key R / tools/make_scenario.py draw from these boxes (world x0, x1, y0, y1)
+  m1_goal_region: [14.0, 17.0, 1.0, 20.0]
+  m1_goal_yaw_deg: 90
+  ball_region: [7.25, 11.25, 5.5, 8.5]
+
+instruction:
+  # The mission order the instruction asks for, e.g. [2, 5, 6]; the results file
+  # records whether the students' plan matches it.  null = not checked.
+  expect: null
+  web_port: 8501
+  open_browser: true
+
+simulator:
+  view: true                     # MuJoCo window (false: headless)
+  start_pose: [16.0, 11.0, 0]    # G1's start (world x, y, yaw_deg) = mission 1's and 4's start point
+  shadow_size: 0                 # shadow map resolution: 0 = scene default; 4096 on an 8 GB GPU
+                                 # (lower it if the GPU runs out of memory, e.g. 2048)
+  # Ball friction: sliding, torsional, rolling; overrides floor friction.
+  # Rolling 0.01 permits the short-run-up kick; 0.015 stops it short.
+  ball_friction: [0.62, 0.02, 0.01]
+  extra_args: []

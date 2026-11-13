@@ -1,0 +1,7 @@
+{
+  "display_name": "School corridor locker",
+  "root_body": "school_corridor_locker",
+  "aliases": ["school locker", "hallway cabinet", "복도 사물함"],
+  "categories": ["Office & School", "Cabinets & Storage"],
+  "base_quat": [1, 0, 0, 0], "floor_z": 0.0, "dynamic": false
+}

@@ -1,0 +1,23 @@
+{
+  "display_name": "Simple classroom wall clock",
+  "aliases": [
+    "school clock",
+    "white round clock",
+    "classroom clock",
+    "교실 벽시계",
+    "학교 시계"
+  ],
+  "categories": [
+    "Office & School",
+    "Decor & Art"
+  ],
+  "root_body": "classroom_wall_clock",
+  "base_quat": [
+    0.5,
+    0.5,
+    -0.5,
+    -0.5
+  ],
+  "floor_z": 0.23,
+  "dynamic": false
+}
