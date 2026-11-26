@@ -618,7 +618,7 @@ def _json_default(value):
 
 
 class MissionStatusPublisher:
-    def __init__(self, node, mission_topic: str, panda_topic: str) -> None:
+    def __init__(self, node, mission_topic: str) -> None:
         from rclpy.qos import DurabilityPolicy, QoSProfile, ReliabilityPolicy
         from std_msgs.msg import String
 
@@ -629,8 +629,6 @@ class MissionStatusPublisher:
             durability=DurabilityPolicy.TRANSIENT_LOCAL,
         )
         self._mission = node.create_publisher(String, mission_topic, qos)
-        self._panda = node.create_publisher(String, panda_topic, qos)
-        self._panda_active = False
         self._seq = 0
         self.common: dict = {}
 
@@ -652,22 +650,6 @@ class MissionStatusPublisher:
             **({} if yaw is None else {"yaw_deg": math.degrees(float(yaw))}),
             **(extra or {}),
         })
-
-    def panda_started(self, prompt: str, sim_time: float) -> None:
-        self._panda_active = True
-        self._send(self._panda, {"event": "started", "prompt": prompt, "sim_time": float(sim_time)})
-
-    def poll(self, sim_time: float, panda_runtime) -> None:
-        if panda_runtime is not None:
-            active = bool(panda_runtime.policy_active)
-            if self._panda_active and not active:
-                self._send(self._panda, {
-                    "event": "stopped",
-                    "sim_time": float(sim_time),
-                    "prompt": panda_runtime.instruction,
-                    "result": panda_runtime.task_result(),
-                })
-            self._panda_active = active
 
 
 def _load_combined_builder():
@@ -723,36 +705,6 @@ def _arguments(argv: Optional[Sequence[str]]) -> argparse.Namespace:
     ap.add_argument("--assets-dir", type=Path,
                     default=Path(os.environ.get("MLSPACES_ASSETS_DIR", DEFAULT_ASSETS)))
     ap.add_argument("--policy", type=Path, default=DEFAULT_POLICY)
-    ap.add_argument(
-        "--g1-mimic-policy",
-        type=Path,
-        default=None,
-        help="unitree_rl_mjlab G1 tracking ONNX (154 observations, 29 actions)",
-    )
-    ap.add_argument(
-        "--g1-mimic-motion",
-        type=Path,
-        default=None,
-        help="50 Hz G1 motion NPZ paired with --g1-mimic-policy",
-    )
-    ap.add_argument(
-        "--g1-mimic-loop",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="loop the mimic reference instead of holding after one playback",
-    )
-    ap.add_argument(
-        "--g1-mimic-autostart",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="start mimic motion immediately (disable to start on nonzero cmd_vel)",
-    )
-    ap.add_argument(
-        "--g1-mimic-then-walk",
-        action=argparse.BooleanOptionalAction,
-        default=True,
-        help="after a finite mimic motion, switch to the normal 29-DoF velocity policy",
-    )
     ap.add_argument("--regenerate-sensors", action="store_true")
     ap.add_argument(
         "--shadow-size",
@@ -853,11 +805,10 @@ def _arguments(argv: Optional[Sequence[str]]) -> argparse.Namespace:
                     help="show the exact Panda pencil/cup spawn sectors")
     ap.add_argument(
         "--panda-mode",
-        choices=("ros", "collect", "policy", "standby"),
+        choices=("ros", "collect"),
         default="ros",
-        help="Panda controller: ROS, TeleDex, immediate policy, or prompt-triggered standby",
+        help="Panda controller: ROS command topics, or TeleDex demonstration recording",
     )
-    ap.add_argument("--panda-task-topic", default="/panda/task_prompt")
     ap.add_argument("--dataset-dir", type=Path, default=DEFAULT_PANDA_DATASET)
     ap.add_argument(
         "--task-instruction",
@@ -865,21 +816,7 @@ def _arguments(argv: Optional[Sequence[str]]) -> argparse.Namespace:
     )
     ap.add_argument("--teledex-port", type=int, default=8888)
     ap.add_argument("--panda-rate", type=float, default=10.0,
-                    help="Panda observation/action rate (default: LIBERO 10 Hz)")
-    ap.add_argument("--panda-replan-steps", type=int, default=5,
-                    help="actions executed from each policy chunk before replanning (default: 5)")
-    ap.add_argument(
-        "--panda-task-timeout",
-        type=float,
-        default=0.0,
-        help="optional simulated-time limit in seconds; 0 disables (default: unlimited)",
-    )
-    ap.add_argument(
-        "--panda-auto-success",
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help="enable geometric automatic success detection (default: disabled; use S/F manually)",
-    )
+                    help="Panda recording rate in --panda-mode collect (default: LIBERO 10 Hz)")
     ap.add_argument("--panda-position-scale", type=float, default=1.6)
     ap.add_argument(
         "--panda-yaw-scale",
@@ -893,8 +830,6 @@ def _arguments(argv: Optional[Sequence[str]]) -> argparse.Namespace:
         default=1.0,
         help="TeleDex phone top-edge tilt gain; use -1 to invert, 0 to disable (default: 1)",
     )
-    ap.add_argument("--panda-policy", type=Path,
-                    help="Python policy adapter used when --panda-mode policy")
     ap.add_argument(
         "--panda-preview",
         action=argparse.BooleanOptionalAction,
@@ -980,8 +915,6 @@ def _arguments(argv: Optional[Sequence[str]]) -> argparse.Namespace:
     )
     ap.add_argument("--mission-status-topic", default="/g1/mission_status",
                     help="latched std_msgs/String JSON: last G1 respawn")
-    ap.add_argument("--panda-task-status-topic", default="/panda/task_status",
-                    help="latched std_msgs/String JSON: Panda task started/stopped + geometry")
     ap.add_argument("--joint-command-topic", default="/g1/joint_command",
                     help="sensor_msgs/JointState (name + position, rad): G1 joint targets; "
                          "while they arrive the walking policy is suspended")
@@ -1081,18 +1014,12 @@ def _arguments(argv: Optional[Sequence[str]]) -> argparse.Namespace:
         ap.error("--lidar-threads must be non-negative")
     if args.pos is not None and len(args.pos) not in (2, 3):
         ap.error("--pos requires x y or x y z")
-    if (args.g1_mimic_policy is None) != (args.g1_mimic_motion is None):
-        ap.error("--g1-mimic-policy and --g1-mimic-motion must be used together")
-    if args.g1_mimic_policy is not None and not args.walk:
-        ap.error("--g1-mimic-policy requires --walk")
     if min(args.max_vx, args.max_vy, args.max_wz) <= 0:
         ap.error("velocity limits must be positive")
     if args.unitree_odom and min(args.unitree_odom_hz, args.unitree_odom_lf_hz) <= 0:
         ap.error("Unitree odometry rates must be positive")
     if args.panda_mode != "ros" and not args.panda:
-        ap.error("--panda-mode collect/policy requires --panda")
-    if args.panda_mode in {"policy", "standby"} and args.panda_policy is None:
-        ap.error("--panda-mode policy/standby requires --panda-policy PATH")
+        ap.error("--panda-mode collect requires --panda")
     if args.panda_rate <= 0:
         ap.error("--panda-rate must be positive")
     if not all(
@@ -1100,10 +1027,6 @@ def _arguments(argv: Optional[Sequence[str]]) -> argparse.Namespace:
         for value in (args.panda_yaw_scale, args.panda_pitch_scale)
     ):
         ap.error("Panda yaw/pitch parameters must be finite")
-    if args.panda_replan_steps <= 0:
-        ap.error("--panda-replan-steps must be positive")
-    if args.panda_task_timeout < 0:
-        ap.error("--panda-task-timeout must be non-negative")
     if args.panda_camera_hz < 0:
         ap.error("--panda-camera-hz must be non-negative")
     if args.camera_hz is None:
@@ -1118,12 +1041,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args.scene = args.scene.expanduser().resolve()
     args.assets_dir = args.assets_dir.expanduser().resolve()
     args.policy = args.policy.expanduser().resolve()
-    if args.g1_mimic_policy is not None:
-        args.g1_mimic_policy = args.g1_mimic_policy.expanduser().resolve()
-        args.g1_mimic_motion = args.g1_mimic_motion.expanduser().resolve()
     args.dataset_dir = args.dataset_dir.expanduser().resolve()
-    if args.panda_policy is not None:
-        args.panda_policy = args.panda_policy.expanduser().resolve()
     os.environ["MLSPACES_ASSETS_DIR"] = str(args.assets_dir)
     os.environ["ROS_LOCALHOST_ONLY"] = os.environ.get("HAIC_LOCALHOST_ONLY", "1")
 
@@ -1135,16 +1053,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args.lidar = "OS1-32"
     ensure_sensor_robot(args.assets_dir, args.regenerate_sensors, sensors)
     scenario = Scenario.load(args.scenario) if args.scenario else Scenario()
-    if args.walk and args.g1_mimic_policy is None and not args.policy.exists():
+    if args.walk and not args.policy.exists():
         raise FileNotFoundError(
             f"walking policy not found: {args.policy}\n"
             f"Run: bash {SRC_ROOT / 'setup' / 'setup.sh'}"
         )
-    if args.g1_mimic_policy is not None:
-        if not args.g1_mimic_policy.exists():
-            raise FileNotFoundError(f"G1 mimic policy not found: {args.g1_mimic_policy}")
-        if not args.g1_mimic_motion.exists():
-            raise FileNotFoundError(f"G1 mimic motion not found: {args.g1_mimic_motion}")
 
     import rclpy
 
@@ -1239,41 +1152,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     joint_command_switch = None
     # Recover only before the first movement command; later falls count as failures.
     g1_motion_command_seen = {"value": False}
-    mimic_mode = args.g1_mimic_policy is not None
     if args.walk:
-        if mimic_mode:
-            if args.g1_mimic_then_walk:
-                from ros2_bridge.tools.g1_mimic_then_walk import (
-                    G1MimicThenWalkPolicy29DoF,
-                )
-
-                walker = G1MimicThenWalkPolicy29DoF(
-                    sim.model,
-                    sim.data,
-                    args.g1_mimic_policy,
-                    args.g1_mimic_motion,
-                    args.policy,
-                    prefix=spawn.prefix,
-                    loop=args.g1_mimic_loop,
-                    autostart=args.g1_mimic_autostart,
-                )
-            else:
-                from ros2_bridge.tools.g1_mimic_policy_29dof import G1MimicPolicy29DoF
-
-                walker = G1MimicPolicy29DoF(
-                    sim.model,
-                    sim.data,
-                    args.g1_mimic_policy,
-                    args.g1_mimic_motion,
-                    prefix=spawn.prefix,
-                    loop=args.g1_mimic_loop,
-                    autostart=args.g1_mimic_autostart,
-                )
-            policy_label = (
-                f"Unitree G1 29-DoF mimic ({walker.frame_count} frames at 50 Hz)"
-                + (" -> velocity policy" if args.g1_mimic_then_walk else "")
-            )
-        elif args.policy.suffix.lower() == ".onnx":
+        if args.policy.suffix.lower() == ".onnx":
             from ros2_bridge.tools.g1_walk_policy_29dof import G1WalkPolicy29DoF
 
             policy_class = G1WalkPolicy29DoF
@@ -1284,29 +1164,25 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             policy_class = G1WalkPolicy
             policy_label = "legacy Unitree 12-DoF TorchScript"
 
-        if not mimic_mode:
-            if getattr(policy_class, "__name__", "") == "G1WalkPolicy29DoF":
-                from ros2_bridge.tools.g1_joint_command import G1JointCommandSwitch29DoF
+        if getattr(policy_class, "__name__", "") == "G1WalkPolicy29DoF":
+            from ros2_bridge.tools.g1_joint_command import G1JointCommandSwitch29DoF
 
-                walker = G1JointCommandSwitch29DoF(
-                    sim.model, sim.data, args.policy, prefix=spawn.prefix,
-                    timeout=args.joint_command_timeout,
-                )
-                joint_command_switch = walker
-            else:
-                walker = policy_class(
-                    sim.model, sim.data, args.policy, prefix=spawn.prefix,
-                    cmd=(0.0, 0.0, 0.0),
-                )
+            walker = G1JointCommandSwitch29DoF(
+                sim.model, sim.data, args.policy, prefix=spawn.prefix,
+                timeout=args.joint_command_timeout,
+            )
+            joint_command_switch = walker
+        else:
+            walker = policy_class(
+                sim.model, sim.data, args.policy, prefix=spawn.prefix,
+                cmd=(0.0, 0.0, 0.0),
+            )
         walker.reset(pos=spawn.pos, yaw=yaw)
         velocity_policy = getattr(walker, "walk", walker)
         if hasattr(velocity_policy, "stationary_idle"):
             velocity_policy.stationary_idle = bool(args.idle_hold)
             velocity_policy.command_deadband = float(args.idle_threshold)
         walker.install()
-        g1_motion_command_seen["value"] = bool(
-            mimic_mode and args.g1_mimic_autostart
-        )
 
         def command_g1(vx: float, vy: float, wz: float) -> None:
             if np.linalg.norm((vx, vy, wz)) > 1e-3:
@@ -1314,16 +1190,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             walker.set_command(vx, vy, wz)
 
         command_callback = command_g1
-        if mimic_mode:
-            state_text = (
-                f"{policy_label} READY; "
-                + ("motion started" if args.g1_mimic_autostart else
-                   f"waiting for nonzero {args.cmd_vel_topic}")
-            )
-        else:
-            state_text = (
-                f"{policy_label} READY; standing until {args.cmd_vel_topic} arrives"
-            )
+        state_text = (
+            f"{policy_label} READY; standing until {args.cmd_vel_topic} arrives"
+        )
     else:
         held = hold_pose(sim.model, sim.data, spawn.prefix)
         command_callback = None
@@ -1419,9 +1288,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         if walker is not None:
             walker.set_command(0.0, 0.0, 0.0)
             walker.reset(pos=target_pos, yaw=target_yaw)
-            g1_motion_command_seen["value"] = bool(
-                mimic_mode and args.g1_mimic_autostart
-            )
+            g1_motion_command_seen["value"] = False
         else:
             sim.data.qpos[g1_qpos_indices] = initial_g1_qpos
             free_joint_ids = [
@@ -1498,7 +1365,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             sim.model,
             sim.data,
             task,
-            mode="policy" if args.panda_mode == "standby" else args.panda_mode,
             dataset_dir=args.dataset_dir,
             instruction=args.task_instruction,
             rate_hz=args.panda_rate,
@@ -1507,12 +1373,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             yaw_scale=args.panda_yaw_scale,
             pitch_scale=args.panda_pitch_scale,
             preview=args.panda_preview,
-            policy_path=args.panda_policy,
             controller=panda_controller,
-            policy_replan_steps=args.panda_replan_steps,
-            start_active=args.panda_mode != "standby",
-            policy_task_timeout=args.panda_task_timeout,
-            policy_auto_success=args.panda_auto_success,
         )
 
     soccer_mission = None
@@ -1644,11 +1505,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 )
             from std_msgs.msg import Int32
 
-            status = MissionStatusPublisher(
-                pub.node,
-                args.mission_status_topic,
-                args.panda_task_status_topic,
-            )
+            status = MissionStatusPublisher(pub.node, args.mission_status_topic)
 
             status.common = mission_judge.public
 
@@ -1818,8 +1675,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             pub.node.get_logger().info(
                 f"Mission API: std_msgs/Int32 {args.g1_mission_begin_topic} (1-6, G1 not moved), "
                 f"std_msgs/Empty {args.g1_randomize_topic}; status on "
-                f"{args.mission_status_topic}, "
-                f"{args.panda_task_status_topic}"
+                f"{args.mission_status_topic}"
             )
             pub.node.get_logger().info(
                 "ground truth: "
@@ -1831,30 +1687,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                    f"respawns and on {args.localize_topic}" if initial_pose_pub is not None
                    else "manual (RViz 2D Pose Estimate)")
             )
-            panda_task_subscription = None
-            panda_last_prompt = {"prompt": None}
-            if args.panda_mode == "standby" and panda_runtime is not None:
-                from std_msgs.msg import String
-
-                def receive_panda_prompt(message: String) -> None:
-                    prompt = message.data.strip()
-                    if prompt:
-                        panda_last_prompt["prompt"] = prompt
-                        panda_runtime.start_policy(prompt)
-                        status.panda_started(prompt, float(sim.data.time))
-                        pub.node.get_logger().info(
-                            f"Panda accepted task prompt: {prompt}"
-                        )
-                    else:
-                        panda_runtime.stop_policy("empty ROS prompt")
-                        pub.node.get_logger().info("Panda task stopped")
-
-                panda_task_subscription = pub.node.create_subscription(
-                    String, args.panda_task_topic, receive_panda_prompt, 10
-                )
-                pub.node.get_logger().info(
-                    f"Panda policy STANDBY; publish std_msgs/String to {args.panda_task_topic}"
-                )
             # The Panda base's world pose is NOT published: the desk moves with the
             # classroom, so it would tell which room that is (mission 4's answer).
 
@@ -1999,20 +1831,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     controller.set_eef_target(controller.site_transform(sim.data))
                 else:
                     controller.set_joint_target(arm_home)
-                restarted = ""
                 if panda_runtime is not None:
-                    was_active = bool(panda_runtime.policy_active)
                     panda_runtime.workspace_relocated()
-                    prompt = panda_last_prompt["prompt"]
-                    if panda_runtime.mode == "policy" and prompt:
-                        panda_runtime.start_policy(prompt)
-                        if not was_active:
-                            status.panda_started(prompt, float(sim.data.time))
-                        restarted = f"; policy restarted: {prompt!r}"
                 pencil, cup = task["pencil_xy"], task["cup_xy"]
                 pub.node.get_logger().info(
                     f"Panda task ({source}): arm home, pencil ({pencil[0]:.3f}, "
-                    f"{pencil[1]:.3f}), holder ({cup[0]:.3f}, {cup[1]:.3f}){restarted}"
+                    f"{pencil[1]:.3f}), holder ({cup[0]:.3f}, {cup[1]:.3f})"
                 )
                 return True
 
@@ -2276,7 +2100,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                                             },
                                             float(observation["time"]),
                                         )
-                                status.poll(float(sim.data.time), panda_runtime)
                             if panda_runtime is not None and panda_runtime.stop_requested:
                                 break
                             now_wall = time.perf_counter()
@@ -2407,7 +2230,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                                 )
                             if panda_runtime.stop_requested:
                                 break
-                        status.poll(float(sim.data.time), panda_runtime)
                         if args.realtime:
                             now_wall = time.perf_counter()
                             current_sim_time = float(sim.data.time)
@@ -2428,26 +2250,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 f"stopped at sim={sim.data.time:.2f}s wall={wall:.2f}s "
                 f"RTF={sim.data.time / max(wall, 1e-9):.2f}"
             )
-            if mimic_mode and walker is not None:
-                metrics = walker.metrics()
-                pub.node.get_logger().info(
-                    "G1 mimic report: "
-                    f"frame={metrics['last_frame']}/{metrics['reference_frames'] - 1}, "
-                    f"finished={metrics['finished']}, "
-                    f"joint_rmse={metrics['joint_rmse_rad']:.4f} rad, "
-                    f"min_pelvis_z={metrics['min_root_z_m']:.3f} m, "
-                    f"min_up_z={metrics['min_up_z']:.3f}, "
-                    f"walk_handoff={metrics.get('switched_to_walk', False)}"
-                )
-                if soccer_mission is not None:
-                    ball = soccer_mission.metrics(sim.data)
-                    pub.node.get_logger().info(
-                        "Soccer ball report: "
-                        f"xy_displacement={ball['horizontal_displacement_m']:.3f} m, "
-                        f"speed={ball['speed_mps']:.3f} m/s, "
-                        f"position=({ball['x_m']:.3f}, {ball['y_m']:.3f}, "
-                        f"{ball['z_m']:.3f})"
-                    )
     finally:
         if "previous_sigint" in locals():
             signal.signal(signal.SIGINT, previous_sigint)
