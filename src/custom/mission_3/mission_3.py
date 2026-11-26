@@ -19,9 +19,8 @@ class Mission3(Mission):
         super().__init__()
 
     def run(self) -> MissionResult:
-        start = self.begin_mission(3)
-        falls = self.gap_falls
-        # TODO: Cross the cliff course and handle gap-fall respawns.
+        self.begin_mission(3)
+        # TODO: Cross the cliff course (a fall respawns G1 at the start: /g1/respawned).
         return self.result()
 
 

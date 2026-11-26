@@ -19,9 +19,9 @@ class Mission1(Mission):
         super().__init__()
 
     def run(self) -> MissionResult:
-        start = self.begin_mission(1)
+        self.begin_mission(1)
         goal = self.params.get("goal") or self.m1_goal
-        self.log(f"[mission 1] goal {goal}, start {start.get('pos')}")
+        self.log(f"[mission 1] goal {goal}")
         # TODO: Implement navigation to goal.
         return self.result()
 

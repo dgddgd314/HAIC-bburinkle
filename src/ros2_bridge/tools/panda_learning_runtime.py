@@ -282,6 +282,9 @@ class PandaLearningRuntime:
             import teledex
 
             self.session = teledex.Session(port=int(teledex_port), show_qr=True)
+            # teledex 0.0.7 SIGKILLs whatever process holds its port (Jupyter also
+            # defaults to 8888) before it listens. Never kill; collect_panda.py checks the port.
+            self.session._kill_process_using_port = lambda _port: None
             self._install_secondary_button_compat(self.session)
             self.session.start()
             print(

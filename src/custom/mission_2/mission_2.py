@@ -19,7 +19,7 @@ class Mission2(Mission):
         super().__init__()
 
     def run(self) -> MissionResult:
-        start = self.begin_mission(2)
+        self.begin_mission(2)
         color = self.params.get("color") or self.m2_color
         self.log(f"[mission 2] target cone: {color}")
         # TODO: Find the target cone and navigate in front of it.

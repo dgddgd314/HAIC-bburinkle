@@ -19,7 +19,7 @@ class Mission6(Mission):
         super().__init__()
 
     def run(self) -> MissionResult:
-        start = self.begin_mission(6)
+        self.begin_mission(6)
         # TODO: Find the ball and score a goal.
         return self.result()
 

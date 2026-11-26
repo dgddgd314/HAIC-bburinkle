@@ -19,7 +19,7 @@ class Mission4(Mission):
         super().__init__()
 
     def run(self) -> MissionResult:
-        start = self.begin_mission(4)
+        self.begin_mission(4)
         # TODO: Identify rooms north-to-south and navigate into the classroom.
         answer = []
         return self.result(rooms=answer)
