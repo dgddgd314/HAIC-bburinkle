@@ -1,4 +1,4 @@
-"""Score doorway JPEGs with a local PaliGemma checkpoint on the team server."""
+"""Serve M4 doorway scores from a local PaliGemma checkpoint."""
 import argparse
 import io
 import json
