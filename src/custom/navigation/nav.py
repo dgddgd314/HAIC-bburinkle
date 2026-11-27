@@ -150,7 +150,7 @@ class Navigator:
                     return True
             self.m.stop()
             time.sleep(0.1)
-        self.log("[nav] localization not ready, continuing anyway")
+        self.log("[nav] localization readiness timed out")
         return False
 
     def pose(self, wait: float = 2.0):
@@ -164,7 +164,10 @@ class Navigator:
 
     def go_to(self, x: float, y: float, tol: float = 0.2, timeout: float = 120.0,
               final_yaw: float | None = None) -> bool:
-        self.wait_localized()
+        """Plan and follow a route only after localization reports ready."""
+        if not self.wait_localized():
+            self.m.stop()
+            return False
         p = self.pose(5.0)
         if p is None:
             self.log("[nav] no pose (map -> pelvis TF missing)")
@@ -180,6 +183,7 @@ class Navigator:
         return ok
 
     def follow(self, path, tol: float, timeout: float) -> bool:
+        """Follow consecutive path segments and stop if the current segment is lost."""
         deadline = time.monotonic() + timeout
         seg = 0
         gx, gy = path[-1]
@@ -197,12 +201,17 @@ class Navigator:
                 lost_since = None
                 x, y, yaw = p
                 dg = math.hypot(gx - x, gy - y)
-                if dg < tol:
-                    return True
                 # advance along the path: lookahead point on the remaining polyline
                 while seg < len(path) - 2 and math.hypot(path[seg + 1][0] - x, path[seg + 1][1] - y) < self.look:
                     seg += 1
-                tx, ty = self._lookahead(path, seg, x, y)
+                on_final_leg = seg >= len(path) - 2
+                if on_final_leg and dg < tol:
+                    return True
+                target = self._lookahead(path, seg, x, y)
+                if target is None:
+                    self.log("[nav] outside lookahead of current path segment; stopping")
+                    return False
+                tx, ty = target
                 heading = math.atan2(ty - y, tx - x)
                 err = math.atan2(math.sin(heading - yaw), math.cos(heading - yaw))
                 wz = max(-self.w_max, min(self.w_max, 1.5 * err))
@@ -211,7 +220,7 @@ class Navigator:
                 v = max(v, 0.08) if abs(err) < 0.35 else (0.0 if abs(err) > 0.8 else v)
                 # small lateral correction near the goal (G1 can strafe)
                 vy = 0.0
-                if dg < 0.6:
+                if on_final_leg and dg < 0.6:
                     ly = -math.sin(yaw) * (gx - x) + math.cos(yaw) * (gy - y)
                     vy = max(-0.2, min(0.2, 0.8 * ly))
                 self.m.cmd_vel(v, vy, wz)
@@ -222,23 +231,24 @@ class Navigator:
             self.m.stop()
 
     def _lookahead(self, path, seg, x, y):
-        for i in range(seg, len(path) - 1):
-            ax, ay = path[i]
-            bx, by = path[i + 1]
-            dx, dy = bx - ax, by - ay
-            L2 = dx * dx + dy * dy
-            if L2 < 1e-9:
-                continue
-            # farthest point on this segment within the lookahead circle
-            fx, fy = ax - x, ay - y
-            b = 2 * (fx * dx + fy * dy)
-            c = fx * fx + fy * fy - self.look ** 2
-            disc = b * b - 4 * L2 * c
-            if disc >= 0:
-                t = (-b + math.sqrt(disc)) / (2 * L2)
-                if 0 <= t <= 1:
-                    return ax + t * dx, ay + t * dy
-        return path[-1]
+        """Return the forward target on the active segment, or None when off route."""
+        ax, ay = path[seg]
+        bx, by = path[min(seg + 1, len(path) - 1)]
+        if math.hypot(bx - x, by - y) <= self.look:
+            return bx, by
+        dx, dy = bx - ax, by - ay
+        length_sq = dx * dx + dy * dy
+        if length_sq == 0:
+            return None
+        fx, fy = ax - x, ay - y
+        b = 2 * (fx * dx + fy * dy)
+        c = fx * fx + fy * fy - self.look ** 2
+        disc = b * b - 4 * length_sq * c
+        if disc >= 0:
+            t = (-b + math.sqrt(disc)) / (2 * length_sq)
+            if 0 <= t <= 1:
+                return ax + t * dx, ay + t * dy
+        return None
 
     def turn_to(self, yaw_goal: float, tol_deg: float = 5.0, timeout: float = 15.0) -> bool:
         deadline = time.monotonic() + timeout

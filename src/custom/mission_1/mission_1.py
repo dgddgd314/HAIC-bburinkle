@@ -12,7 +12,7 @@ if str(SRC_ROOT) not in sys.path:
 import math  # noqa: E402
 import time  # noqa: E402
 
-from mission_api import Mission, MissionResult, run_standalone  # noqa: E402
+from mission_api import FAIL, Mission, MissionResult, run_standalone  # noqa: E402
 from custom.navigation.nav import Navigator  # noqa: E402
 
 GOAL_TOL = 0.15        # stop this close (success radius is 0.5 m)
@@ -27,6 +27,7 @@ class Mission1(Mission):
         self.nav = Navigator(self)
 
     def run(self) -> MissionResult:
+        """Reach the goal and retry settling drift only after successful navigation."""
         start = self.begin_mission(1)
         goal = self.params.get("goal") or self.m1_goal
         self.log(f"[mission 1] goal {goal}, start {start.get('pos')}")
@@ -37,7 +38,9 @@ class Mission1(Mission):
 
         t0 = time.monotonic()
         for attempt in range(3):
-            self.nav.go_to(gx, gy, tol=GOAL_TOL, timeout=150.0)
+            if not self.nav.go_to(gx, gy, tol=GOAL_TOL, timeout=150.0):
+                self.stop()
+                return MissionResult(self.MISSION, status=FAIL, detail="Navigation failed")
             self.nav.settle(1.5)                     # come to rest before the referee judges
             p = self.nav.pose()
             if p is None:
