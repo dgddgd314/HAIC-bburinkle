@@ -15,7 +15,8 @@ Ubuntu 22.04, [ROS 2 Humble desktop](https://docs.ros.org/en/humble/Installation
 **⓪ Git Clone**
 
 ```bash
-git clone https://github.com/goodhsm2000/HAIC-Humanoid-AI-Challenge.git
+git clone https://github.com/dgddgd314/HAIC-bburinkle.git
+cd HAIC-bburinkle
 ```
 
 **① Miniconda**

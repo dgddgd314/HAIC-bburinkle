@@ -1,0 +1,131 @@
+{
+  "resolution_m": 0.02,
+  "margin_m": 0.25,
+  "body_height_m": 1.4,
+  "slice_world_z_m": 1.0,
+  "shape": [
+    1350,
+    925
+  ],
+  "origin": [
+    5.0,
+    -0.5
+  ],
+  "cloud_points": 2718228,
+  "source_commit": "052a00be32fdd818550c3b2d176b8c1c1db13b7d",
+  "scope": "Fixed walls, doorway frames, wall finish panels and floor polygons; no furniture, goals, objects, window assets, robots.",
+  "navigation_additions": "Goal collision geoms and three color-independent cone slots; navigation only.",
+  "doors": [
+    {
+      "id": "door|1|room0|room2",
+      "start": [
+        13.0,
+        3.1439712080518323
+      ],
+      "end": [
+        13.0,
+        4.1944795879880505
+      ],
+      "height": 2.0993974208831787,
+      "width": 1.0505083799362183
+    },
+    {
+      "id": "door_836a8015db",
+      "start": [
+        18.0,
+        4.3274
+      ],
+      "end": [
+        18.0,
+        2.8585
+      ],
+      "height": 2.1,
+      "width": 1.4689
+    },
+    {
+      "id": "school_room7_centered_door",
+      "start": [
+        18.0,
+        18.3
+      ],
+      "end": [
+        18.0,
+        16.7
+      ],
+      "height": 2.1,
+      "width": 1.6000000000000014
+    },
+    {
+      "id": "school_room8_centered_door",
+      "start": [
+        18.0,
+        11.3
+      ],
+      "end": [
+        18.0,
+        9.7
+      ],
+      "height": 2.1,
+      "width": 1.6000000000000014
+    },
+    {
+      "id": "maze_red_entrance",
+      "start": [
+        13.0,
+        19.525
+      ],
+      "end": [
+        13.0,
+        20.725
+      ],
+      "height": 2.1,
+      "width": 1.2000000000000028
+    },
+    {
+      "id": "maze_red_exit",
+      "start": [
+        13.0,
+        10.775
+      ],
+      "end": [
+        13.0,
+        11.975
+      ],
+      "height": 2.1,
+      "width": 1.1999999999999993
+    },
+    {
+      "id": "yellow_room_door",
+      "start": [
+        14.8,
+        21.0
+      ],
+      "end": [
+        16.2,
+        21.0
+      ],
+      "height": 2.1,
+      "width": 1.3999999999999986
+    },
+    {
+      "id": "soccer_blue_entrance",
+      "start": [
+        13.0,
+        8.35
+      ],
+      "end": [
+        13.0,
+        9.85
+      ],
+      "height": 2.1,
+      "width": 1.5
+    }
+  ],
+  "frame": "world; map coordinates intentionally coincide with world",
+  "limitations": [
+    "Furniture, ball and window assets excluded; goal and cone colliders included in navigation only",
+    "No ROS or walking validation",
+    "Rasterization conservative; finite grid is not exact continuous geometry",
+    "Localization wall reference requires filtering/matching validation; does not solve odometry"
+  ]
+}

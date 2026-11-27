@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "checks": [
+    "all rooms connected",
+    "seven doors open",
+    "legacy door blocked by actual replacement wall",
+    "five cliffs blocked in navigation only",
+    "cliff route connected without corridor shortcut",
+    "thin walls preserved",
+    "coordinate round-trip and bounds",
+    "PGM vertical orientation",
+    "inflation monotonicity",
+    "door header preserved in 3D",
+    "point cloud units and axes",
+    "goal posts/nets/braces blocked with open mouth",
+    "three cone footprints blocked and approach points reachable",
+    "color-independent obstacle records"
+  ],
+  "not_tested": [
+    "MuJoCo runtime geometry comparison",
+    "LiDAR registration",
+    "real walking"
+  ]
+}
