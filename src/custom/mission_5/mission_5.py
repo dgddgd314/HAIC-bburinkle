@@ -19,7 +19,7 @@ class Mission5(Mission):
         super().__init__()
 
     def run(self) -> MissionResult:
-        start = self.begin_mission(5)
+        self.begin_mission(5)
         # TODO: Implement pencil pick-and-place.
         return self.result()
 

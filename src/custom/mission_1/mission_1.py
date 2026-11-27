@@ -28,9 +28,9 @@ class Mission1(Mission):
 
     def run(self) -> MissionResult:
         """Reach the goal and retry settling drift only after successful navigation."""
-        start = self.begin_mission(1)
+        self.begin_mission(1)
         goal = self.params.get("goal") or self.m1_goal
-        self.log(f"[mission 1] goal {goal}, start {start.get('pos')}")
+        self.log(f"[mission 1] goal {goal}")
         if not goal:
             self.log("[mission 1] no goal given")
             return self.result()
