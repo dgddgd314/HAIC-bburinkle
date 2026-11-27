@@ -7,9 +7,7 @@ Inputs
   /lidar/points   PointCloud2 (lidar_link), 10 Hz
   /imu            pelvis IMU: accelerometer -> tilt prior, gyro -> yaw prediction
   /tf             pelvis -> lidar_link (robot_state_publisher)
-  /initialpose    PoseWithCovarianceStamped: manual re-seed; searched +-1 m, +-45 deg
-  /g1/mission_status  simulator status (latched JSON): "startup" / "respawned" events carry
-                  pos + yaw_deg -> re-seed (README 4: respawn is a teleport the odometry can't see)
+  /g1/respawned   Empty: reset the map estimate to the public starting pose
 Outputs
   odom_frame = ""     : TF map -> pelvis (full 6-DoF; self.pose() reads x, y, yaw from it)
   odom_frame = "odom" : TF map -> odom (planar correction) on top of lidar_odom_node's
@@ -36,11 +34,10 @@ import rclpy  # noqa: E402
 from geometry_msgs.msg import PoseWithCovarianceStamped, TransformStamped  # noqa: E402
 from rclpy.node import Node  # noqa: E402
 from rclpy.parameter import Parameter  # noqa: E402
-from rclpy.qos import (DurabilityPolicy, QoSProfile, ReliabilityPolicy,  # noqa: E402
-                       qos_profile_sensor_data)
+from rclpy.qos import qos_profile_sensor_data  # noqa: E402
 from rclpy.time import Time  # noqa: E402
 from sensor_msgs.msg import Imu, PointCloud2  # noqa: E402
-from std_msgs.msg import String  # noqa: E402
+from std_msgs.msg import Empty, String  # noqa: E402
 from tf2_ros import Buffer, TransformBroadcaster, TransformListener  # noqa: E402
 
 START_POSE = (16.0, 11.0, 0.0)        # README: G1 start (16, 11), yaw 0
@@ -75,6 +72,7 @@ def mat_to_quat(R: np.ndarray):
 
 class IcpLocalizer(Node):
     def __init__(self):
+        """Start the wall-map localizer at the configured initial pose."""
         super().__init__("icp_localizer",
                          parameter_overrides=[Parameter("use_sim_time", Parameter.Type.BOOL, True)])
         self.declare_parameter("initial_pose", list(START_POSE))
@@ -115,11 +113,7 @@ class IcpLocalizer(Node):
 
         self.create_subscription(PointCloud2, "/lidar/points", self.on_cloud, qos_profile_sensor_data)
         self.create_subscription(Imu, "/imu", self.on_imu, qos_profile_sensor_data)
-        self.create_subscription(PoseWithCovarianceStamped, "/initialpose", self.on_initialpose, 10)
-        latched = QoSProfile(depth=1, reliability=ReliabilityPolicy.RELIABLE,
-                             durability=DurabilityPolicy.TRANSIENT_LOCAL)
-        self.create_subscription(String, "/g1/mission_status", self.on_mission_status, latched)
-        self.last_seq = None
+        self.create_subscription(Empty, "/g1/respawned", self.on_respawn, 10)
         self.worker = threading.Thread(target=self.loop, daemon=True)
         self.worker.start()
 
@@ -151,35 +145,19 @@ class IcpLocalizer(Node):
                 self.gyro_yaw += float(w @ up / np.linalg.norm(up)) * (t - self.last_imu_t)
             self.last_imu_t = t
 
-    def on_initialpose(self, msg: PoseWithCovarianceStamped):
-        p, q = msg.pose.pose.position, msg.pose.pose.orientation
-        yaw = math.atan2(2 * (q.w * q.z + q.x * q.y), 1 - 2 * (q.y * q.y + q.z * q.z))
-        st = Time.from_msg(msg.header.stamp).nanoseconds * 1e-9
-        self.reseed(p.x, p.y, yaw, "/initialpose", st if st > 0 else None)
-
-    def on_mission_status(self, msg: String):
-        try:
-            s = json.loads(msg.data)
-        except json.JSONDecodeError:
-            return
-        if s.get("seq") is not None and s.get("seq") == self.last_seq:
-            return
-        self.last_seq = s.get("seq")
-        if s.get("event") in ("startup", "respawned") and s.get("pos") and "yaw_deg" in s:
-            x, y = map(float, s["pos"][:2])
-            self.reseed(x, y, math.radians(float(s["yaw_deg"])), f"mission_status {s['event']}",
-                        s.get("sim_time"))
-
-    def reseed(self, x: float, y: float, yaw: float, source: str, sim_time=None):
+    def on_respawn(self, _msg: Empty):
+        """Discard the old correction and reacquire from the public start pose."""
         with self.lock:
-            self.pose = Pose(x, y, yaw, self.pose.z, self.pose.roll, self.pose.pitch)
+            self.pose = Pose(*START_POSE, 0.79, 0.0, NOMINAL_PITCH)
             self.seed = Pose(**vars(self.pose))
-            self.seed_time = float(sim_time) if sim_time is not None else None
+            self.seed_time = self.get_clock().now().nanoseconds * 1e-9
+            self.latest = self.last_stamp = self.last_imu_t = None
+            self.up_imu = self.corr = None
             self.fixed = False                             # no fix since this seed yet
             self.need_search, self.bad, self.vel[:] = True, 0, 0.0
             self.gyro_yaw = 0.0
             self.gen += 1                                  # results of in-flight scans are stale
-        self.get_logger().info(f"re-seed from {source}: ({x:.2f}, {y:.2f}, {math.degrees(yaw):.0f} deg)")
+        self.get_logger().info("respawn: reacquiring map pose at (16, 11), yaw 0")
 
     # ------------------------------------------------------------------ worker
     def loop(self):
@@ -225,6 +203,8 @@ class IcpLocalizer(Node):
 
         t = stamp.nanoseconds * 1e-9
         with self.lock:
+            if self.seed_time is not None and t < self.seed_time + 0.2:
+                return
             prior = Pose(**vars(self.pose))
             dt = 0.0 if self.last_stamp is None else max(0.0, min(0.5, t - self.last_stamp))
             dyaw, self.gyro_yaw = self.gyro_yaw, 0.0
@@ -232,15 +212,16 @@ class IcpLocalizer(Node):
             search = self.need_search
             vel = self.vel.copy()
             gen = self.gen
+            corr = self.corr
             seeded = self.seed is not None and not self.fixed
             if seeded:
                 prior = Pose(**vars(self.seed))
         tilt_err = 20.0 if search else 5.0
         if seeded:
             pass                                           # stay on the seed until the first fix
-        elif odom is not None and self.corr is not None and (not search or self.bad > 0):
+        elif odom is not None and corr is not None and (not search or self.bad > 0):
             # prediction: map <- odom correction applied to the odometry pose
-            prior = self.apply_corr(odom)
+            prior = self.apply_corr(odom, corr)
             tilt_err = 4.0
         else:
             # prediction: constant velocity + gyro yaw
@@ -255,7 +236,7 @@ class IcpLocalizer(Node):
             tilt_err = 8.0 if search else 4.0
 
         if search:
-            # start / respawn / /initialpose: guess is good -> +-1 m, +-45 deg;
+            # start / respawn: guess is good -> +-1 m, +-45 deg;
             # lost while tracking -> full yaw circle around the last pose, then the known spots
             lost = self.bad > 0 and not seeded
             if lost:
@@ -305,22 +286,23 @@ class IcpLocalizer(Node):
                     self.need_search = True
             self.last_stamp = t
             pose, bad = self.pose, self.bad
-        if odom is not None:
-            if self.corr is not None:
-                self.publish_corr(msg.header.stamp)
-                self.publish_pose_msg(pose, msg.header.stamp)
-        else:
-            self.publish(pose, msg.header.stamp)
-        self.status_pub.publish(String(data=json.dumps({
-            "ok": bool(res.ok), "inlier_ratio": round(res.inlier_ratio, 3),
-            "rmse_cm": round(res.rmse * 100, 2), "points": res.n_points, "leveled": res.leveled,
-            "bad_in_row": bad, "searching": search, "stamp": round(t, 4),
-            "skipped_no_odom": self.skipped,
-            "x": round(pose.x, 3), "y": round(pose.y, 3), "yaw_deg": round(math.degrees(pose.yaw), 2)})))
+            if odom is not None:
+                if self.corr is not None:
+                    self.publish_corr(msg.header.stamp)
+                    self.publish_pose_msg(pose, msg.header.stamp)
+            else:
+                self.publish(pose, msg.header.stamp)
+            self.status_pub.publish(String(data=json.dumps({
+                "ok": bool(res.ok), "inlier_ratio": round(res.inlier_ratio, 3),
+                "rmse_cm": round(res.rmse * 100, 2), "points": res.n_points, "leveled": res.leveled,
+                "bad_in_row": bad, "searching": search, "stamp": round(t, 4),
+                "skipped_no_odom": self.skipped,
+                "x": round(pose.x, 3), "y": round(pose.y, 3), "yaw_deg": round(math.degrees(pose.yaw), 2)})))
 
     # ------------------------------------------------------------------ outputs
-    def apply_corr(self, odom: Pose) -> Pose:
-        cx, cy, cyaw = self.corr
+    def apply_corr(self, odom: Pose, corr) -> Pose:
+        """Apply the map correction captured for this scan."""
+        cx, cy, cyaw = corr
         c, s = math.cos(cyaw), math.sin(cyaw)
         return Pose(cx + c * odom.x - s * odom.y, cy + s * odom.x + c * odom.y,
                     wrap(cyaw + odom.yaw), odom.z, odom.roll, odom.pitch)

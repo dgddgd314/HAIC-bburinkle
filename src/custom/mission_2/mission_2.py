@@ -5,6 +5,7 @@ from __future__ import annotations
 import sys
 import math
 import time
+import threading
 from pathlib import Path
 
 SRC_ROOT = Path(__file__).resolve().parents[2]
@@ -12,10 +13,13 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 import numpy as np  # noqa: E402
+from message_filters import Subscriber, TimeSynchronizer  # noqa: E402
 from rclpy.duration import Duration  # noqa: E402
+from rclpy.qos import qos_profile_sensor_data  # noqa: E402
 from rclpy.time import Time  # noqa: E402
 from scipy.spatial.transform import Rotation  # noqa: E402
 from sensor_msgs.msg import CameraInfo, Image  # noqa: E402
+from std_msgs.msg import Empty  # noqa: E402
 from tf2_ros import TransformException  # noqa: E402
 from custom.mission_2.cone_vision import HUE, cone_points  # noqa: E402
 from mission_api import FAIL, Mission, MissionResult, run_standalone  # noqa: E402
@@ -26,25 +30,48 @@ class Mission2(Mission):
     MISSION = 2
 
     def __init__(self) -> None:
+        """Subscribe to timestamp-matched camera frames and public respawn events."""
         super().__init__()
+        self.frames_ready = threading.Condition()
+        self.frames = None
+        self.respawned = threading.Event()
+        streams = [
+            Subscriber(self, msg_type, topic, qos_profile=qos_profile_sensor_data)
+            for msg_type, topic in ((Image, "/camera/color/image_raw"),
+                                    (Image, "/camera/depth/image_raw"),
+                                    (CameraInfo, "/camera/camera_info"))
+        ]
+        self.camera_sync = TimeSynchronizer(streams, 5)
+        self.camera_sync.registerCallback(self.on_frames)
+        self.create_subscription(Empty, "/g1/respawned", self.on_respawn, 10)
+
+    def on_frames(self, rgb, depth, info):
+        """Wake the observer with a complete RGB-D sample."""
+        with self.frames_ready:
+            self.frames = (rgb, depth, info)
+            self.frames_ready.notify_all()
+
+    def on_respawn(self, _msg):
+        """Invalidate the cone target when the simulator shuffles its placement."""
+        with self.frames_ready:
+            self.respawned.set()
+            self.frames = None
+            self.frames_ready.notify_all()
 
     def observe_cone(self, color):
         """Locate a floor-level color component inside the cone room using fresh RGB-D."""
-        info = self.latest("/camera/camera_info", CameraInfo, timeout=2.0)
-        if info is None:
-            return None
-        color_topic = "/camera/color/image_raw"
-        first = self.latest(color_topic, Image, timeout=1.0)
-        last_stamp = first.header.stamp if first is not None else None
         deadline = time.monotonic() + 4.0
+        with self.frames_ready:
+            previous = self.frames
         while time.monotonic() < deadline:
-            rgb = self.latest(color_topic, Image, timeout=0.1)
-            depth = self.latest("/camera/depth/image_raw", Image, timeout=0.1)
-            if (rgb is None or depth is None or rgb.header.stamp == last_stamp
-                    or rgb.header.stamp != depth.header.stamp):
-                time.sleep(0.02)
-                continue
-            last_stamp = rgb.header.stamp
+            with self.frames_ready:
+                fresh = self.frames_ready.wait_for(
+                    lambda: self.respawned.is_set() or self.frames is not previous,
+                    timeout=deadline - time.monotonic())
+                if not fresh or self.respawned.is_set():
+                    return None
+                previous = self.frames
+                rgb, depth, info = previous
             if (rgb.encoding != "rgb8" or depth.encoding != "32FC1"
                     or rgb.header.frame_id != depth.header.frame_id
                     or rgb.header.frame_id != info.header.frame_id
@@ -57,7 +84,7 @@ class Mission2(Mission):
                                    buffer=depth.data, strides=(depth.step, 4))
             try:
                 tf = self._tf().lookup_transform("map", rgb.header.frame_id,
-                         Time.from_msg(last_stamp), timeout=Duration(seconds=0.4)).transform
+                         Time.from_msg(rgb.header.stamp), timeout=Duration(seconds=0.4)).transform
             except TransformException:
                 continue
             q, t = tf.rotation, tf.translation
@@ -74,7 +101,17 @@ class Mission2(Mission):
         color = self.params.get("color") or self.m2_color
         if color not in HUE:
             return MissionResult(self.MISSION, status=FAIL, detail="Missing or invalid cone color")
-        nav = Navigator(self)
+        nav = Navigator(self, interrupted=self.respawned)
+        while True:
+            self.respawned.clear()
+            result = self.approach_cone(nav, color)
+            if not self.respawned.is_set():
+                return result
+            self.stop()
+            self.log("[mission 2] respawned; returning to observe the new placement")
+
+    def approach_cone(self, nav, color):
+        """Complete one approach using only observations from this placement."""
         if not nav.go_to(15.5, 21.0, tol=0.15, final_yaw=math.pi / 2):
             self.stop()
             return MissionResult(self.MISSION, status=FAIL, detail="Could not reach cone doorway")

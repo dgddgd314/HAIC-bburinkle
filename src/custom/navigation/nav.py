@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import heapq
 import math
+import threading
 import time
 from pathlib import Path
 
@@ -152,29 +153,42 @@ class Navigator:
     """Walks a mission's G1 along planned paths using self.pose() and self.cmd_vel()."""
 
     def __init__(self, mission, grid: GridMap | None = None, *, v_max: float = 0.5,
-                 w_max: float = 0.7, lookahead: float = 0.6, log=None):
+                 w_max: float = 0.7, lookahead: float = 0.6, log=None, interrupted=None):
+        """Follow paths until completion or an optional mission interruption."""
         self.m = mission
         self.grid = grid or GridMap()
         self.v_max, self.w_max, self.look = v_max, w_max, lookahead
         self.log = log or getattr(mission, "log", print)
+        self.interrupted = interrupted or threading.Event()
 
     def wait_localized(self, timeout: float = 20.0) -> bool:
         """Block until /localization/status says ok and not searching (e.g. right after
         a respawn the TF can still hold the pre-teleport pose for a moment)."""
         import json
         from std_msgs.msg import String
-        end = time.monotonic() + timeout
-        while time.monotonic() < end:
-            msg = self.m.latest("/localization/status", String, timeout=1.0)
-            if msg is not None:
-                try:
-                    s = json.loads(msg.data)
-                except ValueError:
-                    s = {}
-                if s.get("ok") and not s.get("searching"):
-                    return True
-            self.m.stop()
-            time.sleep(0.1)
+        ready = threading.Event()
+
+        def on_status(msg):
+            """Use only a localization result delivered during this wait."""
+            try:
+                status = json.loads(msg.data)
+            except ValueError:
+                ready.clear()
+                return
+            if status.get("ok") and not status.get("searching"):
+                ready.set()
+            else:
+                ready.clear()
+
+        sub = self.m.create_subscription(String, "/localization/status", on_status, 1)
+        try:
+            end = time.monotonic() + timeout
+            while time.monotonic() < end and not self.interrupted.is_set():
+                self.m.stop()
+                if ready.wait(0.1):
+                    return not self.interrupted.is_set()
+        finally:
+            self.m.destroy_subscription(sub)
         self.log("[nav] localization readiness timed out")
         return False
 
@@ -214,7 +228,7 @@ class Navigator:
         gx, gy = path[-1]
         lost_since = None
         try:
-            while time.monotonic() < deadline:
+            while time.monotonic() < deadline and not self.interrupted.is_set():
                 p = self.m.pose(timeout=0.2)
                 if p is None:
                     self.m.stop()
@@ -268,7 +282,7 @@ class Navigator:
                     vy = max(-0.2, min(0.2, 0.8 * ly))
                 self.m.cmd_vel(v, vy, wz)
                 time.sleep(0.05)
-            self.log("[nav] timeout")
+            self.log("[nav] interrupted or timed out")
             return False
         finally:
             self.m.stop()
@@ -294,9 +308,10 @@ class Navigator:
         return None
 
     def turn_to(self, yaw_goal: float, tol_deg: float = 5.0, timeout: float = 15.0) -> bool:
+        """Rotate in place unless the mission is interrupted."""
         deadline = time.monotonic() + timeout
         try:
-            while time.monotonic() < deadline:
+            while time.monotonic() < deadline and not self.interrupted.is_set():
                 p = self.m.pose(timeout=0.2)
                 if p is None:
                     continue

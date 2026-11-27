@@ -1,0 +1,35 @@
+# Sensors, walking and policy files in one place. main.py reads this file at start-up.
+
+sensors:
+  g1:
+    camera:                 # Intel RealSense D435i (colour + depth) on the head's camera mount
+      pitch_deg: 15.0       # downward tilt: 0 = level, 36.8 = the mount's own slot (mostly floor)
+      forward_m: 0.0        # moved forward (+) / back (-) from the mount's slot
+      up_m: 0.0
+    lidar:                  # Ouster on top of the head: OS0-32 (wide 90 deg FOV), OS1-32 (45 deg),
+      up_m: 0.0
+  panda:
+    agentview:              # third-person view of the desk; pos / quat (w, x, y, z) in the Panda base frame
+      pos: [1.28, 0.0, 0.92]
+      quat: [0.66331780, 0.24496836, 0.24496836, 0.66331780]
+      fovy: 46.0            # vertical field of view, degrees
+    wrist:                  # eye-in-hand camera; pos / quat in the hand (robot0_right_hand) frame
+      pos: [0.05, 0.0, 0.0]
+      quat: [0.0, 0.707108, 0.707108, 0.0]
+      fovy: 75.0
+
+walking:
+  # policy: path relative to custom/; null uses the bundled 29-DoF policy.
+  # Replacements must match g1_walk_policy_29dof.py inputs and outputs.
+  policy: null
+  # max_vel clips /cmd_vel: vx/vy in m/s, wz in rad/s.
+  max_vel:
+    vx: 0.6
+    vy: 0.4
+    wz: 0.7
+
+# Any other policy files you use, as  name: path relative to custom/.
+# main.py checks that every file exists; missions read them as self.policies["name"] (a Path).
+# Example:
+#   kick: models/my_kick.onnx
+policies: {}

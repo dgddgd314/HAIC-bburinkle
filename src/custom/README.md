@@ -2,7 +2,7 @@
 
 ## 실행 전 준비
 
-- 추가 pip/apt 패키지 없음 (numpy, scipy, rclpy, tf2_ros는 대회 기본 환경에 포함).
+- 공식 기본 코드 `f03a500`에서 이 폴더를 `src/custom/`으로 사용합니다. 센서·보행 설정은 `robot.yaml`에 있습니다. 공식 `src/setup/install_ros_deps.sh`가 미션 2용 `ros-humble-message-filters`를 설치합니다.
 - 첫 실행 때 벽 점군 법선을 계산해 `~/.cache/haic_bburinkle/`에 저장합니다(약 3초). 이후 실행은 0.1초.
 
 ## 위치 추정 (`localization/`)
@@ -35,9 +35,7 @@
 
 ### 리스폰·위치 잃었을 때
 
-- 시뮬레이터 `/g1/mission_status`의 `startup`/`respawned` 이벤트의 `pos`, `yaw_deg`로 자동 재설정
-  (README 4절: 리스폰은 순간이동이라 오도메트리가 모름).
-- 수동 재설정: `/initialpose` (PoseWithCovarianceStamped) 발행.
+- 공개 `/g1/respawned` 이벤트를 받으면 이전 지도 보정을 버리고 공식 시작 자세 (16, 11, 0°)에서 LiDAR 정합을 다시 시작합니다.
 - 5스캔 연속 실패 → 마지막 위치 ±1 m 전방위 탐색, 실패 시 미션 시작 지점들 주변 탐색.
 
 ### 검증 결과 (2026-11-26, 시뮬레이터)
@@ -78,6 +76,10 @@ self.nav.settle(1.5)                        # 판정 전 멈춰 서기
 `Navigator.go_to(goal)` → 1.5초 정지 → 목표에서 0.3 m 넘게 벗어났으면 다시 접근(최대 3회).
 검증(2026-11-26): 무작위 목표 8회 모두 PASS, 판정 거리 0.09–0.11 m, 16–38초.
 `python main.py --missions 1` 공식 경로로도 PASS (0.09 m, 26.7 s).
+
+## 미션 2
+
+공식 환경의 `src/`에서 `python main.py --missions 2`로 실행합니다. 미션은 컬러·깊이·카메라 내부 파라미터를 같은 시각으로 맞춰 지정 색을 관측합니다. 리스폰 시 기존 목표를 폐기하고 문 앞에서 새 배치를 관측합니다.
 
 ## 지도 (`maps_structural/`, `structural_mapping/`)
 
