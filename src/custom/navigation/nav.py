@@ -45,6 +45,31 @@ class GridMap:
     def free(self, r, c) -> bool:
         return self.inside(r, c) and not self.blocked[r, c]
 
+    def segment_free(self, x, y, tx, ty) -> bool:
+        """Check every grid cell crossed by a world-space steering segment."""
+        r, c = self.to_cell(x, y)
+        goal_r, goal_c = self.to_cell(tx, ty)
+        dx, dy = tx - x, ty - y
+        step_c = 1 if dx > 0 else -1
+        step_r = 1 if dy > 0 else -1
+        while self.free(r, c):
+            if (r, c) == (goal_r, goal_c):
+                return True
+            edge_x = OX + (c + (step_c > 0)) * self.cell
+            edge_y = OY + (r + (step_r > 0)) * self.cell
+            cross_x = (edge_x - x) / dx if c != goal_c else math.inf
+            cross_y = (edge_y - y) / dy if r != goal_r else math.inf
+            if math.isclose(cross_x, cross_y, rel_tol=0, abs_tol=1e-12):
+                if not self.free(r, c + step_c) or not self.free(r + step_r, c):
+                    return False
+                c += step_c
+                r += step_r
+            elif cross_x < cross_y:
+                c += step_c
+            else:
+                r += step_r
+        return False
+
     def nearest_free(self, r, c, max_cells: int = 15):
         if self.free(r, c):
             return r, c
@@ -203,6 +228,12 @@ class Navigator:
                 dg = math.hypot(gx - x, gy - y)
                 # advance along the path: lookahead point on the remaining polyline
                 while seg < len(path) - 2 and math.hypot(path[seg + 1][0] - x, path[seg + 1][1] - y) < self.look:
+                    # A nearby waypoint may still be on the far side of a corner.
+                    candidate = self._lookahead(path, seg + 1, x, y)
+                    if candidate is None:
+                        break
+                    if not self.grid.segment_free(x, y, *candidate):
+                        break
                     seg += 1
                 on_final_leg = seg >= len(path) - 2
                 if on_final_leg and dg < tol:
@@ -212,6 +243,18 @@ class Navigator:
                     self.log("[nav] outside lookahead of current path segment; stopping")
                     return False
                 tx, ty = target
+                if not self.grid.segment_free(x, y, tx, ty):
+                    # Rejoin the current leg before looking beyond the obstructed corner.
+                    ax, ay = path[seg]
+                    bx, by = path[min(seg + 1, len(path) - 1)]
+                    dx, dy = bx - ax, by - ay
+                    length_sq = dx * dx + dy * dy
+                    along = ((x - ax) * dx + (y - ay) * dy) / length_sq if length_sq else 0
+                    along = max(0.0, min(1.0, along))
+                    tx, ty = ax + along * dx, ay + along * dy
+                    if math.hypot(tx - x, ty - y) < 1e-6 or not self.grid.segment_free(x, y, tx, ty):
+                        self.log("[nav] no visible route back to path; stopping")
+                        return False
                 heading = math.atan2(ty - y, tx - x)
                 err = math.atan2(math.sin(heading - yaw), math.cos(heading - yaw))
                 wz = max(-self.w_max, min(self.w_max, 1.5 * err))

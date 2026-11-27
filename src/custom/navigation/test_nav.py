@@ -3,7 +3,7 @@ import math
 import unittest
 from unittest.mock import Mock, patch
 
-from custom.navigation.nav import Navigator
+from custom.navigation.nav import GridMap, Navigator
 
 
 class NavigationTests(unittest.TestCase):
@@ -40,3 +40,26 @@ class NavigationTests(unittest.TestCase):
     def test_off_path_with_no_intersection(self):
         """An empty lookahead circle must not fall back to the final goal."""
         self.assertIsNone(self.nav._lookahead([(0, 0), (4, 0), (4, 2)], 0, 1, -1))
+
+    def test_turns_keep_commanded_trajectory_in_free_cells(self):
+        """Replay the failing corner route with ideal body-frame velocities at 20 Hz."""
+        grid = GridMap()
+        nav = Navigator(self.mission, grid)
+        x, y, yaw = 12.5, 20.1, 0.0
+        goal = (6.05, 18.8)
+        path = grid.plan((x, y), goal)
+
+        def step(vx, vy, wz):
+            """Integrate one controller tick and check the traversed map cell."""
+            nonlocal x, y, yaw
+            dt = 0.05
+            x += (vx * math.cos(yaw) - vy * math.sin(yaw)) * dt
+            y += (vx * math.sin(yaw) + vy * math.cos(yaw)) * dt
+            yaw += wz * dt
+            self.assertTrue(grid.free(*grid.to_cell(x, y)), (x, y))
+
+        self.mission.pose.side_effect = lambda timeout: (x, y, yaw)
+        self.mission.cmd_vel.side_effect = step
+        with patch("custom.navigation.nav.time.sleep"):
+            self.assertTrue(nav.follow(path, tol=0.15, timeout=8))
+        self.assertLess(math.hypot(x - goal[0], y - goal[1]), 0.15)
