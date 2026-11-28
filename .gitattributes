@@ -1,3 +1,5 @@
 *.npy binary
 *.ply binary
 *.pgm binary
+M4_LINUX_START.sh text eol=lf
+server/mission_4/train_locked.sh text eol=lf

@@ -85,15 +85,20 @@ class Mission4(Mission):
                 return return_value
             self.log("[M4] Respawned. Repeating the doorway survey.")
 
-    def survey(self, nav, url):
-        """Classify each view, solve the layout and enter the identified classroom."""
-        scores = {}
+    def doorway_views(self, nav):
+        """Yield the same stationary JPEGs to the mission and practice recorder."""
         # Spawn is beside the middle door. Visit middle, north, then south.
         for y in (DOOR_Y[1], DOOR_Y[0], DOOR_Y[2]):
             if not nav.go_to(17.4, y, tol=0.15, final_yaw=0.0):
-                return MissionResult(self.MISSION, status=FAIL, detail=f"Doorway y={y} unreachable")
+                raise ValueError(f"Doorway y={y} unreachable")
             nav.settle()
-            scores[y] = request_scores(url, self.capture())
+            yield y, self.capture()
+
+    def survey(self, nav, url):
+        """Classify each view, solve the layout and enter the identified classroom."""
+        scores = {}
+        for y, jpeg in self.doorway_views(nav):
+            scores[y] = request_scores(url, jpeg)
             self.log(f"[M4] Door y={y}: {scores[y]}")
         rooms = assign_rooms([scores[y] for y in DOOR_Y])
         y = DOOR_Y[rooms.index("classroom")]
